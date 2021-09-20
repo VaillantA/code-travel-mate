@@ -6,7 +6,7 @@ import './styles.css';
 const App = () => (
   <div className="app">
     <img src={reactLogo} alt="react logo" />
-    <h1>Composant : App</h1>
+    <h1>Coucou</h1>
   </div>
 );
 

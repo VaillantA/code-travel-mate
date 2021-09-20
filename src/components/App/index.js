@@ -4,7 +4,7 @@ import './styles.css';
 // == Composant
 const App = () => (
   <div>
-    <h1>Notre application </h1>
+    <h1>Composant : App</h1>
   </div>
 );
 

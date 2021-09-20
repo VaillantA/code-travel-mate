@@ -1,0 +1,56 @@
+*{
+  // font-family: 'Roboto Condensed', sans-serif;
+}
+
+:root {
+  --primary: #F6A9A9;
+}
+
+.btn
+ {
+   padding: 8px 20px;
+   border-radius: 5px;
+   border: none;
+  //  font-family: 'Roboto Condensed', sans-serif;
+ }
+
+.btn:hover {
+    padding: 8px 20px;
+    transition: all 0.3s ease-out;
+    background: #fff6ea;
+    color: #F6A9A9;
+    transition: 250ms;
+
+}
+
+.btn--primary {
+  background-color: var(--primary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+  transition: all 0.3s ease-out;
+
+}
+
+.btn--medium {
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #fff;
+}
+
+.btn-large {
+  padding: 12px 26px;
+  border-radius: 5px;
+  font-size: 20px;
+  color: #fff;
+}
+
+
+
+

@@ -1,6 +1,7 @@
 // == Import
+import React from 'react';
 import NavBar from 'src/components/NavBar';
-import './styles.css';
+import './style.scss';
 
 // == Composant
 const App = () => (

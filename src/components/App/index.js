@@ -1,10 +1,12 @@
-
-import './styles.css';
+import './style.scss';
+/* composants */
+import Cards from 'src/components/Cards';
 
 // == Composant
 const App = () => (
+
   <div>
-    <h1>Composant : App</h1>
+    <Cards />
   </div>
 );
 

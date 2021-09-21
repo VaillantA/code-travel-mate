@@ -1,40 +1,47 @@
 // import PropTypes from 'prop-types';
-import React, { Component } from "react";
-import { MenuItems } from 'src/components/NavBar/MenuItems.js';
+import React from "react";
 import { Button } from 'src/components/NavBar/Button/index.js';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
 
-class NavBar extends Component {
-  state = { clicked : false }
-  
-  handleClick = () => {
-  this.setState ({ clicked: !this.state.clicked})
-  }
+const NavBar = () => {
+  const isClicked = useSelector((state)=> state.burgerOpen); 
 
-  render() {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch({
+      type: 'BURGEN_OPEN',
+    });
+  };
+
     return (
         <nav className="NavbarItems">
           <h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa"></i></h1>
-          <div className="menu-icon" onClick={this.handleClick}>
-            <i className={ this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'}></i>
           </div>
-          <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
-            {MenuItems.map((item, index) =>  {
-                return (
-                  <li key={index}>
-                    <a className={item.cName} href={item.url}>
-                    {item.title}
-                    </a>
-                  </li>
-                )
-            })}
+          <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
+              <li>
+                <a className="nav-links" href="">Home</a>
+              </li>
+              <li>
+                <a className="nav-links" href="">Event</a>
+              </li>
+              <li>
+                <a className="nav-links" href="">Categories</a>
+              </li>
+              <li>
+                <a className="nav-links" href="">About Us</a>
+              </li>
+              <li>
+                <a className="nav-links-mobile" href="">Sign Up</a>
+              </li>
           </ul>
           <Button>Sign Up</Button>
         </nav>
     );
-  }
-}
+};
 
 
 export default NavBar;

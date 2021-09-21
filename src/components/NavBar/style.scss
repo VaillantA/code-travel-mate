@@ -3,12 +3,13 @@ body, html {
 }
 .NavbarItems {
   // background : linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252,1) 100%);
-  background: #f0cca4;
+  background: #3B185F;
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .navbar-logo {
@@ -50,7 +51,7 @@ color: #fff;
 
 .nav-links:hover {
   background-color: #fff6ea;
-  color:#f0cca4;
+  color: #3B185F;
   border-radius: 5px;
   transition: all 0.2s ease-out;
 }
@@ -72,7 +73,7 @@ color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 500px;
+    height: 450px;
     position: absolute;
     top: 80px;
     left: -100%;
@@ -80,7 +81,7 @@ color: #fff;
     transition: all 0.5s ease;
   }
   .nav-menu.active {
-    background-color: #f0cca4 ;
+    background-color: #3B185F ;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
@@ -92,10 +93,25 @@ color: #fff;
     width: 100%;
     display: table;
   }
+ 
   .nav-links:hover {
-    background-color: #fff6ea;
-    color:#f0cca4;
+    background-color: #fff;
+    color:#3B185F;
   }
+
+  .nav-links-mobile {
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+    display: table;
+    background-color: #A12568;
+  }
+
+  .nav-links-mobile:hover {
+    background-color: #fff;
+    color:#A12568;
+  }
+
   .navbar-logo {
     position: absolute;
     top:0;
@@ -111,7 +127,16 @@ color: #fff;
     font-size: 1.8rem;
     cursor: pointer;
   }
+  button {
+    display: none;
+  }
 }
 
 
+@media screen and (max-width: 480px) {
+
+  button {
+    display: none;
+  }
+}
 

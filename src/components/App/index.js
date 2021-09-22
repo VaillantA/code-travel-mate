@@ -8,6 +8,7 @@ import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
 import Searchbar from 'src/components/Searchbar';
+import Cards from 'src/components/Cards';
 
 import './style.scss';
 

@@ -2,17 +2,22 @@ import './style.scss';
 import { useSelector} from 'react-redux';
 
 
-const SelectBanniere = ({destination}) => {
+const SelectBanniere = ({choice}) => {
   
-console.log(destination);
+console.log(choice);
+  
   return (
-    <select>
-      {destination.map((pays)=>(
-      <option key={pays.id}>{pays.country}</option>
+    <select className="searchBar--select">
+      {choice.map((currentChoice)=>(
+      <option
+        value="{currentChoice.option}"
+        key={currentChoice.id}         className="searchBar--option"
+      >
+        {currentChoice.option}
+      </option>
     ))}
     </select>
   )
-    
 };
 
 export default SelectBanniere;

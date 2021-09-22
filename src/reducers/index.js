@@ -4,57 +4,68 @@ const initialState = {
   burgerSearch: false,
   destination:[
     {
-      country:'France',
+      option:'France',
       id:1,
     },
     {
-      country:'Espagne',
+      option:'Espagne',
       id:2,
     },
     {
-      country:'Canada',
+      option:'Canada',
       id:3,
     },
     {
-      country:'Australie',
+      option:'Australie',
       id:4,
     },
   ],
   villes:[
     {
-      city:'Paris',
+      option:'Paris',
+      id:1,
     },
     {
-      city:'Madrid',
+      option:'Madrid',
+      id:2,
     },
     {
-      city:'Montreal',
+      option:'Montreal',
+      id:3,
     },
     {
-      city:'Sydney',
+      option:'Sydney',
+      id:4,
     },
   ],
   categories:[
     {
-      activité:'Sport',
+      option:'Sport',
+      id:1,
     },
     {
-      activités:'Culturel',
+      option:'Culturel',
+      id:2,
     },
     {
-      activités:'Restaurant',
+      option:'Restaurant',
+      id:3,
     },
     {
-      activités:'Festifs',
+      option:'Festifs',
+      id:4,
     },
     {
-      activités:'Rencontres',
+      option:'Rencontres',
+      id:5,
     },
     {
-      activités:'Nature',
+      option:'Nature',
+      id:6,
     },
     {
-      activités:'Entraide',
+      option:'Entraide',
+      id:7,
     },
   ]
 };

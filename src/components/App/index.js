@@ -9,6 +9,7 @@ import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
 import Searchbar from 'src/components/Searchbar';
 import Cards from 'src/components/Cards';
+import Footer from 'src/components/Footer';
 
 import './style.scss';
 
@@ -35,6 +36,7 @@ const App = () => {
               <NotFound />
             </Route>
           </Switch>
+          <Footer/>
       </div>
    
   )

@@ -26,7 +26,7 @@ const LoginForm = () => {
               <input type="text" className="input"/>
           </div>
           <div className="input-field">
-              <label>Confirm Password</label>
+              <label>Password</label>
               <input type="text" className="input"/>
           </div>
           <div className="input-field">
@@ -48,7 +48,7 @@ const LoginForm = () => {
               <input type="text" className="input"/>
           </div>
           <div className="input-field">
-              <label>Discription</label>
+              <label>Description</label>
               <textarea type="text" className="input"> </textarea>
           </div>
           <button type="button" className="button">Register</button>

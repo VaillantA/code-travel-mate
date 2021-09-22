@@ -1,6 +1,6 @@
 import react from 'react';
 import './style.scss';
-import background_searchbar from 'src/assets/Image/background_searchbar.jpg';
+import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import SelectBanniere from './SelectBanniere';
 

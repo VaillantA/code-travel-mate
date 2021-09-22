@@ -38,7 +38,9 @@ const Searchbar = () => {
       <input type="date" className="searchBar--select"></input>
       <button className="searchBar--buttonSubmit">GO !</button>
     </div>
-    <input placeholder="search" className="searchBar--input"></input>
+    <div className="banniere--searchInput">
+      <input placeholder="search" className="searchBar--input"></input>
+    </div>
     <button className="searchBar--buttonSubmitMobile" onClick={handleClick}>Search</button>
     
     {searchOpen && 

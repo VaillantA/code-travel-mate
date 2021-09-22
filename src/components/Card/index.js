@@ -3,7 +3,11 @@ import "./style.scss";
 import landscape from "src/assets/images/licensed-image.jpeg";
 import avatar from "src/assets/images/avatar.png";
 import Ripples from 'react-ripples';
-import {Heart} from 'react-feather'
+import {Heart, MessageCircle} from 'react-feather'
+import {useState} from 'react';
+
+
+
 /* import { NavLink } from "react-router-dom"; */
 
 /* import { createRipples } from 'react-ripples'; */
@@ -13,7 +17,7 @@ import {Heart} from 'react-feather'
 
  
  const Card = (props) => {
-    return(
+    return( 
       <div className="card">
         <div className="card-header">
           <div className="profile">
@@ -34,6 +38,7 @@ import {Heart} from 'react-feather'
           </a>
           <div className="card-like"> 
             <Heart className=" card-like-icon"/>
+            <MessageCircle className=" card-like-icon"/>
         </div>
           <div className="card-text">{props.description}</div>
           <div className="divButton">          

@@ -2,6 +2,7 @@
 import Card from "src/components/Card";
 import landscape from "src/assets/images/licensed-image.jpeg";
 
+
 function Cards() {
   const recipeAuthor = "Jhon,";
   const recipeItem = {
@@ -9,14 +10,16 @@ function Cards() {
     date: "9 janvier 2021",
     image: landscape,
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolores vel illo porro necessitatibus tenetur, facilis nam. Ex eaque harum, vero maxime ullam repellat, atque perferendis id ipsam libero beatae..",
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolores vel illo porro necessitatibus tenetur, facilis nam...",
   };
 
   const like= 193;
   const isLiked = true;
 
   return (
-    <main className="cards">  
+    <main > 
+      <div className="slider">
+    <div className="cards"> 
       <div className="event">
       <a href="#">
         <h1 className="event-tittle">
@@ -53,7 +56,7 @@ function Cards() {
       <div className="event">
         <a href="#">
         <h1 className="event-tittle">
-          Les événements proches de chez vous 
+          proches de vous 
         </h1>
         </a>
       </div>
@@ -86,7 +89,7 @@ function Cards() {
       <div className="event">
         <a href="#">
         <h1 className="event-tittle">
-          Les événements proches de chez vous 
+          proches de  vous 
         </h1>
         </a>
       </div>
@@ -116,7 +119,10 @@ function Cards() {
           likeCount={like}
         />
       </div>
+      </div>
+      </div>
     </main>
+    
   );
 }
 

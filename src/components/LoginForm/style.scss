@@ -45,7 +45,7 @@
 
 .container .form .input-field .input,
 .container .form .input-field .textarea{
-  width: 100%;
+  width: 130%;
   outline: none;
   border: 1px solid #3B185F;
   font-size: 15px;
@@ -61,7 +61,7 @@
 
 .container .form .input-field .gender-select {
   position: relative;
-  width: 100%;
+  width: 132%;
   height: 37px;
 }
 
@@ -105,4 +105,5 @@
   display: block;
   align-items: center;
   text-align: center;
+  font-weight: bold;
 }

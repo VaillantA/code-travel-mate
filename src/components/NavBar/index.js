@@ -25,7 +25,7 @@ const NavBar = () => {
           </div>
           <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
               <li>
-                <NavLink className="nav-links" to="/" exact={true}>Home</NavLink>
+                <NavLink className="nav-links" to="/home" exact={true}>Home</NavLink>
               </li>
               <li>
                 <NavLink className="nav-links" to="/events">Event</NavLink>

@@ -7,20 +7,19 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
-import Searchbar from 'src/components/Searchbar';
-import Cards from 'src/components/Cards';
 
 import './style.scss';
+import Home from '../Home';
 
 // == Composant
 const App = () => {
     return(
-   
-  
       <div className="app">
           <NavBar />
-          <Searchbar />
           <Switch>
+            <Route path="/home">
+            <Home />
+            </Route>
             <Route path="/categories">
               <Categories />
             </Route>
@@ -31,9 +30,9 @@ const App = () => {
               <LoginForm />
             </Route>
             {/* <Redirect from="/jquery" to="/autre" /> */}
-            <Route>
+            {/* <Route>
               <NotFound />
-            </Route>
+            </Route> */}
           </Switch>
       </div>
    

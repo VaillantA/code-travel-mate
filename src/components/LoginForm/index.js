@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 // import Ripple
-// import './style.scss';
+import './style.scss';
 
 const LoginForm = () => {
   useEffect(() => {

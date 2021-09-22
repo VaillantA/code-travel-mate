@@ -2,6 +2,8 @@
 import React from "react";
 import { Button } from 'src/components/NavBar/Button/index.js';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link, NavLink } from 'react-router-dom';
+
 
 import './style.scss';
 
@@ -23,22 +25,23 @@ const NavBar = () => {
           </div>
           <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
               <li>
-                <a className="nav-links" href="">Home</a>
+                <NavLink className="nav-links" to="/" exact={true}>Home</NavLink>
               </li>
               <li>
-                <a className="nav-links" href="">Event</a>
+                <NavLink className="nav-links" to="/events">Event</NavLink>
+              </li>
+  
+              <li>
+                <NavLink className="nav-links" to="/categories">Categories</NavLink>
               </li>
               <li>
-                <a className="nav-links" href="">Categories</a>
+                <NavLink className="nav-links" to="/about-us">About Us</NavLink>
               </li>
               <li>
-                <a className="nav-links" href="">About Us</a>
-              </li>
-              <li>
-                <a className="nav-links-mobile" href="">Sign Up</a>
+                <NavLink className="nav-links" to="/registration">Sign Up</NavLink>
               </li>
           </ul>
-          <Button>Sign Up</Button>
+            {/* <Button>Sign Up</Button> */}
         </nav>
     );
 };

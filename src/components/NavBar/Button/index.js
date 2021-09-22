@@ -1,5 +1,7 @@
 import React from 'react';
 import './style.scss';
+import { Link, NavLink } from 'react-router-dom';
+
 
 const STYLES = [
     'btn--primary',
@@ -12,7 +14,6 @@ const SIZES = [
 ]
 
 export const Button = ({
-  children,
   type,
   onClick,
   buttonsStyle,
@@ -24,8 +25,9 @@ export const Button = ({
     const checkButtonSize = SIZES.includes(buttonSize) ? buttonSize : SIZES[0]
 
     return (
-      <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type}>
-          {children}
-      </button>
+      
+        <button className={`btn ${checkButtonStyle} ${checkButtonSize}`} onClick={onClick} type={type} href="/registration">
+          <NavLink  to="/registration">Sign Up</NavLink>
+        </button>
     )
 }

@@ -7,6 +7,8 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
+import Searchbar from 'src/components/Searchbar';
+import Cards from 'src/components/Cards';
 
 import './style.scss';
 
@@ -17,6 +19,7 @@ const App = () => {
   
       <div className="app">
           <NavBar />
+          <Searchbar />
           <Switch>
             <Route path="/categories">
               <Categories />
@@ -39,3 +42,5 @@ const App = () => {
 
 // == Export
 export default App;
+
+

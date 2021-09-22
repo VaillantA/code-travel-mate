@@ -1,0 +1,15 @@
+@use 'src/styles/vars';
+
+.not-found {
+  margin: vars.$gutter;
+  text-align: center;
+  color: vars.$title-color;
+
+  &-link {
+    color: vars.$primary-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

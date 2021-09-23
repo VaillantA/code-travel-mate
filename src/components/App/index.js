@@ -19,7 +19,7 @@ const App = () => {
   
       <div className="app">
           <NavBar />
-          <Searchbar />
+          {/* <Searchbar /> */}
           <Switch>
             <Route path="/categories">
               <Categories />

@@ -3,7 +3,7 @@ body, html {
 }
 .NavbarItems {
   // background : linear-gradient(90deg, rgb(110,94,254) 0%, rgba(73,63,252,1) 100%);
-  background: #3B185F;
+  background: #2A0944;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -75,7 +75,7 @@ color: #fff;
 
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 800px) {
   .NavbarItems {
     position: relative;
   }

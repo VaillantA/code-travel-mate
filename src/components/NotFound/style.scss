@@ -3,10 +3,11 @@
 .not-found {
   margin: vars.$gutter;
   text-align: center;
-  color: vars.$title-color;
+  color: white;
 
   &-link {
-    color: vars.$primary-color;
+    color: rgb(216, 102, 9);
+    padding-top: 1em;
 
     &:hover {
       text-decoration: underline;

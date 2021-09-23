@@ -1,4 +1,4 @@
-/* import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useEffect } from 'react';
 // == Import
 import './style.scss';
@@ -19,4 +19,4 @@ const NotFound = () => {
 
 // == Export
 export default NotFound;
- */
+

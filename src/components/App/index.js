@@ -7,8 +7,9 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
-
 import './style.scss';
+import Cards from 'src/components/Cards';
+import Searchbar from 'src/components/Searchbar';
 import Home from '../Home';
 
 // == Composant
@@ -20,6 +21,10 @@ const App = () => {
             <Route path="/home">
             <Home />
             </Route>
+            <Route path="/"exact>
+            <Searchbar />
+            <Cards />
+            </Route>
             <Route path="/categories">
               <Categories />
             </Route>
@@ -30,9 +35,9 @@ const App = () => {
               <LoginForm />
             </Route>
             {/* <Redirect from="/jquery" to="/autre" /> */}
-            {/* <Route>
+             <Route>
               <NotFound />
-            </Route> */}
+            </Route> 
           </Switch>
       </div>
    

@@ -1,6 +1,6 @@
 import react from 'react';
 import './style.scss';
-import background_searchbar from 'src/assets/Image/background_searchbar.jpg';
+import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import SelectBanniere from './SelectBanniere';
 
@@ -38,7 +38,9 @@ const Searchbar = () => {
       <input type="date" className="searchBar--select"></input>
       <button className="searchBar--buttonSubmit">GO !</button>
     </div>
-    <input placeholder="search" className="searchBar--input"></input>
+    <div className="banniere--searchInput">
+      <input placeholder="search" className="searchBar--input"></input>
+    </div>
     <button className="searchBar--buttonSubmitMobile" onClick={handleClick}>Search</button>
     
     {searchOpen && 
@@ -60,5 +62,3 @@ const Searchbar = () => {
 }
 
 export default Searchbar;
-
-

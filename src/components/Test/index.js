@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 const Test = () => {
-  const name = useSelector((state) => state.countries.name);
+  const name = useSelector((state) => state.country.countriesList);
+  console.log(name);
   const dispatch = useDispatch();
   useEffect(() => {
     // ici j'utilise un action creator qui est tout simplement

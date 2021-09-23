@@ -8,15 +8,15 @@ const reducer = (state = initialState, action = {}) => {
     case 'FETCH_COUNTRIES':
       return {
         ...state,
-        countriesList: action.countries
+        countriesList: action.countries,
       };
-      case 'RECEIVE_ERROR':
-        return {
-          ...state,
-          error: true,
-        };
-  default:
-     return state;
+    case 'RECEIVE_ERROR':
+      return {
+        ...state,
+        error: true,
+      };
+    default:
+      return state;
+  }
 };
-
 export default reducer;

@@ -15,7 +15,7 @@ const ajax = (store) => (next) => (action) => {
         });
       })
       .catch((error) => {
-        console.log(error);
+         {console.log(error)}
         store.dispatch({
           type: 'RECEIVE_ERROR',
         });

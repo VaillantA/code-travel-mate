@@ -7,19 +7,24 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
-import Searchbar from 'src/components/Searchbar';
-import Cards from 'src/components/Cards';
-import Footer from 'src/components/Footer';
-
 import './style.scss';
+import Cards from 'src/components/Cards';
+import Searchbar from 'src/components/Searchbar';
+import Footer from 'src/components/Footer';
+import Home from '../Home';
 
 // == Composant
 const App = () => (
-
   <div className="app">
     <NavBar />
-    <Searchbar />
     <Switch>
+      <Route path="/home">
+        <Home />
+      </Route>
+      <Route path="/" exact>
+        <Searchbar />
+        <Cards />
+      </Route>
       <Route path="/categories">
         <Categories />
       </Route>

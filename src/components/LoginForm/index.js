@@ -29,10 +29,6 @@ const LoginForm = () => {
           <input type="text" className="input" />
         </div>
         <div className="input-field">
-          <label>Password</label>
-          <input type="text" className="input" />
-        </div>
-        <div className="input-field">
           <label>Confirm Password</label>
           <input type="text" className="input" />
         </div>

@@ -10,6 +10,7 @@ import NotFound from 'src/components/NotFound';
 import Searchbar from 'src/components/Searchbar';
 import Cards from 'src/components/Cards';
 import Footer from 'src/components/Footer';
+import EventForm from 'src/components/EventForm';
 
 import './style.scss';
 
@@ -19,6 +20,7 @@ const App = () => (
   <div className="app">
     <NavBar />
     <Searchbar />
+    <EventForm />
     <Switch>
       <Route path="/categories">
         <Categories />

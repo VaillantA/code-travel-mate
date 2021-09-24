@@ -2,8 +2,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 const Test = () => {
-  const name = useSelector((state) => state.country.countriesList);
-  console.log(name);
+  const countries = useSelector((state) => state.country.countriesList);
+  console.log(countries);
   const dispatch = useDispatch();
   useEffect(() => {
     // ici j'utilise un action creator qui est tout simplement
@@ -15,7 +15,9 @@ const Test = () => {
   }, []);
   return (
     <div>
-      <h1>{name}</h1>
+      { countries.map((country) => (
+        <h2 key={country.id}>{country.name}</h2>
+      ))}
     </div>
   );
 };

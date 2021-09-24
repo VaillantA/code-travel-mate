@@ -24,10 +24,7 @@ const LoginForm = () => {
           <label>Pseudo</label>
           <input type="text" className="input" />
         </div>
-        <div className="input-field">
-          <label>Password</label>
-          <input type="text" className="input" />
-        </div>
+
         <div className="input-field">
           <label>Password</label>
           <input type="text" className="input" />
@@ -53,7 +50,7 @@ const LoginForm = () => {
         </div>
         <div className="input-field">
           <label>Description</label>
-          <textarea type="text" className="input"> </textarea>
+          <textarea type="text" className="input" value="coucou"> </textarea>
         </div>
         <button type="button" className="button">Register</button>
       </div>

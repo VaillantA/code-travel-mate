@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   // baseURL: 'http://tai-patrick-buth-khun.vpnuser.lan/apotheose/projet-travel-mate/travel-mate-back/public',
-  baseURL: 'http://tai-patrick-buth-khun.vpnuser.lan:8080/api/v1/',
+  baseURL: 'http://tai-patrick-buth-khun.vpnuser.lan:8000/api/v1/',
 });
 
 const ajax = (store) => (next) => (action) => {
@@ -10,7 +10,7 @@ const ajax = (store) => (next) => (action) => {
     api.get('country')
       .then((response) => {
         store.dispatch({
-          type: 'FETCH_COUNTRIES',
+          type: 'SAVE_COUNTRIES',
           countries: response.data,
         });
       })

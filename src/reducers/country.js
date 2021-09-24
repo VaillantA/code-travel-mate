@@ -5,7 +5,7 @@ export const initialState = {
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
-    case 'FETCH_COUNTRIES':
+    case 'SAVE_COUNTRIES':
       return {
         ...state,
         countriesList: action.countries,

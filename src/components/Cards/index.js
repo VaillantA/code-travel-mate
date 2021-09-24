@@ -13,11 +13,11 @@ function Cards() {
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolores vel illo porro necessitatibus tenetur, facilis nam...",
   };
 
-  const like= 193;
+  const like = 193;
   const isLiked = true;
 
   return (
-    <main > 
+    <main> 
       <div className="slider">
     <div className="cards"> 
       <div className="event">

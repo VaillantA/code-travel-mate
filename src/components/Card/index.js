@@ -42,9 +42,9 @@ import {useState} from 'react';
         </div>
           <div className="card-text">{props.description}</div>
           <div className="divButton">          
-            <Ripples color="#fff" during={1200}>
+            {/* <Ripples color="#fff" during={1200}> */}
                 <button type="button" className="buttons-ripples">View Details</button>
-            </Ripples>
+            {/* </Ripples> */}
           </div>
         </div>
       </div>

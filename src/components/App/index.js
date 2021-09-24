@@ -14,33 +14,7 @@ import Footer from 'src/components/Footer';
 import './style.scss';
 
 // == Composant
-const App = () => {
-    return(
-   
-  
-      <div className="app">
-          <NavBar />
-          <Searchbar />
-          <Switch>
-            <Route path="/categories">
-              <Categories />
-            </Route>
-            <Route path="/events">
-              <Events />
-            </Route>
-            <Route path="/registration">
-              <LoginForm />
-            </Route>
-            {/* <Redirect from="/jquery" to="/autre" /> */}
-            <Route>
-              <NotFound />
-            </Route>
-          </Switch>
-          <Footer/>
-      </div>
-   
-  )
-};
+const App = () => (
 
   <div className="app">
     <NavBar />
@@ -60,6 +34,7 @@ const App = () => {
         <NotFound />
       </Route>
     </Switch>
+    <Footer />
   </div>
 
 );

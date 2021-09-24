@@ -14,8 +14,6 @@ const SelectBanniere = ({ choice }) => {
     });
   };
 
-const SelectBanniere = ({choice}) => {
-    
   return (
     <select
       name="searchBar--category"

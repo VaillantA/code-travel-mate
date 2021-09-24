@@ -1,40 +1,39 @@
 const initialState = {
 
   burgerSearch: false,
-  categories:[
+  categories: [
     {
-      option:'Sport',
-      id:1,
+      option: 'Sport',
+      id: 1,
     },
     {
-      option:'Culturel',
-      id:2,
+      option: 'Culturel',
+      id: 2,
     },
     {
-      option:'Restaurant',
-      id:3,
+      option: 'Restaurant',
+      id: 3,
     },
     {
-      option:'Festifs',
-      id:4,
+      option: 'Festifs',
+      id: 4,
     },
     {
-      option:'Rencontres',
-      id:5,
+      option: 'Rencontres',
+      id: 5,
     },
     {
-      option:'Nature',
-      id:6,
+      option: 'Nature',
+      id: 6,
     },
     {
-      option:'Entraide',
-      id:7,
+      option: 'Entraide',
+      id: 7,
     },
   ],
   cityInProgress: '',
-  selectedCategory:'',
+  selectedCategory: '',
 };
-
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
@@ -56,7 +55,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'CHANGE_SELECT':
       return {
         ...state,
-        selectedCategory: action.category
+        selectedCategory: action.category,
       };
     default:
       return state;

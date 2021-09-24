@@ -1,8 +1,7 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 
-
-const Input = ({className}) => {
+const Input = ({ className }) => {
   const cityInProgress = useSelector((state) => state.cityInProgress);
 
   const dispatch = useDispatch();
@@ -19,13 +18,11 @@ const Input = ({className}) => {
     <input
       name="searchBar--search"
       className={className}
-      placeholder='Ville'
+      placeholder="Ville"
       onChange={handleChange}
       value={cityInProgress}
-    >
-    </input>
-  )
+    />
+  );
 };
-  
+
 export default Input;
-  

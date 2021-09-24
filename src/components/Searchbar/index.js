@@ -3,15 +3,11 @@ import './style.scss';
 import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
 import SelectBanniere from './SelectBanniere';
-
+import Input from './Input';
 
 const Searchbar = () => {
- 
   const searchOpen = useSelector((state) => state.burgerSearch);
-  const destination = useSelector((state) => state.destination);
-  const villes = useSelector((state) => state.villes);
   const categories = useSelector((state) => state.categories);
-
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -19,48 +15,50 @@ const Searchbar = () => {
       type: 'BURGER_SEARCH',
     });
   };
-
+  const handleSubmit = () => {
+    console.log('handleSubmit SearchBar OK');
+  };
 
   return (
-  <div className="banniere" style={{ backgroundImage: `url(${background_searchbar})` }}>
-    <div className="banniere--searchBar">
-     
-      <SelectBanniere
-        choice={destination}
-      /> 
-      <SelectBanniere
-        choice={villes}
-      />
-      <SelectBanniere
-        choice={categories}
-      />
-      
-      <input type="date" className="searchBar--select"></input>
-      <button className="searchBar--buttonSubmit">GO !</button>
-    </div>
-    <div className="banniere--searchInput">
-      <input placeholder="search" className="searchBar--input"></input>
-    </div>
-    <button className="searchBar--buttonSubmitMobile" onClick={handleClick}>Search</button>
-    
-    {searchOpen && 
-      <div className="searchBar--hidden">
-        <SelectBanniere
-        choice={destination}
+    <div className="banniere" style={{ backgroundImage: `url(${background_searchbar})` }}>
+      <div className="banniere--searchBar">
+
+        <Input
+          className="searchBar--input"
         />
+
         <SelectBanniere
-          choice={villes}
+          choice={categories}
+        />
+
+        {/* <input type="date" className="searchBar--select"></input> */}
+        <button
+          className="searchBar--buttonSubmitGO"
+          onClick={handleSubmit}
+        >
+          GO !
+        </button>
+      </div>
+
+      <button className="searchBar--buttonSubmitMobile" onClick={handleClick}>
+        Search
+      </button>
+
+      {searchOpen
+      && (
+      <div className="searchBar--hidden">
+
+        <Input
+          className="searchBar--input--hidden"
         />
         <SelectBanniere
           choice={categories}
         />
-        <input type="date" className="searchBar--select"></input>
+        {/*  <input type="date" className="searchBar--select"></input> */}
       </div>
-    }
-  </div>
-  )
-}
+      )}
+    </div>
+  );
+};
 
 export default Searchbar;
-
-

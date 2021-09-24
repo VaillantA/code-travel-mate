@@ -1,6 +1,5 @@
 const initialState = {
 
-  burgerOpen: false,
   burgerSearch: false,
   categories:[
     {

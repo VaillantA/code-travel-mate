@@ -17,6 +17,7 @@ const Input = ({className}) => {
 
   return (
     <input
+      name="searchBar--search"
       className={className}
       placeholder='Ville'
       onChange={handleChange}

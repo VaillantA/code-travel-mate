@@ -11,9 +11,9 @@ body, html {
   font-size: 1.2rem;
   top: 0;
   right: 0;
-  left: 0; 
+  left: 0;
   font-weight: bold;
-  position: fixed; 
+  position: fixed;
 }
 
 .navbar-logo {
@@ -79,9 +79,10 @@ color: #fff;
 
 
 
-@media screen and (max-width: 960px) {
+@media screen and (max-width: 800px) {
   .NavbarItems {
-    position: relative;
+    position: fixed;
+    /*  */
   }
 
   .nav-menu {
@@ -114,10 +115,6 @@ color: #fff;
     color:#3B185F;
   }
 
-
-
- 
-
   .navbar-logo {
     position: absolute;
     top:0;
@@ -135,14 +132,15 @@ color: #fff;
   }
   button {
     display: none;
+   
   }
 }
 
 
-@media screen and (max-width: 480px) {
+ @media screen and (max-width: 480px) {
 
   button {
     display: none;
   }
-}
+} 
 

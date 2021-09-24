@@ -23,12 +23,12 @@
 	margin: 10px;
 	font-size: 1em;
 	font-weight: bold;
-  padding-top: 1%;
+  padding-top: 0.01em;
 }
 
 .avatar {
 	vertical-align: middle;
-   max-width: 80%; 
+   max-width: 2em; 
   border-radius: 40px;
 }
 .card-title-group {
@@ -72,13 +72,13 @@
   text-align: left;
   white-space: normal;
   line-height: 1.4;
-  margin-bottom: 1em;
+  margin-bottom: 10px;
   width: 80%;
   margin: auto;
 }
 
 .buttons-ripples {
-  border: 1px;
+  border: 1px; 
   color: #fff;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
@@ -96,16 +96,17 @@
   font-weight: bold;
   text-align: center;
   margin-bottom:0.2em;
-  margin-top: 2em;
+  margin-top: 1em;
   
 } 
 
-.event :first-child {
+/* .event :first-child {
   margin-top: 0;
-}
+} */
 .divButton {
   display: flex;
  justify-content: center; 
+
 }
 @media screen and (min-width:800px){
   .card {
@@ -122,7 +123,7 @@
     padding-top: 3em;
     padding-bottom: 0.2em;
     border-bottom: solid 1px rgb(172, 171, 171);
-    width: 75%;
+    width: 80%;
     margin: auto;
   }
   .card-header {

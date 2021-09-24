@@ -9,11 +9,38 @@ import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
 import Searchbar from 'src/components/Searchbar';
 import Cards from 'src/components/Cards';
+import Footer from 'src/components/Footer';
 
 import './style.scss';
 
 // == Composant
-const App = () => (
+const App = () => {
+    return(
+   
+  
+      <div className="app">
+          <NavBar />
+          <Searchbar />
+          <Switch>
+            <Route path="/categories">
+              <Categories />
+            </Route>
+            <Route path="/events">
+              <Events />
+            </Route>
+            <Route path="/registration">
+              <LoginForm />
+            </Route>
+            {/* <Redirect from="/jquery" to="/autre" /> */}
+            <Route>
+              <NotFound />
+            </Route>
+          </Switch>
+          <Footer/>
+      </div>
+   
+  )
+};
 
   <div className="app">
     <NavBar />

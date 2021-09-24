@@ -33,14 +33,15 @@ const Searchbar = () => {
 
         {/* <input type="date" className="searchBar--select"></input> */}
         <button
-          className="searchBar--buttonSubmitGO"
-          onClick={handleSubmit}
+        className="searchBar--buttonSubmitGO"
+        onClick={handleSubmit}
         >
           GO !
         </button>
       </div>
-
-      <button className="searchBar--buttonSubmitMobile" onClick={handleClick}>
+      <button 
+      className="searchBar--buttonSubmitMobile" 
+      onClick={handleClick}>
         Search
       </button>
 

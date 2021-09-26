@@ -11,6 +11,7 @@ import './style.scss';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
 import Footer from 'src/components/Footer';
+import EventDetail from 'src/components/EventDetail';
 import Home from '../Home';
 
 // == Composant
@@ -30,6 +31,9 @@ const App = () => (
       </Route>
       <Route path="/events">
         <Events />
+      </Route>
+      <Route path="/detailsEvent">
+        <EventDetail />
       </Route>
       <Route path="/registration">
         <LoginForm />

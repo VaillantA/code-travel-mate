@@ -6,7 +6,6 @@ import avatar from 'src/assets/images/avatar.png';
 import { Heart, MessageCircle } from 'react-feather';
 import { Link } from 'react-router-dom';
 
-
 /* import { NavLink } from "react-router-dom"; */
 
 /* import { createRipples } from 'react-ripples'; */
@@ -22,14 +21,14 @@ const Card = (props) => (
         </a>
       </div>
       <div className="card-title-group">
-        <Link to="/detailsEvent" exact={true}>
+        <Link to="/detailsEvent">
           <h5 className="card-title">{props.title}</h5>
         </Link>
         <div className="card-date">{props.date}</div>
       </div>
     </div>
     <div>
-      <Link to="/detailsEvent" exact={true} alt="card-image">
+      <Link to="/detailsEvent" alt="card-image">
         <img className="card-image" src={landscape} alt="Logo" />
       </Link>
       <div className="card-like">
@@ -39,7 +38,7 @@ const Card = (props) => (
       <div className="card-text">{props.description}</div>
       <div className="divButton">
         {/* <Ripples color="#fff" during={1200}> */}
-          <button type="button" className="buttons-ripples">View Details</button>
+        <button type="button" className="buttons-ripples">View Details</button>
         {/* </Ripples> */}
       </div>
     </div>

@@ -1,39 +1,37 @@
 
 .banniere {
-  
   width: 100%;
   height: 300px;
-  /* background-position: -300px;
-  background-repeat: no-repeat; */
   padding: 100px 20px 100px 20px;
 }
 
 .banniere--searchBar {
   display: flex;
   justify-content: center;
+  align-items: baseline;
 }
 
 .searchBar--select {
-  margin: 10px 30px 10px;
+  margin: 10px 30px 20px;
   border-radius: 5px;
   border: none;
   width: 150px;
-  height: 30px;
+  height: 3em;
 }
 
 .searchBar--input {
   display: flex;
-  margin: auto;
   border-radius: 5px;
   border: none;
   width: 300px;
-  height: 30px;
+  height: 3em;
 }
 
-.searchBar--buttonSubmit {
+.searchBar--buttonSubmitGO {
   border-radius: 5px;
   border: none;
-  width: 50px;
+  width: 5em;
+  height: 3em;
   background-color: #ff5757;
 }
 
@@ -49,9 +47,15 @@
   .banniere--searchBar, .searchBar--input {
       display: none;
   }
-  .searchBar--input {
+ 
+  .searchBar--input--hidden {
+    border-radius: 5px;
+    border: none;
     width: 200px;
+    height: 30px;
+    margin-top: 30px;
   }
+  
   .searchBar--buttonSubmitMobile {
     display: block;
     margin: auto;
@@ -62,4 +66,3 @@
     background-color: #ff5757;
   }
 }
-

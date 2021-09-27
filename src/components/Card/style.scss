@@ -1,111 +1,96 @@
 
-.cards{
-  width: calc(600*3); 
-  /* display: flex;
-  justify-content: space-between; */
-  
+.card{
+  width: calc(600*3);
 } 
-
 .card {
-    /* border: 1px solid black;  */
-	/* background-color: white; */
-	color: #272727;
+	color: black;
 	padding-left: 1em; 
   padding-right: 1em;
-  padding-top: 1em;
 	border-radius: 15px;
 	transition: 200ms;
-  
-/*   width: 100%; */
-  max-height: calc(600*3);
-   /* margin-right:10px;
-   margin-bottom: 10px;  */
- 
-  
 }
 .card:last-child{
   margin-right: 0;
 }
-
-/*  */
-
+.card-header {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: nowrap;
+}
 .profile {
 	width: 2.5rem;
 	height: 2.5rem;
 	border-radius: 50%;
 	margin: 10px;
-	font-size: 20px;
+	font-size: 1em;
 	font-weight: bold;
-	justify-content: center;
   padding-top: 1%;
-  position:relative;
 }
 
 .avatar {
 	vertical-align: middle;
-  max-width: 80%;
-  position: absolute;
+  max-width: 80%; 
   border-radius: 40px;
+  // margin-bottom: 100px;
 }
 .card-title-group {
 	justify-content: center;
+  height: auto;
 }
 .card-title {
-	flex: 0.5;
-	font-size: medium;
-	margin-bottom: 0;
-	margin-top: 0;
-}
+  flex: 0.5;
+  font-size: large;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 1em;
+} 
 .card-date {
 	flex: 0.3;
-	font-size: small;
-	margin-bottom: 10px;
+	font-size: 0.7em;
+  padding-bottom: 1em;
 }
 .card-image {
   display: flex;
-  justify-content: center;
+  justify-content: center; 
 	border-radius: 10px;
 	margin-bottom: 20px;
 	margin-top: 20px;
-  width: 90%;
+  width: 80%; 
   margin: auto;
  
 }
 .card-like {
-  display: flex;
-  justify-content: flex-start;
-
+  width: 80%;
+  margin: auto;
 }
 .card-like-icon {
   height: 40px;
   width: 30px;
   padding-left: 5px;
   color: #ff914d;
-  margin-left:19px;
-  /* background: orange; */
-
 }
 .card-text {
-  font-size: medium;
-  padding-right: 2em;
+  font-size: 1em;
+  text-align: left;
   white-space: normal;
   line-height: 1.4;
   margin-bottom: 1em;
+  width: 80%;
+  margin: auto;
 }
 
 .buttons-ripples {
-  border: 1px;
+  border: 1px; 
   color: #fff;
   font-weight: bold;
   font-family: 'Lato', sans-serif;
-	// border: 1px solid;
-	// border-color: #2a0944;
   border-radius: 50px;
   background-color: #ff914d;
   padding-top: 0.7em;
   padding-bottom: 0.7em;
   padding-left: 1.5em;
-  padding-right: 1.5em; 
+  padding-right: 1.5em;
 }
 .event{
   text-transform: uppercase;
@@ -114,61 +99,65 @@
   font-weight: bold;
   text-align: center;
   margin-bottom:0.2em;
-  margin-top: 2em;
+  margin-top: 1em;
   
 } 
 
-.event :first-child {
+/* .event :first-child {
   margin-top: 0;
-}
+} */
 .divButton {
   display: flex;
-  justify-content: center;
-  
+ justify-content: center; 
 }
 @media screen and (min-width:800px){
   .card {
     border-radius: 15px;
     margin-right: 35px;
     color: #272727;
-	  /* padding: 1em; */
-	/* border-radius: 15px; */
-	transition: 200ms;
-  height: 600px;
-   margin-right:10px; 
-   margin-top: 1em;
-   padding-bottom: 0.5em;
+    transition: 200ms;
+    margin-right:10px; 
+    margin-top: 1em;
+    padding-bottom: 0.5em;
   }
-  .card-title {
-    flex: 0.5;
-    font-size: large;
-    margin-bottom: 0;
-    margin-top: 0;
-    font-size: 20px;}
   .event{
-  font-size: 30px;
-  margin-bottom:40px;
-  margin-top: 2em;
-  padding: 15px;
-  border-bottom: solid 1px rgb(104, 103, 103);
-  }
-  /* body{
-    padding-right: 200px;
-    padding-left: 200px;
-    padding-bottom: 100px;
+    font-size: 1em;
+    padding-top: 3em;
+    padding-bottom: 0.2em;
+    border-bottom: solid 1px rgb(172, 171, 171);
+    width: 80%;
     margin: auto;
-  } */
-
+  }
   .card-header {
     display: flex;
     flex-wrap: nowrap;
     align-items: center;
+    width: 80%;
+    margin: auto;
   
   }
-
-  .divButton {
-    margin-bottom: 2em;
+  .card-text {
+    margin-bottom: 1em;
+    margin-left: 1.5;  
   }
+
+  .avatar {
+    vertical-align: middle;
+    max-width: 80%;
+    border-radius: 40px;
+  }
+
+ /*  .card-image {
+    width: 80%;
+  }
+
+  .card-like {
+    width: 80%;
+  }
+  
+  .card-text {
+    width: 80%;
+  } */
   
 }
 

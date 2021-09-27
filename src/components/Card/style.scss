@@ -1,7 +1,8 @@
 
 .card{
-  width: calc(600*3);
-} 
+  width: 100%;
+}
+
 .card {
 	color: black;
 	padding-left: 1em; 
@@ -54,9 +55,9 @@
   display: flex;
   justify-content: center; 
 	border-radius: 10px;
-	margin-bottom: 20px;
-	margin-top: 20px;
-  width: 80%; 
+	margin-bottom: 1em;
+	margin-top: 1em;
+  width: 60%; 
   margin: auto;
  
 }
@@ -73,7 +74,7 @@
 .card-text {
   font-size: 1em;
   text-align: left;
-  white-space: normal;
+  // white-space: normal;
   line-height: 1.4;
   margin-bottom: 1em;
   width: 80%;
@@ -112,6 +113,7 @@
 }
 @media screen and (min-width:800px){
   .card {
+    width: 30%;
     border-radius: 15px;
     margin-right: 35px;
     color: #272727;
@@ -128,6 +130,7 @@
     width: 80%;
     margin: auto;
   }
+
   .card-header {
     display: flex;
     flex-wrap: nowrap;

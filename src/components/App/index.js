@@ -11,38 +11,55 @@ import './style.scss';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
 import Footer from 'src/components/Footer';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
 import Home from '../Home';
 
 // == Composant
-const App = () => (
-  <div className="app">
-    <NavBar />
-    <Switch>
-      <Route path="/home">
-        <Home />
-      </Route>
-      <Route path="/" exact>
-        <Searchbar />
-        <Cards />
-      </Route>
-      <Route path="/categories">
-        <Categories />
-      </Route>
-      <Route path="/events">
-        <Events />
-      </Route>
-      <Route path="/registration">
-        <LoginForm />
-      </Route>
-      {/* <Redirect from="/jquery" to="/autre" /> */}
-      <Route>
-        <NotFound />
-      </Route>
-    </Switch>
-    <Footer />
-  </div>
+const App = () => {
+  const dispatch = useDispatch();
 
-);
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_EVENTS',
+    });
+  }, []);
+
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
+
+  return (
+    <div className="app">
+      <NavBar />
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/" exact>
+          <Searchbar />
+          <Cards />
+        </Route>
+        <Route path="/categories">
+          <Categories />
+        </Route>
+        <Route path="/events">
+          <Events />
+        </Route>
+        <Route path="/registration">
+          <LoginForm />
+        </Route>
+        {/* <Redirect from="/jquery" to="/autre" /> */}
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
+      <Footer />
+    </div>
+  );
+};
 
 // == Export
 export default App;

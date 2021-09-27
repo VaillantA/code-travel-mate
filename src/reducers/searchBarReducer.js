@@ -1,36 +1,7 @@
-const initialState = {
-
+export const initialState = {
+  burgerOpen: false,
   burgerSearch: false,
-  categories: [
-    {
-      option: 'Sport',
-      id: 1,
-    },
-    {
-      option: 'Culturel',
-      id: 2,
-    },
-    {
-      option: 'Restaurant',
-      id: 3,
-    },
-    {
-      option: 'Festifs',
-      id: 4,
-    },
-    {
-      option: 'Rencontres',
-      id: 5,
-    },
-    {
-      option: 'Nature',
-      id: 6,
-    },
-    {
-      option: 'Entraide',
-      id: 7,
-    },
-  ],
+  categoriesList: [],
   cityInProgress: '',
   selectedCategory: '',
 };
@@ -56,6 +27,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedCategory: action.category,
+      };
+    case 'SAVE_CATEGORIES':
+      return {
+        ...state,
+        categoriesList: action.categories,
       };
     default:
       return state;

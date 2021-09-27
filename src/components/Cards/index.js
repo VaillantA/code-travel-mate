@@ -1,22 +1,15 @@
 /* import "src/components/App/styles.scss"; */
 import Card from 'src/components/Card';
 import landscape from 'src/assets/images/licensed-image.jpeg';
+import { useSelector } from 'react-redux';
+import './style.scss';
 
 function Cards() {
-  const recipeAuthor = 'Jhon,';
-  const recipeItem = {
-    title: 'Randonnée nocturne à Wanaka',
-    date: '9 janvier 2021',
-    image: landscape,
-    description:
-      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem dolores vel illo porro necessitatibus tenetur, facilis nam...',
-  };
-
   const like = 193;
   const isLiked = true;
 
+  const listEvents = useSelector((state) => state.events.list);
   return (
-    <main>
       <div className="slider">
         <div className="cards">
           <div className="event">
@@ -26,101 +19,57 @@ function Cards() {
               </h1>
             </a>
           </div>
-          <div className="card-header">
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
+          <div className="card--parent">
+            {listEvents.slice(0, 3).map((currentEvent) => (
+              <Card
+                key={currentEvent.id}
+                title={currentEvent.title}
+                resume={currentEvent.resume}
+                date={currentEvent.startAt}
+                image={currentEvent.image}
+                liked={isLiked}
+                /* likeCount={like} */
+              />
+            ))}
           </div>
           <div className="event">
             <a href="#">
               <h1 className="event-tittle">
-                proches de vous
+                Proches de vous
               </h1>
             </a>
           </div>
           <div className="card-header">
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
+            {listEvents.slice(3, 6).map((currentEvent) => (
+              <Card
+                key={currentEvent.id}
+                title={currentEvent.title}
+                resume={currentEvent.resume}
+                date={currentEvent.startAt}
+                liked={isLiked}
+              />
+            ))}
           </div>
           <div className="event">
             <a href="#">
               <h1 className="event-tittle">
-                proches de  vous
+                Les prochains événements
               </h1>
             </a>
           </div>
           <div className="card-header">
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
-            <Card
-              author={recipeAuthor}
-              title={recipeItem.title}
-              date={recipeItem.date}
-              description={recipeItem.description}
-              liked={isLiked}
-              likeCount={like}
-            />
+            {listEvents.slice(7, 10).map((currentEvent) => (
+              <Card
+                key={currentEvent.id}
+                title={currentEvent.title}
+                resume={currentEvent.resume}
+                date={currentEvent.startAt}
+                liked={isLiked}
+              />
+            ))}
           </div>
         </div>
       </div>
-    </main>
 
   );
 }

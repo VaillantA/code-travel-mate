@@ -9,7 +9,7 @@ import Home from 'src/components/Home';
 import './style.scss';
 
 const NavBar = () => {
-  const isClicked = useSelector((state)=> state.burgerOpen); 
+  const isClicked = useSelector((state) => state.searchBar.burgerOpen); 
 
   const dispatch = useDispatch();
   const handleClick = () => {

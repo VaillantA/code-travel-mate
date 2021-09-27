@@ -1,13 +1,13 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const SelectBanniere = ({ choice }) => {
-  const category = useSelector((state) => state.selectedCategory);
+  const category = useSelector((state) => state.searchBar.selectedCategory);
 
   const dispatch = useDispatch();
 
   const handleSelect = (event) => {
-    console.log(event.target.value);
     dispatch({
       type: 'CHANGE_SELECT',
       category: event.target.value,
@@ -23,15 +23,19 @@ const SelectBanniere = ({ choice }) => {
     >
       {choice.map((currentChoice) => (
         <option
-          value={currentChoice.option}
+          value={currentChoice.name}
           key={currentChoice.id}
           className="searchBar--option"
         >
-          {currentChoice.option}
+          {currentChoice.name}
         </option>
       ))}
     </select>
   );
+};
+
+SelectBanniere.propTypes = {
+  choice: PropTypes.array.isRequired,
 };
 
 export default SelectBanniere;

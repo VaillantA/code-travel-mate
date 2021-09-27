@@ -2,7 +2,7 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 
 const Input = ({ className }) => {
-  const cityInProgress = useSelector((state) => state.cityInProgress);
+  const cityInProgress = useSelector((state) => state.searchBar.cityInProgress);
 
   const dispatch = useDispatch();
 

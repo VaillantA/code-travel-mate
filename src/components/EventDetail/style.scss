@@ -1,6 +1,7 @@
 .detail{
   display: flex;
   flex-direction: row;
+  align-items: flex-start;
 }
 .detail--menu{
   width: 20%;
@@ -17,6 +18,7 @@
 .menu--input{
   border-radius: 5px;
   border: none;
+  width: 80%;
   height: 3em;
   margin-bottom: 1em;
   padding-left: 0.5em;
@@ -31,14 +33,14 @@
 .radio--choice{
   margin-bottom: 0.5em;
 }
-.detailmenu--buttonSubmitGO{
+.detailmenu--submitButton{
   border-radius: 5px;
   border: none;
   width: 5em;
   height: 3em;
   background-color: #ff5757;
 }
-.detailmenu--buttonSubmitGO:hover {
+.detailmenu--submitbutton:hover {
   border: solid, 2px, rgb(139, 5, 17);
 }
 .event--titleAndAuthor{
@@ -117,4 +119,31 @@
   background-color: #ff5757;
   }
 }
+@media screen and (max-width:800px){
+  .detail--event{
+    display: flex;
+    flex-direction: column;
+  }
+  .eventDescription{
+    flex-direction: column;
+    width: 90%;
 
+    &--picture{
+      width: 80%;
+    }
+    &--text{
+      width: 90%;
+    }
+  }
+  
+  
+
+
+  /* .detailmenu--buttonSubmit{
+    border-radius: 5px;
+    border: none;
+    width: 5em;
+    height: 3em;
+    background-color: #ff5757;
+  } */
+}

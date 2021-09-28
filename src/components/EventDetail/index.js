@@ -52,7 +52,7 @@ const EventDetail = () => {
             ))}
           </div>
           <button
-            className="detailmenu--buttonSubmitGO"
+            className="detailmenu--submitButton"
             type="button"
             /* onClick={handleSubmit} */
           >

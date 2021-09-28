@@ -26,7 +26,7 @@ function Cards() {
                 title={currentEvent.title}
                 resume={currentEvent.resume}
                 date={currentEvent.startAt}
-                image={currentEvent.image}
+                image={currentEvent.categories.image}
                 liked={isLiked}
                 /* likeCount={like} */
               />

@@ -25,7 +25,7 @@
   border: none;
   width: 300px;
   height: 3em;
-  padding-left: 0.5em;
+  padding: 1em;
 }
 
 .searchBar--buttonSubmitGO {
@@ -45,8 +45,11 @@
 }
 
 @media screen and (max-width: 800px) {
+  .banniere{
+    width: 100%;
+  }
   .banniere--searchBar, .searchBar--input {
-      display: none;
+    display: none;
   }
  
   .searchBar--input--hidden {

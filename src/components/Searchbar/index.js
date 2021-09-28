@@ -2,12 +2,14 @@ import react from 'react';
 import './style.scss';
 import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+
 import SelectBanniere from './SelectBanniere';
 import Input from './Input';
 
 const Searchbar = () => {
-  const searchOpen = useSelector((state) => state.burgerSearch);
-  const categories = useSelector((state) => state.categories);
+  const searchOpen = useSelector((state) => state.searchBar.burgerSearch);
+  const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const dispatch = useDispatch();
   const handleClick = () => {

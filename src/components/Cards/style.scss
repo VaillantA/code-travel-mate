@@ -1,5 +1,12 @@
 
+ @media screen and (min-width:800px){
+  .card--parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+   }
+ }
 
-.cards {
-  width: calc(600*3);
-} 
+
+
+ 

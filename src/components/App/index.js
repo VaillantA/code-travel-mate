@@ -1,5 +1,7 @@
 // == Import
 import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // import { BrowserRouter } from 'react-router-dom';
 import NavBar from 'src/components/NavBar';
@@ -7,16 +9,16 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
+import Login from 'src/components/Login';
 import NotFound from 'src/components/NotFound';
-import './style.scss';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
 import Footer from 'src/components/Footer';
 import EventDetail from 'src/components/EventDetail';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
+
 import Home from '../Home';
+import './style.scss';
 
 // == Composant
 const App = () => {
@@ -53,6 +55,9 @@ const App = () => {
         </Route>
         <Route path="/detailsEvent">
           <EventDetail />
+        </Route>
+        <Route path="/Login">
+          <Login />
         </Route>
         <Route path="/registration">
           <LoginForm />

@@ -9,7 +9,7 @@ import avatar from 'src/assets/images/avatar.png';
 
 
 const EventDetail = () => {
-  const categories = useSelector((state) => state.categories);
+  const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const dispatch = useDispatch();
   const handleRadio = (event) => {
@@ -22,7 +22,7 @@ const EventDetail = () => {
 
   return (
     <>
-      <Searchbar />
+      {/* <Searchbar /> */}
       <div className="detail">
         <div className="detail--menu">
           <h2 className="menu--title">
@@ -45,7 +45,7 @@ const EventDetail = () => {
                     htmlFor={currentCategoryRadio.id}
                     className="menu--label"
                   >
-                    {currentCategoryRadio.option}
+                    {currentCategoryRadio.name}
                   </label>
                 </div>
               </div>

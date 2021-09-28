@@ -16,6 +16,7 @@ const Categories = () => {
   const like = 193;
   const isLiked = true;
 
+
   const categories = useSelector((state) => (state.categories));
 
   return (

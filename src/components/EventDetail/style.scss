@@ -1,0 +1,149 @@
+.detail{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.detail--menu{
+  width: 20%;
+  background-color: rgb(247, 199, 136);
+  padding: 1em;
+}
+.menu--title{
+  margin-bottom: 1em;
+  font-weight: bold;
+}
+.detail--event{
+  width: 80%;
+}
+.menu--input{
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  height: 3em;
+  margin-bottom: 1em;
+  padding-left: 0.5em;
+}
+.menu--label{
+  margin-left: 0.3em;
+}
+.menu--radio{
+  display: flex;
+  flex-direction: column;
+}
+.radio--choice{
+  margin-bottom: 0.5em;
+}
+.detailmenu--submitButton{
+  border-radius: 5px;
+  border: none;
+  width: 5em;
+  height: 3em;
+  background-color: #ff5757;
+}
+.detailmenu--submitbutton:hover {
+  border: solid, 2px, rgb(139, 5, 17);
+}
+.event--titleAndAuthor{
+  margin: 2em;
+  display: flex;
+  flex-direction: row;
+  height: 4em;
+}
+.event--title{
+  width: 70%;
+  border:solid, 1px, blue;
+  text-align: center;
+  font-size: 1.5em;
+}
+.event--avatar{
+  width: 10%;
+  border:solid, 1px, blue;
+}
+.event--author{
+  width: 25%;
+  border:solid, 1px, blue;
+}
+.eventDescription{
+  margin: 2em;
+  height: 10em;
+  display: flex;
+  flex-direction: row;
+
+  &--picture{
+    padding: 1em;
+    width: 30%;
+    margin: 1em
+  }
+  &--text{
+    width: 30%;
+    text-align: justify;
+    margin: 1em;
+  }
+  &--informations{
+    width: 30%;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+
+    &--map{
+      height: 50%;
+    }
+    &--date{
+      height:20%;
+    }
+    &--address{
+      height:50%;
+    }
+  }
+}
+.participation{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  margin: 1em;
+
+  &--nbParticipants{
+    border: 1px, solid, grey;
+  }
+  &--comments{
+    border: 1px, solid, grey;
+
+
+  }
+  &--button{
+  border-radius: 5px;
+  border: none;
+  width: 8em;
+  height: 3em;
+  background-color: #ff5757;
+  }
+}
+@media screen and (max-width:800px){
+  .detail--event{
+    display: flex;
+    flex-direction: column;
+  }
+  .eventDescription{
+    flex-direction: column;
+    width: 90%;
+
+    &--picture{
+      width: 80%;
+    }
+    &--text{
+      width: 90%;
+    }
+  }
+  
+  
+
+
+  /* .detailmenu--buttonSubmit{
+    border-radius: 5px;
+    border: none;
+    width: 5em;
+    height: 3em;
+    background-color: #ff5757;
+  } */
+}

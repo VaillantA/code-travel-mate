@@ -57,6 +57,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         selectedCategory: action.category,
       };
+    case 'CHANGE_RADIO':
+      return {
+        ...state,
+        selectedCategory: action.category,
+      };
     default:
       return state;
   }

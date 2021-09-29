@@ -39,6 +39,24 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'LOGIN') {
+    const state = store.getState();
+    axios.post('/login', {
+      email: state.login.email,
+      password: state.login.password,
+    })
+      .then((response) => {
+        api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
+        store.dispatch({
+          type: 'SAVE_USER',
+          pseudo: response.data.nickname,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        alert('No match found, please try again');
+      });
+  }
   next(action);
 };
 

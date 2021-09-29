@@ -1,8 +1,7 @@
-import { Plus } from 'react-feather';
+import { User} from 'react-feather';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
-import { Link } from 'react-router-dom';
 import Login from './Login';
 
 const Settings = () => {
@@ -22,7 +21,7 @@ const Settings = () => {
   return (
     <div className={isOpen ? 'settings' : 'settings settings--hidden'}>
       <button onClick={handleClick} className="settings-toggler" type="button" aria-label="Open/Close">
-        <Plus size="100%" />
+        <User size="100%" color="#3B185F" />
         {/* Log In */}
       </button>
       <div className={isOpen ? 'container-ok' : 'container-none'}>

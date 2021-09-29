@@ -1,6 +1,10 @@
 export const initialState = {
   loading: false,
   loginOpen: false,
+  email: '',
+  password: '',
+  pseudo: '',
+
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -19,6 +23,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loginOpen: !state.loginOpen,
+      };
+    case 'SAVE_USER':
+      return {
+        ...state,
+        email: '',
+        password: '',
+        pseudo: action.pseudo,
       };
     default:
       return state;

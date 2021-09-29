@@ -13,17 +13,8 @@
   transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
 
   &--hidden {
-    // transform: translateX(calc(100% - 4em));
-    // display: none;  
-
-    // & .settings-toggler { // .settings--hidden .settings-toggler
-    //   transform: rotate(45deg);
-    // }
-
-    //   &:hover {
-    //     transform: scale(1.2) rotate(45deg);
-    //   }
-    // }
+    // transform: rotate(45deg);
+   
   }
 
   &-toggler {
@@ -33,10 +24,10 @@
     width: 3em;
     height: 3em;
     margin-right: 1rem;
-    transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
+    // transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
 
     &:hover {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
   }
   .container-none {

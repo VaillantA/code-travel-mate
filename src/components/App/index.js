@@ -8,6 +8,7 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
+import Profil from 'src/components/Profil';
 import './style.scss';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
@@ -47,6 +48,9 @@ const App = () => {
         </Route>
         <Route path="/categories">
           <Categories />
+        </Route>
+        <Route path="/profil">
+          <Profil />
         </Route>
         <Route path="/events">
           <Events />

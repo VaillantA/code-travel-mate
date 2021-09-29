@@ -16,6 +16,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         error: true,
       };
+    case 'SAVE_SELECTED_EVENTS':
+      return {
+        ...state,
+        list: action.list,
+      };
     default:
       return state;
   }

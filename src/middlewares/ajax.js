@@ -39,6 +39,17 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'SEARCH_SELECTED_EVENTS') {
+    const stateCategory = store.getState().selectedCategoryID;
+    api.get(`/event/${stateCategory}`)
+      .then((response) => {
+        console.log(stateCategory);
+        store.dispatch({
+          type: 'SAVE_SELECTED_EVENTS',
+          list: response.data,
+        });
+      });
+  }
   next(action);
 };
 

@@ -1,9 +1,6 @@
-import react from 'react';
 import './style.scss';
 import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
 import SelectBanniere from './SelectBanniere';
 import Input from './Input';
 
@@ -19,6 +16,12 @@ const Searchbar = () => {
   };
   const handleSubmit = () => {
     console.log('handleSubmit SearchBar OK');
+    // eslint-disable-next-line max-len
+    // on veut lancer la recherche vers api en fonction de la ville et de la category demandée dans le form : cityInProgess et selectedCategory
+    // on veut ensuite modifier eventsList dans le state
+    dispatch({
+      type: 'SEARCH_SELECTED_EVENTS',
+    });
   };
 
   return (

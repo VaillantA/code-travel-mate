@@ -3,7 +3,7 @@ export const initialState = {
   burgerSearch: false,
   categoriesList: [],
   cityInProgress: '',
-  selectedCategory: '',
+  selectedCategoryID: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,7 +26,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'CHANGE_SELECT':
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategoryID: action.category,
       };
     case 'CHANGE_RADIO':
       return {

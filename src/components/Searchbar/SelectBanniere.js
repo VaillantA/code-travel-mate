@@ -11,6 +11,7 @@ const SelectBanniere = ({ choice }) => {
     dispatch({
       type: 'CHANGE_SELECT',
       category: event.target.value,
+      categoryID: event.target.key,
     });
   };
 
@@ -23,7 +24,7 @@ const SelectBanniere = ({ choice }) => {
     >
       {choice.map((currentChoice) => (
         <option
-          value={currentChoice.name}
+          value={currentChoice.id}
           key={currentChoice.id}
           className="searchBar--option"
         >

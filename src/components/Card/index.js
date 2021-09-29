@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 /* import { createRipples } from 'react-ripples'; */
 
 const Card = ({
+  id,
   title,
   date,
   image,
@@ -25,14 +26,23 @@ const Card = ({
         </a>
       </div>
       <div className="card-title-group">
-        <Link to="/detailsEvent">
+        <Link
+          key={id}
+          to={`/detailsEvent/${id}`}
+          title={`${title}`}
+          exact
+        >
           <h5 className="card-title">{title}</h5>
         </Link>
         <div className="card-date">{date}</div>
       </div>
     </div>
     <div>
-      <Link to="/detailsEvent" alt="card-image">
+      <Link
+        to={`/detailsEvent/${id}`}
+        alt="card-image"
+        exact
+      >
         <img className="card-image" src={image} alt="Logo" />
       </Link>
       <div className="card-like">
@@ -42,7 +52,12 @@ const Card = ({
       <div className="card-text">{resume}</div>
       <div className="divButton">
         {/* <Ripples color="#fff" during={1200}> */}
-        <button type="button" className="buttons-ripples">View Details</button>
+        <Link
+          to={`/detailsEvent/${id}`}
+          exact
+        >
+          <button type="button" className="buttons-ripples">View Details</button>
+        </Link>
         {/* </Ripples> */}
       </div>
     </div>
@@ -54,6 +69,7 @@ Card.propTypes = {
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   resume: PropTypes.string.isRequired,
+  /* id: PropTypes.number.isRequired, */
 };
 
 export default Card;

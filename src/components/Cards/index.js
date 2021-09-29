@@ -3,13 +3,13 @@ import Card from 'src/components/Card';
 import landscape from 'src/assets/images/licensed-image.jpeg';
 import { useSelector } from 'react-redux';
 import './style.scss';
-import { StaticRouter } from 'react-router';
 
 function Cards() {
   const like = 193;
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
+  console.log(listEvents);
 
   return (
     <div className="slider">
@@ -25,6 +25,7 @@ function Cards() {
           {listEvents.slice(0, 3).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}

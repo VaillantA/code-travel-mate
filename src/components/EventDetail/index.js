@@ -1,24 +1,29 @@
-
-import React, { useState } from 'react';
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import Searchbar from 'src/components/Searchbar';
 import Input from 'src/components/Searchbar/Input';
 import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
-
+import PropTypes from 'prop-types';
+import { useParams } from 'react-router-dom';
 
 const EventDetail = () => {
+  const { id } = useParams();
+  function findEvent(eventsList, searchedID) {
+    const event = eventsList.find((testedEvent) => testedEvent.id === searchedID);
+    return event;
+  }
+  const searchedEvent = useSelector((state) => findEvent(state.events.list, id));
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const dispatch = useDispatch();
   const handleRadio = (event) => {
-    console.log('submit form OK');
+    /* console.log('submit form OK'); */
     dispatch({
       type: 'CHANGE_RADIO',
       category: event.target.value,
     });
   };
+  /* console.log(title); */
 
   return (
     <>
@@ -38,7 +43,7 @@ const EventDetail = () => {
                   <input
                     name="categories"
                     type="radio"
-                    value={currentCategoryRadio.option}
+                    value={currentCategoryRadio.name}
                     id={currentCategoryRadio.id}
                   />
                   <label
@@ -62,7 +67,7 @@ const EventDetail = () => {
         <div className="detail--event">
           <div className="event--titleAndAuthor">
             <h2 className="event--title">
-              Event Title
+              {searchedEvent.title}
             </h2>
             <div className="event--avatar">
               <img className="avatar" src={avatar} />
@@ -72,7 +77,7 @@ const EventDetail = () => {
             </div>
           </div>
           <div className="eventDescription">
-            <img className="eventDescription--picture" src={landscape}/>
+            <img className="eventDescription--picture" src={landscape} />
             <div className="eventDescription--text">
               <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
             </div>
@@ -107,5 +112,12 @@ const EventDetail = () => {
     </>
   );
 };
+
+/* EventDetail.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  resume: PropTypes.string.isRequired,
+}; */
 
 export default EventDetail;

@@ -13,13 +13,14 @@ const Login = () => {
 
   const dispatch = useDispatch();
   const handleSubmit = (event) => {
+    console.log('COucou petite péruche');
     event.preventDefault();
     dispatch({
       type: 'LOGIN',
     });
   };
   return (
-    <div className="container" onSubmit={handleSubmit}>
+    <div className="container" >
       <div className="title">
         Log In
       </div>
@@ -44,7 +45,7 @@ const Login = () => {
             inputKey="userPassword"
           />
         </div>
-        <button type="button" className="button">Log In</button>
+        <button type="button" className="button" onClick={handleSubmit}>Log In</button>
       </div>
     </div>
   );

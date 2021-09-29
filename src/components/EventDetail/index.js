@@ -8,19 +8,29 @@ import { useParams } from 'react-router-dom';
 
 const EventDetail = () => {
   const { id } = useParams();
+  /* console.log(id); */
+  /* eslint-disable import/prefer-default-export */
+  /* eslint-disable arrow-body-style */
   function findEvent(eventsList, searchedID) {
-    const event = eventsList.find((testedEvent) => testedEvent.id === searchedID);
+    const event = eventsList.find((testedEvent) => {
+      return testedEvent.id === searchedID;
+    });
     return event;
   }
+  console.log(event);
+  // eslint-disable-next-line no-unused-vars
   const searchedEvent = useSelector((state) => findEvent(state.events.list, id));
+  /* console.log(searchedEvent); */
+  // eslint-disable-next-line no-trailing-spaces
+
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const dispatch = useDispatch();
-  const handleRadio = (event) => {
+  const handleRadio = (e) => {
     /* console.log('submit form OK'); */
     dispatch({
       type: 'CHANGE_RADIO',
-      category: event.target.value,
+      category: e.target.value,
     });
   };
   /* console.log(title); */
@@ -67,7 +77,8 @@ const EventDetail = () => {
         <div className="detail--event">
           <div className="event--titleAndAuthor">
             <h2 className="event--title">
-              {searchedEvent.title}
+              Titre
+              {/* {searchedEvent.title} */}
             </h2>
             <div className="event--avatar">
               <img className="avatar" src={avatar} />

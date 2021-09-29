@@ -9,7 +9,7 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  console.log(listEvents);
+  /* console.log(listEvents); */
 
   return (
     <div className="slider">
@@ -61,7 +61,7 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 9).map((currentEvent) => (
+          {listEvents.slice(6, 8).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               title={currentEvent.title}

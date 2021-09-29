@@ -1,55 +1,35 @@
-import { useDispatch, useSelector } from 'react-redux';
-
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Input from './Input';
+import { Plus } from 'react-feather';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
+import { Link } from 'react-router-dom';
+import Login from './Login';
 
-const Login = () => {
-  useEffect(() => {
-    document.title = 'Login';
-  }, []);
+const Settings = () => {
+  const isOpen = useSelector((state) => state.login.loginOpen);
 
   const dispatch = useDispatch();
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleClick = () => {
     dispatch({
-      type: 'LOGIN',
+      type: 'TOGGLE_OPEN',
     });
   };
+  // const handleLogout = () => {
+  //   dispatch({
+  //     type: 'LOGOUT',
+  //   });
+  // };
   return (
-    <div className="container">
-      <div className="title">
-        Log In
-      </div>
-      <div className="form" onSubmit={handleSubmit}>
-        <div className="input-field">
-          <label>Email Adress</label>
-          <Input
-            type="email"
-            aria-label="Email"
-            placeholder="Enter your email adress"
-            className="input"
-            inputKey="userEmail"
-          />
-        </div>
-        <div className="input-field">
-          <label>Password</label>
-          <Input
-            type="password"
-            aria-label="Password"
-            placeholder="Enter your password"
-            className="input"
-            inputKey="userPassword"
-          />
-        </div>
-        <button type="button" className="button">Log In</button>
+    <div className={isOpen ? 'settings' : 'settings settings--hidden'}>
+      <button onClick={handleClick} className="settings-toggler" type="button" aria-label="Open/Close">
+        <Plus size="100%" />
+        {/* Log In */}
+      </button>
+      <div className={isOpen ? 'container-ok' : 'container-none'}>
+        <Login />
       </div>
     </div>
   );
 };
 
-
-export default Login;
-
+export default Settings;

@@ -4,11 +4,15 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Home from 'src/components/Home';
+import Settings from 'src/components/Login';
+
 
 import './style.scss';
 
 const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
+  const isOpen = useSelector((state) => state.login.loginOpen);
+
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -37,9 +41,9 @@ const NavBar = () => {
         <li>
           <NavLink className="nav-links" to="/about-us">About Us</NavLink>
         </li>
-        <li>
-          <Link className="nav-links" to="/login">Log In</Link>
-        </li>
+        {/* <li>
+          <Settings />
+        </li> */}
         <li>
           <NavLink className="nav-links" to="/registration">Sign Up</NavLink>
         </li>

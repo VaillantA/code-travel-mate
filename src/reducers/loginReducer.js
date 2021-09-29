@@ -1,5 +1,6 @@
 export const initialState = {
   loading: false,
+  loginOpen: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -13,6 +14,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
+      };
+    case 'TOGGLE_OPEN':
+      return {
+        ...state,
+        loginOpen: !state.loginOpen,
       };
     default:
       return state;

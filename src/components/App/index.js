@@ -15,6 +15,8 @@ import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
 import Footer from 'src/components/Footer';
 import EventDetail from 'src/components/EventDetail';
+import Settings from 'src/components/Login';
+
 
 
 import Home from '../Home';
@@ -39,6 +41,7 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
+      <Settings />
       <Switch>
         <Route path="/home">
           <Home />

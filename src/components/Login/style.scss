@@ -1,0 +1,45 @@
+@use 'sass:color';
+@use 'src/styles/vars';
+
+.settings {
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 1rem;   
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  // https://cubic-bezier.com/
+  transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
+
+  &--hidden {
+    // transform: translateX(calc(100% - 4em));
+    // display: none;  
+
+    // & .settings-toggler { // .settings--hidden .settings-toggler
+    //   transform: rotate(45deg);
+    // }
+
+    //   &:hover {
+    //     transform: scale(1.2) rotate(45deg);
+    //   }
+    // }
+  }
+
+  &-toggler {
+    border: 0;
+    background-color: white;
+    border-radius: 50%;
+    width: 3em;
+    height: 3em;
+    margin-right: 1rem;
+    transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  .container-none {
+    display: none;
+  }
+}

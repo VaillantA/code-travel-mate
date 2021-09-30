@@ -12,7 +12,7 @@ const Login = () => {
   }, []);
 
   const dispatch = useDispatch();
-  const handleSubmit = (event) => {
+  const handleClick = (event) => {
     console.log('COucou petite péruche');
     event.preventDefault();
     dispatch({
@@ -24,7 +24,7 @@ const Login = () => {
       <div className="title">
         Log In
       </div>
-      <div className="form">
+      <form className="form">
         <div className="input-field">
           <label>Email Adress</label>
           <Input
@@ -32,7 +32,7 @@ const Login = () => {
             aria-label="Email"
             placeholder="Enter your email adress"
             className="input"
-            inputKey="userEmail"
+            inputKey="email"
           />
         </div>
         <div className="input-field">
@@ -42,11 +42,11 @@ const Login = () => {
             aria-label="Password"
             placeholder="Enter your password"
             className="input"
-            inputKey="userPassword"
+            inputKey="password"
           />
         </div>
-        <button type="button" className="button" onClick={handleSubmit}>Log In</button>
-      </div>
+        <button type="button" className="button" onClick={handleClick}>Log In</button>
+      </form>
     </div>
   );
 };

@@ -2,9 +2,9 @@
 @use 'src/styles/vars';
 
 .settings {
-  position: fixed;
-  left: 0;
-  top: 0;
+  position: absolute;
+  right: 0;
+  top: 3rem;
   padding: 1rem;   
   display: flex;
   align-items: flex-start;

@@ -26,7 +26,7 @@ const Login = () => {
       <div className="title">
         Log In
       </div>
-      <form className="form" >
+      <form className="form">
         <div className="input-field">
           <label>Email Adress</label>
           <Input

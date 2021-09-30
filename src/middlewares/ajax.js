@@ -40,15 +40,24 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'SEARCH_SELECTED_EVENTS') {
-    const stateCategory = store.getState().selectedCategoryID;
-    api.get(`/event/${stateCategory}`)
+    const stateCategory = store.getState().searchBar.selectedCategoryID;
+    console.log(stateCategory);
+    api.get(`/search?category=${stateCategory}`)
       .then((response) => {
-        console.log(stateCategory);
         store.dispatch({
           type: 'SAVE_SELECTED_EVENTS',
           list: response.data,
         });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
       });
+     /*  http://localhost:8080/api/v1/search?search=bel&category=80 */
   }
   next(action);
 };

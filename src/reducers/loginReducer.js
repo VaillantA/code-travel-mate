@@ -15,13 +15,6 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         [action.key]: action.newValue, // avec des [] on peut mettre un nom de propriété dynamique
       };
-    case 'LOGIN':
-      return {
-        ...state,
-        loading: true,
-        logged: true,
-        pseudo: action.pseudo,
-      };
     case 'TOGGLE_OPEN':
       return {
         ...state,
@@ -30,6 +23,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'SAVE_USER':
       return {
         ...state,
+        logged: true,
         email: '',
         password: '',
         pseudo: action.pseudo,

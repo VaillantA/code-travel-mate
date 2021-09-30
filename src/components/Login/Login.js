@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Input from './Input';
@@ -11,9 +10,24 @@ const Login = () => {
     document.title = 'Login';
   }, []);
 
-  const isOpen = useSelector((state) => state.login.loginOpen);
+  /* const isOpen = useSelector((state) => state.login.loginOpen); */
+  const logged = useSelector((state) => state.login.logged);
 
   const dispatch = useDispatch();
+  // const handleClick = (event) => {
+  //   console.log('COucou petite péruche');
+  //   event.preventDefault();
+  //   if (logged === true) {
+  //     dispatch({
+  //       type: 'LOGOUT',
+  //     });
+  //   }
+  //   else {
+  //     dispatch({
+  //       type: 'LOGIN',
+  //     });
+  //   }
+  // };
   const handleClick = (event) => {
     console.log('COucou petite péruche');
     event.preventDefault();
@@ -21,6 +35,7 @@ const Login = () => {
       type: 'LOGIN',
     });
   };
+
   return (
     <div className="container">
       <div className="title">
@@ -52,5 +67,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

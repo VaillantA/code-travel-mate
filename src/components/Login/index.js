@@ -11,11 +11,11 @@ const Settings = () => {
   const pseudo = useSelector((state) => state.login.pseudo);
 
   const dispatch = useDispatch();
-  const handleLogout = () => {
-    dispatch({
-      type: 'LOGOUT',
-    });
-  };
+  // const handleLogout = () => {
+  //   dispatch({
+  //     type: 'LOGOUT',
+  //   });
+  // };
   return (
     <div className={isOpen ? 'settings' : 'settings settings--hidden'}>
       <div className={isOpen ? 'container-ok' : 'container-none'}>
@@ -24,7 +24,7 @@ const Settings = () => {
       {logged && (
         <p>
           Connecté en tant que {pseudo}
-          <button onClick={handleLogout} type="button">Log Out</button>
+          {/* <button onClick={handleLogout} type="button">Log Out</button> */}
         </p>
       )}
     </div>

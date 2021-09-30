@@ -47,7 +47,8 @@ const ajax = (store) => (next) => (action) => {
     })
       .then((response) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
-        console.log(response.data);
+        console.log(response);
+        // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER',
           pseudo: response.data.nickname,

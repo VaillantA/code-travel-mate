@@ -19,6 +19,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         loading: true,
+        logged: true,
+        pseudo: action.pseudo,
       };
     case 'TOGGLE_OPEN':
       return {

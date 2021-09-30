@@ -11,7 +11,7 @@ import './style.scss';
 const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
   const isOpen = useSelector((state) => state.login.loginOpen);
-
+  const logged = useSelector ((state) => state.login.logged);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -20,10 +20,18 @@ const NavBar = () => {
     });
   };
   const handleClickToggle = () => {
-    dispatch({
-      type: 'TOGGLE_OPEN',
-    });
+    if (logged === true) {
+      dispatch({
+        type: 'LOGOUT',
+      });
+    }
+    else {
+      dispatch({
+        type: 'TOGGLE_OPEN',
+      });
+    }
   };
+
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1>
@@ -45,7 +53,7 @@ const NavBar = () => {
           <NavLink className="nav-links" to="/about-us">About Us</NavLink>
         </li>
         <li>
-          <Link className="nav-links" to="" onClick={handleClickToggle}>Log In</Link>
+          <Link className="nav-links" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
           <NavLink className="nav-links" to="/registration">Sign Up</NavLink>

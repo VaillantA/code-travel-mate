@@ -17,19 +17,19 @@
    
   }
 
-  &-toggler {
-    border: 0;
-    background-color: white;
-    border-radius: 50%;
-    width: 3em;
-    height: 3em;
-    margin-right: 1rem;
-    // transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
+  // &-toggler {
+  //   border: 0;
+  //   background-color: white;
+  //   border-radius: 50%;
+  //   width: 3em;
+  //   height: 3em;
+  //   margin-right: 1rem;
+  //   // transition: 0.3s transform cubic-bezier(.35,1.61,.86,1.02);
 
-    &:hover {
-      transform: scale(1.1);
-    }
-  }
+  //   &:hover {
+  //     transform: scale(1.1);
+  //   }
+  // }
   .container-none {
     display: none;
   }

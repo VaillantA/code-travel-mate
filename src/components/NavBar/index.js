@@ -4,7 +4,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Home from 'src/components/Home';
-import Settings from 'src/components/Login';
 
 
 import './style.scss';
@@ -20,7 +19,11 @@ const NavBar = () => {
       type: 'BURGEN_OPEN',
     });
   };
-
+  const handleClickToggle = () => {
+    dispatch({
+      type: 'TOGGLE_OPEN',
+    });
+  };
   return (
     <nav className="NavbarItems">
       <h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1>
@@ -41,9 +44,9 @@ const NavBar = () => {
         <li>
           <NavLink className="nav-links" to="/about-us">About Us</NavLink>
         </li>
-        {/* <li>
-          <Settings />
-        </li> */}
+        <li>
+          <Link className="nav-links" to="" onClick={handleClickToggle}>Log In</Link>
+        </li>
         <li>
           <NavLink className="nav-links" to="/registration">Sign Up</NavLink>
         </li>

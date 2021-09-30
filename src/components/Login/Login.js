@@ -20,11 +20,11 @@ const Login = () => {
     });
   };
   return (
-    <div className="container" >
+    <div className="container">
       <div className="title">
         Log In
       </div>
-      <div className="form" >
+      <div className="form">
         <div className="input-field">
           <label>Email Adress</label>
           <Input

@@ -41,7 +41,7 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'LOGIN') {
     const state = store.getState();
-    axios.post('/login', {
+    axios.get('/login', {
       email: state.login.email,
       password: state.login.password,
     })

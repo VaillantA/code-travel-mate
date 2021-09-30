@@ -14,9 +14,9 @@ import PropTypes from 'prop-types';
 const Card = ({
   id,
   title,
+  resume,
   date,
   image,
-  resume,
 }) => (
   <div className="card">
     <div className="card-header">

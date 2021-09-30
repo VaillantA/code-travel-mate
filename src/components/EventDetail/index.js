@@ -15,9 +15,10 @@ const EventDetail = () => {
     const event = eventsList.find((testedEvent) => {
       return testedEvent.id === searchedID;
     });
+    console.log(event);
     return event;
   }
-  console.log(event);
+  
   // eslint-disable-next-line no-unused-vars
   const searchedEvent = useSelector((state) => findEvent(state.events.list, id));
   /* console.log(searchedEvent); */

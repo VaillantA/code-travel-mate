@@ -22,6 +22,11 @@ const SelectBanniere = ({ choice }) => {
       value={category}
       onChange={handleSelect}
     >
+      <option
+        value=""
+      >
+        Choisissez une catégorie
+      </option>
       {choice.map((currentChoice) => (
         <option
           value={currentChoice.id}

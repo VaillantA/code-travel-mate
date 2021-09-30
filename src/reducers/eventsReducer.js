@@ -2,6 +2,7 @@ export const initialState = {
   list: [],
   category: [],
   error: false,
+  redirection: false,
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -20,6 +21,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
+        redirection: true,
+      };
+    case 'REDIRECT_FALSE':
+      return {
+        ...state,
+        redirection: false,
       };
     default:
       return state;

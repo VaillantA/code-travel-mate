@@ -38,6 +38,12 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         categoriesList: action.categories,
       };
+    case 'REDIRECT_FALSE':
+      return {
+        ...state,
+        cityInProgress: '',
+        selectedCategoryID: '',
+      };
     default:
       return state;
   }

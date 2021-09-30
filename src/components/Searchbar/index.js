@@ -15,7 +15,6 @@ const Searchbar = () => {
     });
   };
   const handleSubmit = () => {
-    console.log('handleSubmit SearchBar OK');
     // eslint-disable-next-line max-len
     // on veut lancer la recherche vers api en fonction de la ville et de la category demandée dans le form : cityInProgess et selectedCategory
     // on veut ensuite modifier eventsList dans le state
@@ -27,15 +26,12 @@ const Searchbar = () => {
   return (
     <div className="banniere" style={{ backgroundImage: `url(${background_searchbar})` }}>
       <div className="banniere--searchBar">
-
         <Input
           className="searchBar--input"
         />
-
         <SelectBanniere
           choice={categories}
         />
-
         {/* <input type="date" className="searchBar--select"></input> */}
         <button
           type="button"
@@ -52,11 +48,9 @@ const Searchbar = () => {
       >
         Search
       </button>
-
       {searchOpen
       && (
       <div className="searchBar--hidden">
-
         <Input
           className="searchBar--input--hidden"
         />

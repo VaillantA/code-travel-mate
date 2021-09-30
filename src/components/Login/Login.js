@@ -11,6 +11,8 @@ const Login = () => {
     document.title = 'Login';
   }, []);
 
+  const isOpen = useSelector((state) => state.login.loginOpen);
+
   const dispatch = useDispatch();
   const handleClick = (event) => {
     console.log('COucou petite péruche');
@@ -24,7 +26,7 @@ const Login = () => {
       <div className="title">
         Log In
       </div>
-      <form className="form">
+      <form className="form" >
         <div className="input-field">
           <label>Email Adress</label>
           <Input

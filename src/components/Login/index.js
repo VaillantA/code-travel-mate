@@ -1,32 +1,32 @@
-import { User} from 'react-feather';
+import { User } from 'react-feather';
 import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
 import Login from './Login';
+// import Settings from 'src/components/Login';
 
 const Settings = () => {
   const isOpen = useSelector((state) => state.login.loginOpen);
+  const logged = useSelector((state) => state.login.logged);
+  const pseudo = useSelector((state) => state.login.pseudo);
 
-  // const dispatch = useDispatch();
-  // const handleClick = () => {
-  //   dispatch({
-  //     type: 'TOGGLE_OPEN',
-  //   });
-  // };
-  // const handleLogout = () => {
-  //   dispatch({
-  //     type: 'LOGOUT',
-  //   });
-  // };
+  const dispatch = useDispatch();
+  const handleLogout = () => {
+    dispatch({
+      type: 'LOGOUT',
+    });
+  };
   return (
     <div className={isOpen ? 'settings' : 'settings settings--hidden'}>
-      {/* <button onClick={handleClick} className="settings-toggler" type="button" aria-label="Open/Close">
-        <User size="100%" color="#3B185F" />
-        Log In
-      </button> */}
       <div className={isOpen ? 'container-ok' : 'container-none'}>
-        <Login />
+        {!logged && <Login />}
       </div>
+      {logged && (
+        <p>
+          Connecté en tant que {pseudo}
+          <button onClick={handleLogout} type="button">Se déconnecter</button>
+        </p>
+      )}
     </div>
   );
 };

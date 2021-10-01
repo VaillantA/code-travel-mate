@@ -2,14 +2,13 @@
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-
-
 // == Import : local
 // Composants
 import App from 'src/components/App';
-
 import store from 'src/store';
+// import { loadState } from './localStorage';
 
+// const persistedState = loadState();
 // == Render
 // 1. Élément React racine (celui qui contient l'ensemble de l'app)
 //    => crée une structure d'objets imbriqués (DOM virtuel)

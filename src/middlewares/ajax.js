@@ -68,7 +68,7 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
         console.log(response);
-        // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
+        localStorage.setItem(JSON.stringify(`${response.data.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER',
           pseudo: response.data.data.nickname,
@@ -78,6 +78,10 @@ const ajax = (store) => (next) => (action) => {
         console.log(error);
         alert('No match found, please try again');
       });
+  }
+  else if (action.type === 'LOGOUT') {
+    // on efface un propriété d'un objet pour oublier le token
+    delete api.defaults.headers.common.Authorization;
   }
   next(action);
 };

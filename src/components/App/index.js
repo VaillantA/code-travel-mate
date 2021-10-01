@@ -42,7 +42,7 @@ const App = () => {
     dispatch({
       type: 'FETCH_USERS',
     });
-  }, []);
+  }, [])
 
   return (
     <div className="app">

@@ -2,7 +2,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { useEffect } from 'react';
 
-
 import Card from 'src/components/Card';
 import Searchbar from '../Searchbar';
 import './style.scss';
@@ -10,9 +9,10 @@ import './style.scss';
 const Results = () => {
   const listEvents = useSelector((state) => state.events.list);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch({
-      type: 'REDIRECT_FALSE'
+      type: 'REDIRECT_FALSE',
     });
   }, []);
 
@@ -29,7 +29,7 @@ const Results = () => {
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}
-            image={currentEvent.categories[0].image}
+            /* image={currentEvent.categories[0].image} */
             /* liked={isLiked} */
           />
         ))}

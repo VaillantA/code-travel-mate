@@ -4,6 +4,7 @@ export const initialState = {
   error: false,
   redirection: false,
   loading: true,
+  searchedlist: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -12,6 +13,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
+        loading: false,
+      };
+    case 'SAVE_SEARCHED_EVENTS':
+      return {
+        ...state,
+        searchedlist: action.eventsList,
         loading: false,
       };
     case 'RECEIVE_ERROR':

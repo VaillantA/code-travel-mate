@@ -22,6 +22,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  if (action.type === 'FETCH_USERS') {
+    api.get('/user')
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_USERS',
+          events: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

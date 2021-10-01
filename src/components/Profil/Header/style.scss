@@ -1,12 +1,3 @@
-.navList{
-  list-style: none;/* liste des puces */
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid #ccc;
-  /* pour la navigation mobile */
-  border-bottom: 1px solid #ccc;
-  /* ============================ */
-}
 .header-profil{
   /* border: 10px solid red; */
   margin: auto;
@@ -42,6 +33,15 @@
    text-align: center;
    border: 1px solid rgb(180, 180, 180);
   margin-bottom: 1em;
+}
+.navList{
+  list-style: none;/* liste des puces */
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  /* pour la navigation mobile */
+  border-bottom: 1px solid #ccc;
+  /* ============================ */
 }
 
 .buttons {

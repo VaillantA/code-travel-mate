@@ -25,7 +25,7 @@ const LoginForm = () => {
           <input type="text" className="input" />
         </div>
         <div className="input-field">
-          <label>Password</label>
+          <label>Email Adress</label>
           <input type="text" className="input" />
         </div>
         <div className="input-field">
@@ -43,13 +43,8 @@ const LoginForm = () => {
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
-              <option value="gender-fluid">Gender Fluid</option>
             </select>
           </div>
-        </div>
-        <div className="input-field">
-          <label>Email Adress</label>
-          <input type="text" className="input" />
         </div>
         <div className="input-field">
           <label>Description</label>

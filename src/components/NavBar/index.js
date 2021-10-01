@@ -34,7 +34,7 @@ const NavBar = () => {
 
   return (
     <nav className="NavbarItems">
-      <h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1>
+      <Link to="/home"><h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1></Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'} />
       </div>

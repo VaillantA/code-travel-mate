@@ -51,7 +51,7 @@ const ajax = (store) => (next) => (action) => {
         // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER',
-          pseudo: response.data.nickname,
+          pseudo: response.data.data.nickname,
         });
       })
       .catch((error) => {

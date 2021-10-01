@@ -27,6 +27,7 @@ const reducer = (state = initialState, action = {}) => {
         email: '',
         password: '',
         pseudo: action.pseudo,
+        loginOpen: false,
       };
     case 'LOGOUT':
       return {

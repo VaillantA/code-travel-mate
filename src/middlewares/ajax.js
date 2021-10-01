@@ -39,6 +39,26 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'SEARCH_SELECTED_EVENTS') {
+    const stateCategory = store.getState().searchBar.selectedCategoryID;
+    const stateCity = store.getState().searchBar.cityInProgress;
+    api.get(`/search?search=${stateCity}&category=${stateCategory}`)
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_SELECTED_EVENTS',
+          list: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+    /* http://localhost:8080/api/v1/search?search=bel&category=80 */
+  }
   next(action);
 };
 

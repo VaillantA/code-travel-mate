@@ -1,49 +1,49 @@
 // == Import
-import React from 'react';
-
 // import { BrowserRouter } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import { Redirect } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import './style.scss';
+
 import NavBar from 'src/components/NavBar';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import EventDetail from 'src/components/EventDetail';
+import Results from 'src/components/Results';
 import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
-import './style.scss';
-import Cards from 'src/components/Cards';
-import Searchbar from 'src/components/Searchbar';
 import Footer from 'src/components/Footer';
-import EventDetail from 'src/components/EventDetail';
+import Home from 'src/components/Home';
+import Loading from 'src/components/Loading';
 
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import Home from '../Home';
-
-// == Composant
+// == romposant
 const App = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     dispatch({
       type: 'FETCH_EVENTS',
     });
   }, []);
-
   useEffect(() => {
     dispatch({
       type: 'FETCH_CATEGORIES',
     });
   }, []);
 
+  const redirection = useSelector((state) => state.events.redirection);
+  const loading = useSelector((state) => state.events.loading);
+
+  if (loading) {
+    return <Loading />;
+  }
+
   return (
     <div className="app">
       <NavBar />
       <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
         <Route path="/" exact>
-          <Searchbar />
-          <Cards />
+          {redirection ? <Redirect to="/results" /> : <Home /> }
         </Route>
         <Route path="/categories">
           <Categories />
@@ -53,6 +53,10 @@ const App = () => {
         </Route>
         <Route path="/detailsEvent">
           <EventDetail />
+        </Route>
+        <Route path="/results">
+          {/* {loading ? <Loading /> : <Results />} */}
+          <Results />
         </Route>
         <Route path="/registration">
           <LoginForm />

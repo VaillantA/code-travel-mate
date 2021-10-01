@@ -27,7 +27,7 @@ const Card = ({
         <Link
           key={id}
           to={`/detailsEvent/${id}`}
-          title={`${title}`}
+          /* title={`${title}`} */
           exact
         >
           <h5 className="card-title">{title}</h5>

@@ -2,6 +2,7 @@ export const initialState = {
   list: [],
   category: [],
   error: false,
+  oneEvent: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -10,6 +11,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
+      };
+    case 'SAVE_ONE_EVENT':
+      return {
+        ...state,
+        oneEvent: action.oneEvent,
       };
     case 'RECEIVE_ERROR':
       return {

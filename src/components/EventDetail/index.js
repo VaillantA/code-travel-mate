@@ -1,35 +1,25 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
 import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
-const EventDetail = ({ title }) => {
+const EventDetail = () => {
   const { id } = useParams();
-  const listEvents = useSelector((state) => state.events.list);
-  /* console.log("eventsDetail / listEvents: " +listEvents); */
-
-  console.log(`id : ${id}`);
-  /* eslint-disable import/prefer-default-export */
-  /* eslint-disable arrow-body-style */
-  /* function findEvent(eventsList, searchedID) {
-    const foundEvent = eventsList.find((testedEvent) => {
-      return testedEvent.id === searchedID;
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_ONE_EVENT',
+      id: id,
     });
-    console.log(`foundEvent : ${foundEvent}`);
-    return foundEvent;
-  } */
-
-  // eslint-disable-next-line no-unused-vars
-  /* const searchedEvent = useSelector((state) => findEvent(listEvents, id)); */
-  /* console.log("searchedEvent : " + searchedEvent); */
-  // eslint-disable-next-line no-trailing-spaces
+  }, []);
 
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
-  const dispatch = useDispatch();
   const handleRadio = (e) => {
     /* console.log('submit form OK'); */
     dispatch({
@@ -37,11 +27,12 @@ const EventDetail = ({ title }) => {
       category: e.target.value,
     });
   };
-  console.log("title : " + title);
+
+  const oneEvent = useSelector((state) => state.events.oneEvent);
+  console.log(oneEvent);
 
   return (
     <>
-      {/* <Searchbar /> */}
       <div className="detail">
         <div className="detail--menu">
           <h2 className="menu--title">
@@ -81,14 +72,13 @@ const EventDetail = ({ title }) => {
         <div className="detail--event">
           <div className="event--titleAndAuthor">
             <h2 className="event--title">
-              Titre
-              {/* {searchedEvent.title} */}
+              {oneEvent.title}
             </h2>
             <div className="event--avatar">
               <img className="avatar" src={avatar} />
             </div>
             <div className="event--author">
-              <p>Author: name, firstName, age</p>
+              <p>Author: {/* {oneEvent.creator.firstname} {oneEvent.creator.lastname} */}</p>
             </div>
           </div>
           <div className="eventDescription">
@@ -101,7 +91,7 @@ const EventDetail = ({ title }) => {
                 //todo map
               </div>
               <div className="eventDescription--informations--date">
-                <p>Date et heure</p>
+                <p>{oneEvent.startAt}</p>
               </div>
               <div clasName="eventDescription--informations--address">
                 <p>Adresse</p>

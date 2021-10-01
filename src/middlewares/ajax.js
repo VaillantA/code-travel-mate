@@ -39,6 +39,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'FETCH_ONE_EVENT') {
+    api.get(`/event/${action.id}`)
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_ONE_EVENT',
+          oneEvent: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

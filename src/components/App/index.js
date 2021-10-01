@@ -14,12 +14,17 @@ import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
 import Footer from 'src/components/Footer';
-import Home from '../Home';
+import Home from 'src/components/Home';
+import Loading from 'src/components/Loading';
 
 // == romposant
 const App = () => {
   const dispatch = useDispatch();
-
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_EVENTS',
+    });
+  }, []);
   useEffect(() => {
     dispatch({
       type: 'FETCH_CATEGORIES',
@@ -27,6 +32,11 @@ const App = () => {
   }, []);
 
   const redirection = useSelector((state) => state.events.redirection);
+  const loading = useSelector((state) => state.events.loading);
+
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div className="app">
@@ -45,6 +55,7 @@ const App = () => {
           <EventDetail />
         </Route>
         <Route path="/results">
+          {/* {loading ? <Loading /> : <Results />} */}
           <Results />
         </Route>
         <Route path="/registration">

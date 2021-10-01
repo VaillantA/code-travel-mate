@@ -23,7 +23,7 @@ const Results = () => {
         Results of your search :
       </h1>
       <div className="card--parent">
-        {listEvents.slice(0, 3).map((currentEvent) => (
+        {listEvents.map((currentEvent) => (
           <Card
             key={currentEvent.id}
             title={currentEvent.title}

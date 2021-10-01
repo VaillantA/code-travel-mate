@@ -11,7 +11,6 @@ const SelectBanniere = ({ choice }) => {
     dispatch({
       type: 'CHANGE_SELECT',
       category: event.target.value,
-      categoryID: event.target.key,
     });
   };
 

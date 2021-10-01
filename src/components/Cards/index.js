@@ -1,6 +1,4 @@
-/* import "src/components/App/styles.scss"; */
 import Card from 'src/components/Card';
-import landscape from 'src/assets/images/licensed-image.jpeg';
 import { useSelector } from 'react-redux';
 import './style.scss';
 import { StaticRouter } from 'react-router';
@@ -10,6 +8,7 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
+  /* console.log(listEvents); */
 
   return (
     <div className="slider">
@@ -60,13 +59,13 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 7).map((currentEvent) => (
+          {listEvents.slice(6, 8).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}

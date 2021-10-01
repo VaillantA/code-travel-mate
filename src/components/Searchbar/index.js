@@ -15,9 +15,6 @@ const Searchbar = () => {
     });
   };
   const handleSubmit = () => {
-    // eslint-disable-next-line max-len
-    // on veut lancer la recherche vers api en fonction de la ville et de la category demandée dans le form : cityInProgess et selectedCategory
-    // on veut ensuite modifier eventsList dans le state
     dispatch({
       type: 'SEARCH_SELECTED_EVENTS',
     });

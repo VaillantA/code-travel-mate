@@ -1,6 +1,5 @@
 /* import "src/components/App/styles.scss"; */
 import Card from 'src/components/Card';
-import landscape from 'src/assets/images/licensed-image.jpeg';
 import { useSelector } from 'react-redux';
 import './style.scss';
 
@@ -9,7 +8,7 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  /* console.log(listEvents); */
+  console.log("cards / listEvents : " + listEvents);
 
   return (
     <div className="slider">
@@ -29,7 +28,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}
@@ -49,7 +48,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}
@@ -69,7 +68,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}

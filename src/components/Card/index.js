@@ -1,6 +1,4 @@
-import React, { useState } from 'react';
 import './style.scss';
-import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
 // import Ripples from 'react-ripples';
 import { Heart, MessageCircle } from 'react-feather';
@@ -29,7 +27,7 @@ const Card = ({
         <Link
           key={id}
           to={`/detailsEvent/${id}`}
-          /* title={`${title}`} */
+          title={`${title}`}
           exact
         >
           <h5 className="card-title">{title}</h5>
@@ -43,7 +41,7 @@ const Card = ({
         alt="card-image"
         exact
       >
-        <img className="card-image" src={image} alt="Logo" />
+        {/* <img className="card-image" src={image} alt="Logo" /> */}
       </Link>
       <div className="card-like">
         <Heart className=" card-like-icon" />
@@ -64,12 +62,12 @@ const Card = ({
   </div>
 );
 
-Card.propTypes = {
+/* Card.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   resume: PropTypes.string.isRequired,
-  /* id: PropTypes.number.isRequired, */
-};
+  id: PropTypes.number.isRequired,
+}; */
 
 export default Card;

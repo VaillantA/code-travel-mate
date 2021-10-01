@@ -6,22 +6,25 @@ import avatar from 'src/assets/images/avatar.png';
 import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
-const EventDetail = () => {
+const EventDetail = ({ title }) => {
   const { id } = useParams();
-  /* console.log(id); */
+  const listEvents = useSelector((state) => state.events.list);
+  /* console.log("eventsDetail / listEvents: " +listEvents); */
+
+  console.log(`id : ${id}`);
   /* eslint-disable import/prefer-default-export */
   /* eslint-disable arrow-body-style */
-  function findEvent(eventsList, searchedID) {
-    const event = eventsList.find((testedEvent) => {
+  /* function findEvent(eventsList, searchedID) {
+    const foundEvent = eventsList.find((testedEvent) => {
       return testedEvent.id === searchedID;
     });
-    console.log(event);
-    return event;
-  }
-  
+    console.log(`foundEvent : ${foundEvent}`);
+    return foundEvent;
+  } */
+
   // eslint-disable-next-line no-unused-vars
-  const searchedEvent = useSelector((state) => findEvent(state.events.list, id));
-  /* console.log(searchedEvent); */
+  /* const searchedEvent = useSelector((state) => findEvent(listEvents, id)); */
+  /* console.log("searchedEvent : " + searchedEvent); */
   // eslint-disable-next-line no-trailing-spaces
 
   const categories = useSelector((state) => state.searchBar.categoriesList);
@@ -34,7 +37,7 @@ const EventDetail = () => {
       category: e.target.value,
     });
   };
-  /* console.log(title); */
+  console.log("title : " + title);
 
   return (
     <>

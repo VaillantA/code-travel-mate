@@ -3,8 +3,8 @@ import Searchbar from 'src/components/Searchbar';
 
 const Home = () => (
   <div className="home">
-  <Searchbar />
-  <Cards/>
+    <Searchbar />
+    <Cards />
   </div>
 );
 

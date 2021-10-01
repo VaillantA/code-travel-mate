@@ -1,9 +1,10 @@
 // == Import
+import React from 'react';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 // import { BrowserRouter } from 'react-router-dom';
 import { Switch, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import './style.scss';
 
 import NavBar from 'src/components/NavBar';
@@ -12,12 +13,16 @@ import Results from 'src/components/Results';
 import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
+import Login from 'src/components/Login';
 import NotFound from 'src/components/NotFound';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
+import Cards from 'src/components/Cards';
+import Searchbar from 'src/components/Searchbar';
+import Settings from 'src/components/Login';
 
-// == romposant
+// == Composant
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
@@ -41,6 +46,7 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
+      <Settings />
       <Switch>
         <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
@@ -57,6 +63,9 @@ const App = () => {
         <Route path="/results">
           {/* {loading ? <Loading /> : <Results />} */}
           <Results />
+        </Route>
+        <Route path="/Login">
+          <Login />
         </Route>
         <Route path="/registration">
           <LoginForm />

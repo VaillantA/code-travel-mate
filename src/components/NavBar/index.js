@@ -5,10 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Home from 'src/components/Home';
 
+
 import './style.scss';
 
 const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
+  const isOpen = useSelector((state) => state.login.loginOpen);
+  const logged = useSelector ((state) => state.login.logged);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -16,10 +19,22 @@ const NavBar = () => {
       type: 'BURGEN_OPEN',
     });
   };
+  const handleClickToggle = () => {
+    if (logged === true) {
+      dispatch({
+        type: 'LOGOUT',
+      });
+    }
+    else {
+      dispatch({
+        type: 'TOGGLE_OPEN',
+      });
+    }
+  };
 
   return (
     <nav className="NavbarItems">
-      <h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1>
+      <Link to="/home"><h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1></Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'} />
       </div>
@@ -36,6 +51,9 @@ const NavBar = () => {
         </li>
         <li>
           <NavLink className="nav-links" to="/about-us">About Us</NavLink>
+        </li>
+        <li>
+          <Link className="nav-links" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
           <NavLink className="nav-links" to="/registration">Sign Up</NavLink>

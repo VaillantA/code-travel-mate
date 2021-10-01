@@ -37,7 +37,7 @@ color: #fff;
 
 .nav-menu {
   display : grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(6, auto);
   grid-gap: 10px;
   list-style: none;
   text-align: center;
@@ -136,12 +136,3 @@ color: #fff;
   }
 
 }
-
-
-//  @media screen and (max-width: 480px) {
-
-//   button {
-//     display: none;
-//   }
-// } 
-

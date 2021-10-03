@@ -1,7 +1,5 @@
 .detail{
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
 }
 .detail--menu{
   width: 20%;
@@ -46,7 +44,6 @@
 .event--titleAndAuthor{
   margin: 2em;
   display: flex;
-  flex-direction: row;
   height: 4em;
 }
 .event--title{
@@ -65,9 +62,7 @@
 }
 .eventDescription{
   margin: 2em;
-  height: 10em;
   display: flex;
-  flex-direction: row;
 
   &--picture{
     padding: 1em;
@@ -122,11 +117,13 @@
 @media screen and (max-width:800px){
   .detail--event{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .event--titleAndAuthor{
+    width: 100%;
   }
   .eventDescription{
     flex-direction: column;
-    width: 90%;
 
     &--picture{
       width: 80%;

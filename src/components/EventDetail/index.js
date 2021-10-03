@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
-import Searchbar from 'src/components/Searchbar';
 import Input from 'src/components/Searchbar/Input';
+import Map from 'src/components/Map';
 import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
 
@@ -78,12 +78,12 @@ const EventDetail = () => {
             </div>
             <div className="eventDescription--informations">
               <div className="eventDescription--informations--map">
-                //todo map
+                {/* <Map /> */}
               </div>
               <div className="eventDescription--informations--date">
                 <p>Date et heure</p>
               </div>
-              <div clasName="eventDescription--informations--address">
+              <div className="eventDescription--informations--address">
                 <p>Adresse</p>
               </div>
             </div>

@@ -45,6 +45,7 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
+          oneEventCreator: response.data.creator,
         });
       })
       .catch((error) => {

@@ -10,7 +10,7 @@ import { useParams } from 'react-router-dom';
 const EventDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch({
       type: 'FETCH_ONE_EVENT',
@@ -93,7 +93,7 @@ const EventDetail = () => {
               <div className="eventDescription--informations--date">
                 <p>{oneEvent.startAt}</p>
               </div>
-              <div clasName="eventDescription--informations--address">
+              <div className="eventDescription--informations--address">
                 <p>Adresse</p>
               </div>
             </div>

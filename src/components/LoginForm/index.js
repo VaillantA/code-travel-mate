@@ -1,11 +1,30 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import './style.scss';
 import Input from './Input';
+import Textarea from './Textarea';
 
 const LoginForm = () => {
   useEffect(() => {
     document.title = 'Registration Form';
   }, []);
+  const value= useSelector((state) => state.login.selectValue);
+
+  const dispatch = useDispatch();
+  const handleChange = (event) => {
+    dispatch({
+      type: 'CHANGE_SELECTED',
+      value: event.target.value,
+    });
+  };
+  const handleClick = (event) => {
+    console.log('COucou petite péruche');
+    event.preventDefault();
+    dispatch({
+      type: 'REGISTER',
+    });
+  };
 
   return (
     <div className="container">
@@ -76,7 +95,7 @@ const LoginForm = () => {
         <div className="input-field">
           <label>Gender</label>
           <div className="gender-select">
-            <select>
+            <select value={value} onChange={handleChange}>
               <option value="">Select</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
@@ -85,9 +104,15 @@ const LoginForm = () => {
         </div>
         <div className="input-field">
           <label>Description</label>
-          <textarea type="text" className="input"> </textarea>
+          <Textarea
+            type="text"
+            className="input"
+            placeholder="Enter a description"
+            aria-label="Description"
+            textareaKey="description"
+          />
         </div>
-        <button type="button" className="button">Register</button>
+        <button type="button" className="button" onClick={handleClick}>Register</button>
       </div>
     </div>
   );

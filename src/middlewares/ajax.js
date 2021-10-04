@@ -79,6 +79,24 @@ const ajax = (store) => (next) => (action) => {
         alert('No match found, please try again');
       });
   }
+  else if (action.type === 'REGISTER') {
+    const state = store.getState();
+    api.post('/api/v1/user')
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_USER_REGISTER',
+          // categories: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

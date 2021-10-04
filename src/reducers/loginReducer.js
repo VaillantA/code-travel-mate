@@ -5,6 +5,7 @@ export const initialState = {
   email: '',
   password: '',
   pseudo: '',
+  selectValue: '',
 
 };
 
@@ -34,6 +35,16 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         logged: false,
         pseudo: 'Utilisateur anonyme',
+      };
+    case 'CHANGE_SELECTED':
+      return {
+        ...state,
+        selectValue: action.value,
+      };
+    case 'SAVE_USER_REGISTER':
+      return {
+        ...state,
+      
       };
     default:
       return state;

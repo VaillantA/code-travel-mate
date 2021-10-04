@@ -12,7 +12,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
-        // eventsImage: action.image,
+        eventsImage: action.image,
       };
     case 'SAVE_ONE_EVENT':
       return {
@@ -23,6 +23,7 @@ const reducer = (state = initialState, action = {}) => {
         eventImage: action.eventImage,
         participants: action.participants,
         eventCity: action.oneEventCity,
+        startAt: action.startAt,
       };
     case 'RECEIVE_ERROR':
       return {

@@ -35,8 +35,9 @@ const EventDetail = () => {
   const eventImage = useSelector((state) => state.events.eventImage);
   const eventParticipants = useSelector((state) => state.events.participants);
   const eventCity = useSelector((state) => state.events.eventCity);
+  const startAt = useSelector((state) => state.events.startAt);
+  const date = new Date(startAt).toLocaleString();
 
-  /* console.log(eventParticipants); */
   return (
     <>
       <div className="detail">
@@ -97,10 +98,10 @@ const EventDetail = () => {
                 //todo map
               </div>
               <div className="eventDescription--informations--date">
-                <p>{oneEvent.startAt}</p>
+                <p>Début de l'événement : {date}</p>
               </div>
               <div className="eventDescription--informations--address">
-                <p>{eventCity}</p>
+                <p>Lieu de l'événement : {eventCity}</p>
               </div>
             </div>
           </div>

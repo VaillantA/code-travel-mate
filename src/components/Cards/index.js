@@ -8,10 +8,11 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  // console.log("cards / listEvents : " + listEvents);
-  const listImages = useSelector((state) => state.events.eventsImages);
+  // console.log(listEvents);
+  // const listImages = useSelector((state) => state.events.eventsImages);
   // console.log(listImages);
-
+  const categories = useSelector((state) => state.searchBar.categoriesList);
+  console.log(categories);
   return (
     <div className="slider">
       <div className="cards">
@@ -30,7 +31,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              /* image={currentEvent.categories[0].image} */
+              // image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}

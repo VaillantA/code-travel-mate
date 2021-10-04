@@ -8,7 +8,9 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  console.log("cards / listEvents : " + listEvents);
+  // console.log("cards / listEvents : " + listEvents);
+  const listImages = useSelector((state) => state.events.eventsImages);
+  // console.log(listImages);
 
   return (
     <div className="slider">

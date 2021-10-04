@@ -8,9 +8,11 @@ const ajax = (store) => (next) => (action) => {
   if (action.type === 'FETCH_EVENTS') {
     api.get('/event')
       .then((response) => {
+        /* console.log(response.data); */
         store.dispatch({
           type: 'SAVE_EVENTS',
           events: response.data,
+          image: response.data.image,
         });
       })
       .catch((error) => {
@@ -25,9 +27,11 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_CATEGORIES') {
     api.get('/category')
       .then((response) => {
+        // console.log(response.data);
         store.dispatch({
           type: 'SAVE_CATEGORIES',
           categories: response.data,
+          // image: response.data.image,
         });
       })
       .catch((error) => {
@@ -42,10 +46,15 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/event/${action.id}`)
       .then((response) => {
+        console.log(response.data.city.name);
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
-          oneEventCreator: response.data.creator,
+          authorFirstname: response.data.creator.firstname,
+          authorLastname: response.data.creator.lastname,
+          oneEventCity: response.data.city.name,
+          eventImage: response.data.image,
+          participants: response.data.participant,
         });
       })
       .catch((error) => {

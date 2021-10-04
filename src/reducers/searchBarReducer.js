@@ -4,6 +4,7 @@ export const initialState = {
   categoriesList: [],
   cityInProgress: '',
   selectedCategory: '',
+  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,6 +38,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoriesList: action.categories,
+        image: action.image,
       };
     default:
       return state;

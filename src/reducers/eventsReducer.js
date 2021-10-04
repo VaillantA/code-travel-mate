@@ -3,6 +3,7 @@ export const initialState = {
   category: [],
   error: false,
   oneEvent: [],
+  eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -11,11 +12,17 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
+        // eventsImage: action.image,
       };
     case 'SAVE_ONE_EVENT':
       return {
         ...state,
         oneEvent: action.oneEvent,
+        authorFirstname: action.authorFirstname,
+        authorLastname: action.authorLastname,
+        eventImage: action.eventImage,
+        participants: action.participants,
+        eventCity: action.oneEventCity,
       };
     case 'RECEIVE_ERROR':
       return {

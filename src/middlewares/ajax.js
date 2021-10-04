@@ -81,7 +81,16 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'REGISTER') {
     const state = store.getState();
-    api.post('/api/v1/user')
+    api.post('/api/v1/registration', {
+      firstname: state.register.firstname,
+      lastname: state.register.lastname,
+      pseudo: state.register.pseudo,
+      emailadress: state.register.emailadress,
+      password: state.register.password,
+      confirmpassword: state.register.confirmpassword,
+      gender: state.register.gender,
+      description: state.register.description,
+    })
       .then((response) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',

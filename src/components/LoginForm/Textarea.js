@@ -6,7 +6,7 @@ const Textarea = ({ textareaKey, ...props }) => {
   const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch({
-      type: 'CHANGE_VALUE',
+      type: 'CHANGE_VALUE_LOGIN_FORM',
       newValue: event.target.value,
       key: textareaKey,
     });

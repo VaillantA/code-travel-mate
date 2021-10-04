@@ -8,11 +8,17 @@ export const initialState = {
   confirmpassword: '',
   gender: '',
   description: '',
+  token: '',
 
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
+    case 'CHANGE_VALUE_LOGIN_FORM':
+      return {
+        ...state,
+        [action.key]: action.newValue, // avec des [] on peut mettre un nom de propriété dynamique
+      };
     case 'SAVE_USER_REGISTER':
       return {
         ...state,
@@ -24,7 +30,7 @@ const reducer = (state = initialState, action = {}) => {
         password: action.value,
         confirmpassword: action.value,
         gender: action.value,
-        description: action.value,     
+        description: action.value,
       };
     case 'CHANGE_SELECTED':
       return {

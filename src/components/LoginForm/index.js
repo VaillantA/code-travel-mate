@@ -53,6 +53,18 @@ const LoginForm = () => {
           />
         </div>
         <div className="input-field">
+          <label>Age</label>
+          <Input
+            type="number"
+            min="0"
+            max="100"
+            className="input"
+            placeholder="Enter your age"
+            aria-label="age"
+            inputKey="age"
+          />
+        </div>
+        <div className="input-field">
           <label>Pseudo</label>
           <Input
             type="text"

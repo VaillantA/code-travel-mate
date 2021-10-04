@@ -8,11 +8,8 @@ function Cards() {
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  // console.log(listEvents);
-  // const listImages = useSelector((state) => state.events.eventsImages);
-  // console.log(listImages);
-  const categories = useSelector((state) => state.searchBar.categoriesList);
-  console.log(categories);
+  console.log(listEvents);
+  
   return (
     <div className="slider">
       <div className="cards">
@@ -31,7 +28,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              // image={currentEvent.categories[0].image}
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -51,7 +48,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              /* image={currentEvent.categories[0].image} */
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -64,14 +61,14 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 7).map((currentEvent) => (
+          {listEvents.slice(6, 9).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              /* image={currentEvent.categories[0].image} */
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -84,13 +81,3 @@ function Cards() {
 
 export default Cards;
 
-
-// {listEvents.slice(0, 3).map((currentEvent) => (
-//   <Card
-//     key={currentEvent.id}
-//     title={currentEvent.title}
-//     resume={currentEvent.resume}
-//     date={currentEvent.startAt}
-//     image={currentEvent.image}
-//     liked={isLiked}
-//   />

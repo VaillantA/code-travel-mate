@@ -13,7 +13,6 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_EVENTS',
           events: response.data,
-          image: response.data.image,
         });
       })
       .catch((error) => {
@@ -48,16 +47,14 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/event/${action.id}`)
       .then((response) => {
-        // console.log(response.data.city.name);
+        console.log(response.data);
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
           authorFirstname: response.data.creator.firstname,
           authorLastname: response.data.creator.lastname,
           oneEventCity: response.data.city.name,
-          startAt: response.data.startAt,
-          eventImage: response.data.image,
-          participants: response.data.participant,
+          eventImage: response.data.categories[0].image,
         });
       })
       .catch((error) => {

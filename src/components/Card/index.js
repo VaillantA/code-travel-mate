@@ -5,10 +5,6 @@ import { Heart, MessageCircle } from 'react-feather';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-/* import { NavLink } from "react-router-dom"; */
-
-/* import { createRipples } from 'react-ripples'; */
-
 const Card = ({
   id,
   title,
@@ -46,7 +42,7 @@ const Card = ({
           alt="card-image"
           exact
         >
-          {/* <img className="card-image" src={image} alt="Logo" /> */}
+          <img className="card-image" src={image} alt="Logo" />
         </Link>
         <div className="card-like">
           <Heart className=" card-like-icon" />

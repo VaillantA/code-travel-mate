@@ -2,9 +2,7 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
-import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
-import PropTypes from 'prop-types';
 import { useParams } from 'react-router-dom';
 
 const EventDetail = () => {
@@ -21,7 +19,6 @@ const EventDetail = () => {
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const handleRadio = (e) => {
-    /* console.log('submit form OK'); */
     dispatch({
       type: 'CHANGE_RADIO',
       category: e.target.value,
@@ -29,14 +26,11 @@ const EventDetail = () => {
   };
 
   const oneEvent = useSelector((state) => state.events.oneEvent);
-  console.log(oneEvent);
   const authorFirstname = useSelector((state) => state.events.authorFirstname);
   const authorLastname = useSelector((state) => state.events.authorLastname);
   const eventImage = useSelector((state) => state.events.eventImage);
-  const eventParticipants = useSelector((state) => state.events.participants);
   const eventCity = useSelector((state) => state.events.eventCity);
-  const startAt = useSelector((state) => state.events.startAt);
-  const date = new Date(startAt).toLocaleString();
+  const date = new Date(oneEvent.startAt).toLocaleString();
 
   return (
     <>
@@ -91,7 +85,7 @@ const EventDetail = () => {
           <div className="eventDescription">
             <img className="eventDescription--picture" src={eventImage} />
             <div className="eventDescription--text">
-              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+              <p>{oneEvent.content}</p>
             </div>
             <div className="eventDescription--informations">
               <div className="eventDescription--informations--map">
@@ -107,7 +101,7 @@ const EventDetail = () => {
           </div>
           <div className="participation">
             <div className="participation--nbParticipants">
-              <p>Nombre de participants inscrits : {eventParticipants}</p>
+              <p>Nombre de participants inscrits : {oneEvent.participant}</p>
             </div>
             <div className="participation--comments">
               <p>Questions et commentaires</p>
@@ -124,12 +118,5 @@ const EventDetail = () => {
     </>
   );
 };
-
-/* EventDetail.propTypes = {
-  title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
-  resume: PropTypes.string.isRequired,
-}; */
 
 export default EventDetail;

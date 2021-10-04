@@ -81,15 +81,15 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'REGISTER') {
     const state = store.getState();
-    api.post('/api/v1/registration', {
+    api.post('/api/v1/registration/', {
       firstname: state.register.firstname,
       lastname: state.register.lastname,
-      pseudo: state.register.pseudo,
-      emailadress: state.register.emailadress,
+      nickname: state.register.pseudo,
+      email: state.register.email,
       password: state.register.password,
-      confirmpassword: state.register.confirmpassword,
       gender: state.register.gender,
       description: state.register.description,
+      // age: state.register.age,
     })
       .then((response) => {
         store.dispatch({

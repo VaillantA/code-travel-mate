@@ -3,11 +3,12 @@ export const initialState = {
   firstname: '',
   lastname: '',
   pseudo: '',
-  emailadress: '',
+  email: '',
   password: '',
   confirmpassword: '',
   gender: '',
   description: '',
+  age: '',
   token: '',
 
 };
@@ -26,11 +27,12 @@ const reducer = (state = initialState, action = {}) => {
         firstname: action.value,
         lastname: action.value,
         pseudo: action.value,
-        emailadress: action.value,
+        email: action.value,
         password: action.value,
         confirmpassword: action.value,
         gender: action.value,
         description: action.value,
+        age: action.value,
       };
     case 'CHANGE_SELECTED':
       return {

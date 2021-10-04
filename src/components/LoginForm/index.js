@@ -9,7 +9,7 @@ const LoginForm = () => {
   useEffect(() => {
     document.title = 'Registration Form';
   }, []);
-  const value= useSelector((state) => state.login.selectValue);
+  const value = useSelector((state) => state.register.selectValue);
 
   const dispatch = useDispatch();
   const handleChange = (event) => {

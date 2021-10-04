@@ -85,7 +85,7 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',
-          // categories: response.data,
+
         });
       })
       .catch((error) => {

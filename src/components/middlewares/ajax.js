@@ -22,11 +22,11 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
-  if (action.type === 'FETCH_USERS') {
-    api.get('/user')
+  if (action.type === 'FETCH_USER') {
+    api.get('/user/113')
       .then((response) => {
         store.dispatch({
-          type: 'SAVE_USERS',
+          type: 'SAVE_USER',
           events: response.data,
         });
       })

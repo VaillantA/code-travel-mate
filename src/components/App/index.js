@@ -38,12 +38,14 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    dispatch({
-      type: 'FETCH_USERS',
-    });
-  }, [])
+  
 
+  /* useEffect(() => {
+    dispatch({
+      type: 'FETCH_CREATEDEVENT',
+    });
+  }, []) */
+  
   return (
     <div className="app">
       <NavBar />
@@ -58,7 +60,7 @@ const App = () => {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/profil">
+        <Route path="/profil/:id">
           <Profil />
         </Route>
         <Route path="/events">

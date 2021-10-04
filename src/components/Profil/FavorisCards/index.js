@@ -26,7 +26,7 @@ const FavorisCards = () => {
                   title={currentEvent.title}
                   resume={currentEvent.resume}
                   date={currentEvent.startAt}
-                  image={currentEvent.categories[0].image}
+                 /*  image={currentEvent.categories[0].image} */
                   /* liked={isLiked} */
                 />
               ))}

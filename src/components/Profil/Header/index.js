@@ -12,10 +12,19 @@ const Header = (/* {nickname,
    age,
    nationality,
    language} */) => {
-  const profilList = useSelector((state) => state.profil.list);
+    
+
   const navList = useSelector((state) => state.profil.profilCardsOpen);
   const favoritesList = useSelector((state) => state.profil.favoritesOpen);
-  console.log(favoritesList);
+  /* INFO USESELECTOR */
+  const avatar = useSelector((state) => state.profil.image);
+  const nickname = useSelector((state) => state.profil.nickname);
+  const age = useSelector((state) => state.profil.age);
+  const nationality = useSelector((state) => state.profil.nationality);
+  const language = useSelector((state) => state.profil.language);
+  
+  /* console.log(profilList); */
+
   const dispatch = useDispatch();
   const handleClick = () => {
     dispatch({
@@ -30,20 +39,15 @@ const Header = (/* {nickname,
   return (
     <div className="header">
       <div className="header-profil">
-        {profilList.map((currentprofil) => (
-          <div key={currentprofil.id}>
-            <div>
-              <img src={currentprofil.image} alt="avatar" />
-            </div>
-            <ul className="infos">
-              <li>{currentprofil.nickname}</li>
-              <li>{currentprofil.age}</li>
-              <li>{currentprofil.nationality}</li>
-              <li>{currentprofil.language}</li>
-            </ul>
-          </div>
-        ))}
-
+      <div>
+       <img src={avatar} alt='avatar'/>
+      </div>
+      <ul className="infos">
+      <li>  {nickname} </li>
+      <li> {age}</li>
+      <li> {nationality}</li>
+      <li> {language}</li>
+      </ul>
         <div className="description">
           <div className="description-text">
             <p>hello everyone I  just landed in Sao Paulo and I hope to find new friends so that my trip will be the most enriching </p>
@@ -91,13 +95,13 @@ const Header = (/* {nickname,
   );
 };
 
-Header.propTypes = {
+/* Header.propTypes = {
   nickname: PropTypes.string.isRequired,
   age: PropTypes.string.isRequired,
   nationality: PropTypes.string.isRequired,
   nickname: PropTypes.string.isRequired,
   nickname: PropTypes.string.isRequired,
 
-};
+}; */
 
 export default Header;

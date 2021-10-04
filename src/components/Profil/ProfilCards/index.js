@@ -5,7 +5,7 @@ import './style.scss';
 
 const ProfilCards = () => {
   const categories = useSelector((state) => (state.searchBar.categoriesList));
-  const listEvents = useSelector((state) => state.events.list);
+  const listEvents = useSelector((state) => state.profil.list);
   return (
     <section className="cards">
     <div className="cards">
@@ -26,7 +26,7 @@ const ProfilCards = () => {
                   title={currentEvent.title}
                   resume={currentEvent.resume}
                   date={currentEvent.startAt}
-                  image={currentEvent.categories[0].image}
+                 /*  image={currentEvent.categories[0].image} */
                   /* liked={isLiked} */
                 />
               ))}

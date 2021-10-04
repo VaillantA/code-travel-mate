@@ -40,11 +40,12 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'FETCH_USER') {
-    api.get('/api/v1/user')
+    api.get(`/api/v1/user/${action.id}`)
       .then((response) => {
+        console.log(response.data);
         store.dispatch({
           type: 'SAVE_USER',
-          users: response.data,
+          user: response.data,
         });
       })
       .catch((error) => {
@@ -56,6 +57,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  /* else if (action.type === 'FETCH_CREATEDEVENT') {
+    api.get('/api/v1/user/113')
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_CREATEDEVENT',
+          createdEvent: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  } */
   next(action);
 };
 

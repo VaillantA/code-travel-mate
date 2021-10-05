@@ -35,6 +35,7 @@ const reducer = (state = initialState, action = {}) => {
         logged: false,
         pseudo: 'Utilisateur anonyme',
       };
+
     default:
       return state;
   }

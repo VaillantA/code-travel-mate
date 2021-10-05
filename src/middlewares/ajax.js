@@ -106,6 +106,33 @@ const ajax = (store) => (next) => (action) => {
         alert('No match found, please try again');
       });
   }
+  else if (action.type === 'REGISTER') {
+    const state = store.getState();
+    api.post('/api/v1/registration/', {
+      firstname: state.register.firstname,
+      lastname: state.register.lastname,
+      nickname: state.register.pseudo,
+      email: state.register.email,
+      password: state.register.password,
+      gender: state.register.gender,
+      description: state.register.description,
+      // age: state.register.age,
+    })
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_USER_REGISTER',
+
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

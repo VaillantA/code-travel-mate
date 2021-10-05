@@ -3,7 +3,9 @@ export const initialState = {
   burgerSearch: false,
   categoriesList: [],
   cityInProgress: '',
+  selectedCategoryID: '',
   selectedCategory: '',
+  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -26,7 +28,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'CHANGE_SELECT':
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategoryID: action.category,
       };
     case 'CHANGE_RADIO':
       return {
@@ -37,6 +39,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoriesList: action.categories,
+        image: action.image,
+      };
+    case 'REDIRECT_FALSE':
+      return {
+        ...state,
+        cityInProgress: '',
+        selectedCategoryID: '',
       };
     default:
       return state;

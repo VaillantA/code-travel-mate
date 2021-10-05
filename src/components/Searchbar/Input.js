@@ -7,7 +7,7 @@ const Input = ({ className }) => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    /* console.log('message ok'); */
+
     dispatch({
       type: 'CHANGE_MESSAGE',
       city: event.target.value,

@@ -1,9 +1,6 @@
-import react from 'react';
 import './style.scss';
 import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-
 import SelectBanniere from './SelectBanniere';
 import Input from './Input';
 
@@ -18,21 +15,20 @@ const Searchbar = () => {
     });
   };
   const handleSubmit = () => {
-    console.log('handleSubmit SearchBar OK');
+    dispatch({
+      type: 'SEARCH_SELECTED_EVENTS',
+    });
   };
 
   return (
     <div className="banniere" style={{ backgroundImage: `url(${background_searchbar})` }}>
       <div className="banniere--searchBar">
-
         <Input
           className="searchBar--input"
         />
-
         <SelectBanniere
           choice={categories}
         />
-
         {/* <input type="date" className="searchBar--select"></input> */}
         <button
           type="button"
@@ -49,11 +45,9 @@ const Searchbar = () => {
       >
         Search
       </button>
-
       {searchOpen
       && (
       <div className="searchBar--hidden">
-
         <Input
           className="searchBar--input--hidden"
         />

@@ -22,8 +22,6 @@ const Header = (/* {nickname,
   const age = useSelector((state) => state.profil.age);
   const nationality = useSelector((state) => state.profil.nationality);
   const language = useSelector((state) => state.profil.language);
-  
-  /* console.log(profilList); */
 
   const dispatch = useDispatch();
   const handleClick = () => {

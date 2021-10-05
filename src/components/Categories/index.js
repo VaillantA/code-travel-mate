@@ -9,7 +9,7 @@ const Categories = () => {
 
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
-  console.log(categories);
+
 
   return (
     <main>

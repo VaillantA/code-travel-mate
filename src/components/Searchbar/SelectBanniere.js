@@ -21,9 +21,14 @@ const SelectBanniere = ({ choice }) => {
       value={category}
       onChange={handleSelect}
     >
+      <option
+        value=""
+      >
+        Choisissez une catégorie
+      </option>
       {choice.map((currentChoice) => (
         <option
-          value={currentChoice.name}
+          value={currentChoice.id}
           key={currentChoice.id}
           className="searchBar--option"
         >

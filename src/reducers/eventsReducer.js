@@ -5,7 +5,6 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
-  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {

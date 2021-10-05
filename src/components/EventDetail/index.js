@@ -7,7 +7,6 @@ import Map from 'src/components/Map';
 import landscape from 'src/assets/images/licensed-image.jpeg';
 import avatar from 'src/assets/images/avatar.png';
 
-
 const EventDetail = () => {
   const categories = useSelector((state) => state.searchBar.categoriesList);
 

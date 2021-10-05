@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 
 const SelectEvent = ({ choice }) => {
-  const category = useSelector((state) => state.searchBar.selectedCategory);
+  const category = useSelector((state) => state.eventForm.selectedCategory);
 
   const dispatch = useDispatch();
 
   const handleSelect = (event) => {
     dispatch({
-      type: 'CHANGE_SELECT',
+      type: 'CHANGE_SELECT_EVENT_FORM',
       category: event.target.value,
     });
   };

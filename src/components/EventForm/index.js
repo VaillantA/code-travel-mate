@@ -10,7 +10,14 @@ const EventForm = () => {
   useEffect(() => {
     document.title = 'Registration Form';
   }, []);
-
+  const dispatch = useDispatch();
+  const handleClick = (event) => {
+    console.log('Coucou petite péroquet');
+    event.preventDefault();
+    dispatch({
+      type: 'CREATE_EVENT',
+    });
+  };
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
   return (
@@ -21,17 +28,17 @@ const EventForm = () => {
       <div className="form">
         <div className="input-field">
           <label>Event title</label>
-          <Input 
-          type="text" 
-          className="input"
-          placeholder="Enter a title"
-          aria-label="title"
-          inputKey="eventTitle"
-           />
+          <Input
+            type="text"
+            className="input"
+            placeholder="Enter a title"
+            aria-label="title"
+            inputKey="eventTitle"
+          />
         </div>
         <div className="input-field">
           <label>Description</label>
-          <Textarea 
+          <Textarea
             type="text"
             className="input"
             placeholder="Enter a description"
@@ -41,7 +48,7 @@ const EventForm = () => {
         </div>
         <div className="input-field">
           <label>Resume</label>
-          <Input 
+          <Input
             type="text"
             className="input"
             placeholder="Enter a resume"
@@ -54,7 +61,7 @@ const EventForm = () => {
         />
         <div className="input-field">
           <label>Date</label>
-          <Input 
+          <Input
             type="date"
             className="input"
             placeholder="Date"
@@ -62,7 +69,7 @@ const EventForm = () => {
             inputKey="date"
           />
         </div>
-        <button type="button" className="button">Create an event</button>
+        <button type="button" className="button" onClick={handleClick}>Create an event</button>
       </div>
     </div>
   );

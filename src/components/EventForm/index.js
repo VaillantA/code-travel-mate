@@ -34,7 +34,7 @@ const EventForm = () => {
         />
         <div className="input-field">
           <label>Date</label>
-          <input type="text" className="input" />
+          <input type="date" className="input" />
         </div>
         <button type="button" className="button">Register</button>
       </div>

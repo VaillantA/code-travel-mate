@@ -21,6 +21,7 @@ import Loading from 'src/components/Loading';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
 import Settings from 'src/components/Login';
+import EventForm from 'src/components/EventForm';
 
 // == Composant
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
     <div className="app">
       <NavBar />
       <Settings />
+      <EventForm />
       <Switch>
         <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }

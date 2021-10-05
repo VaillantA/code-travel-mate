@@ -1,0 +1,51 @@
+import './style.scss';
+import { useSelector, useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
+
+const SelectEvent = ({ choice }) => {
+  const category = useSelector((state) => state.searchBar.selectedCategory);
+
+  const dispatch = useDispatch();
+
+  const handleSelect = (event) => {
+    dispatch({
+      type: 'CHANGE_SELECT',
+      category: event.target.value,
+    });
+  };
+
+  return (
+    <div className="input-field">
+      <label>Category</label>
+      <div className="gender-select">
+        <select
+          name="searchBar--category"
+          className=""
+          value={category}
+          onChange={handleSelect}
+        >
+          <option
+            value=""
+          >
+            Choisissez une catégorie
+          </option>
+          {choice.map((currentChoice) => (
+            <option
+              value={currentChoice.option}
+              key={currentChoice.id}
+              className="searchBar--option"
+            >
+              {currentChoice.name}
+            </option>
+          ))}
+        </select>
+      </div>
+    </div>
+  );
+};
+
+SelectEvent.propTypes = {
+  choice: PropTypes.array.isRequired,
+};
+
+export default SelectEvent;

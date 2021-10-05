@@ -4,6 +4,8 @@ export const initialState = {
   categoriesList: [],
   cityInProgress: '',
   selectedCategoryID: '',
+  selectedCategory: '',
+  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -37,6 +39,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         categoriesList: action.categories,
+        image: action.image,
       };
     case 'REDIRECT_FALSE':
       return {

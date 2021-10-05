@@ -57,7 +57,7 @@ const App = () => {
         <Route path="/events">
           <Events />
         </Route>
-        <Route path="/detailsEvent">
+        <Route path="/detailsEvent/:id" exact>
           <EventDetail />
         </Route>
         <Route path="/results">

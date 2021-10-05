@@ -4,6 +4,8 @@ export const initialState = {
   error: false,
   redirection: false,
   loading: true,
+  oneEvent: [],
+  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -13,6 +15,15 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: action.events,
         loading: false,
+      };
+    case 'SAVE_ONE_EVENT':
+      return {
+        ...state,
+        oneEvent: action.oneEvent,
+        authorFirstname: action.authorFirstname,
+        authorLastname: action.authorLastname,
+        eventImage: action.eventImage,
+        eventCity: action.oneEventCity,
       };
     case 'RECEIVE_ERROR':
       return {

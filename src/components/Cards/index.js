@@ -1,15 +1,14 @@
 import Card from 'src/components/Card';
 import { useSelector } from 'react-redux';
 import './style.scss';
-import { StaticRouter } from 'react-router';
 
 function Cards() {
   const like = 193;
   const isLiked = true;
 
   const listEvents = useSelector((state) => state.events.list);
-  /* console.log(listEvents); */
-
+  console.log(listEvents);
+  
   return (
     <div className="slider">
       <div className="cards">
@@ -24,10 +23,11 @@ function Cards() {
           {listEvents.slice(0, 3).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              // image={currentEvent.categories[0].image}
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -43,10 +43,11 @@ function Cards() {
           {listEvents.slice(3, 6).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              // image={currentEvent.categories[0].image}
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -62,10 +63,11 @@ function Cards() {
           {listEvents.slice(6, 7).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              // image={currentEvent.categories[0].image}
+              image={currentEvent.categories[0].image}
               liked={isLiked}
             />
           ))}
@@ -78,13 +80,3 @@ function Cards() {
 
 export default Cards;
 
-
-// {listEvents.slice(0, 3).map((currentEvent) => (
-//   <Card
-//     key={currentEvent.id}
-//     title={currentEvent.title}
-//     resume={currentEvent.resume}
-//     date={currentEvent.startAt}
-//     image={currentEvent.image}
-//     liked={isLiked}
-//   />

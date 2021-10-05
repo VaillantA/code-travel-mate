@@ -42,6 +42,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'FETCH_CITIES') {
+    api.get('/api/v1/city')
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_CITIES',
+          cities: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/event/${action.id}`)
       .then((response) => {

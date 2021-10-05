@@ -4,7 +4,9 @@ export const initialState = {
   description: '',
   resume: '',
   date: '',
-  city: '',
+  selectedCity: '',
+  citiesList: [],
+  selectCityID: '',
 
 };
 
@@ -20,6 +22,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         selectedCategoryID: action.category,
       };
+    case 'CHANGE_SELECT_CITY_FORM':
+      return {
+        ...state,
+        selectedCityID: action.city,
+      };
     case 'SAVE_EVENT_CREATE':
       return {
         ...state,
@@ -28,7 +35,12 @@ const reducer = (state = initialState, action = {}) => {
         description: action.value,
         resume: action.value,
         date: action.value,
-        city: action.value,
+        selectedCity: action.value,
+      };
+    case 'SAVE_CITIES':
+      return {
+        ...state,
+        citiesList: action.cities,
       };
     default:
       return state;

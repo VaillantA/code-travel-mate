@@ -37,6 +37,7 @@ const App = () => {
     });
   }, []);
 
+
   const redirection = useSelector((state) => state.events.redirection);
   const loading = useSelector((state) => state.events.loading);
 

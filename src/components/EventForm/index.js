@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
 import SelectEvent from 'src/components/EventForm/SelectEvent';
+import SelectCity from 'src/components/EventForm/SelectCity';
+
 import Input from './Input';
 import Textarea from './Textarea';
 
@@ -11,6 +13,11 @@ const EventForm = () => {
     document.title = 'Registration Form';
   }, []);
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CITIES',
+    });
+  }, []);
   const handleClick = (event) => {
     event.preventDefault();
     dispatch({
@@ -18,7 +25,7 @@ const EventForm = () => {
     });
   };
   const categories = useSelector((state) => state.searchBar.categoriesList);
-
+  const cities = useSelector((state) => state.eventForm.citiesList);
   return (
     <div className="container">
       <div className="title"> Event Create Form</div>
@@ -33,16 +40,9 @@ const EventForm = () => {
             inputKey="title"
           />
         </div>
-        <div className="input-field">
-          <label>City</label>
-          <Input
-            type="text"
-            className="input"
-            placeholder="Enter a city"
-            aria-label="city"
-            inputKey="city"
-          />
-        </div>
+        <SelectCity
+          cities={cities}
+        />
         <div className="input-field">
           <label>Description</label>
           <Textarea
@@ -82,6 +82,7 @@ const EventForm = () => {
         <button type="button" className="button" onClick={handleClick}>Create an event</button>
       </div>
     </div>
+
   );
 };
 

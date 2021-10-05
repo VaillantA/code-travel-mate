@@ -17,7 +17,7 @@ const Header = (/* {nickname,
   const navList = useSelector((state) => state.profil.profilCardsOpen);
   const favoritesList = useSelector((state) => state.profil.favoritesOpen);
   /* INFO USESELECTOR */
-  const avatar = useSelector((state) => state.profil.image);
+  /* const avatar = useSelector((state) => state.profil.image); */
   const nickname = useSelector((state) => state.profil.nickname);
   const age = useSelector((state) => state.profil.age);
   const nationality = useSelector((state) => state.profil.nationality);
@@ -46,7 +46,7 @@ const Header = (/* {nickname,
       <li>  {nickname} </li>
       <li> {age}</li>
       <li> {nationality}</li>
-      <li> {language}</li>
+      {/* <li> {language}</li> */}
       </ul>
         <div className="description">
           <div className="description-text">

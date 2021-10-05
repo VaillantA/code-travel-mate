@@ -6,7 +6,8 @@ export const initialState = {
     age : "",
     language : "",
     nationality : "",
-    list : [] ,
+    createdEventList : [] ,
+    eventsList : [],
   
 };
 
@@ -31,7 +32,8 @@ console.log(action );
        nickname : action.user.nickname,
        age: action.user.age,
        nationality: action.user.nationality,
-        list : action.user.events,
+       createdEventListlist : action.user.createdEvent,
+       eventsList : action.user.events, 
        
       };
       /* case 'SAVE_CREATEDEVENT':

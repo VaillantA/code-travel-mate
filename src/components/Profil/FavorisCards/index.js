@@ -4,21 +4,21 @@ import Card from 'src/components/Card';
 import './style.scss';
 
 const FavorisCards = () => {
-  const categories = useSelector((state) => (state.searchBar.categoriesList));
-  const listEvents = useSelector((state) => state.events.list);
+  /* const categories = useSelector((state) => (state.searchBar.categoriesList)); */
+  const listEvents = useSelector((state) => state.profil.eventsList);
   return (
     <section className="cards">
-    <div className="cards">
-        {categories.slice(0, 3).map((currentCategory) => (
+     <div className="cards">
+        {/* {categories.slice(0, 3).map((currentCategory) => ( */}
 
           <div className="category">
-            <div className="event">
+            <div className="">
               <a href="#">
-                <h1 className="event-tittle">
+                {/* <h1 className="event-tittle">
                   {currentCategory.name}
-                </h1>
+                </h1> */}
               </a>
-            </div>
+            </div> 
             <div className="card-header">
               {listEvents.slice(0, 3).map((currentEvent) => (
                 <Card
@@ -32,7 +32,7 @@ const FavorisCards = () => {
               ))}
             </div>
           </div>
-        ))}
+        {/* ))} */}
       </div>
     </section>
   )

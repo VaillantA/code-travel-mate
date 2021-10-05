@@ -31,6 +31,7 @@ const SelectEvent = ({ choice }) => {
           </option>
           {choice.map((currentChoice) => (
             <option
+              type="text"
               value={currentChoice.option}
               key={currentChoice.id}
               className="searchBar--option"

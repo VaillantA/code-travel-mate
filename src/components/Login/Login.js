@@ -29,7 +29,6 @@ const Login = () => {
   //   }
   // };
   const handleClick = (event) => {
-    console.log('COucou petite péruche');
     event.preventDefault();
     dispatch({
       type: 'LOGIN',

@@ -27,8 +27,6 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_CATEGORIES') {
     api.get('/api/v1/category')
       .then((response) => {
-        // console.log(response.data);
-        // console.log(response.data.image);
         store.dispatch({
           type: 'SAVE_CATEGORIES',
           categories: response.data,
@@ -47,7 +45,7 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/event/${action.id}`)
       .then((response) => {
-        console.log(response.data);
+        // console.log(response.data);
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
@@ -94,7 +92,6 @@ const ajax = (store) => (next) => (action) => {
     })
       .then((response) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
-        console.log(response);
         // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER',
@@ -128,6 +125,24 @@ const ajax = (store) => (next) => (action) => {
         console.log(error);
         store.dispatch({
           type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
+  else if (action.type === 'CREATE_EVENT') {
+    const state = store.getState();
+    api.post('/api/v1/event/', {
+      title: state.eventForm.title,
+      content: state.eventForm.description,
+      resume: state.eventForm.resume,
+      date: state.eventForm.date,
+      // categories: state.eventForm.selectedCategoryID,
+      city: state.eventForm.city,
+    })
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_EVENT_CREATE',
         });
       })
       .finally(() => {

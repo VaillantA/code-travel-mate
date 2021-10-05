@@ -12,7 +12,6 @@ const EventForm = () => {
   }, []);
   const dispatch = useDispatch();
   const handleClick = (event) => {
-    console.log('Coucou petite péroquet');
     event.preventDefault();
     dispatch({
       type: 'CREATE_EVENT',
@@ -22,9 +21,7 @@ const EventForm = () => {
 
   return (
     <div className="container">
-      <div className="title">
-        Event Create Form
-      </div>
+      <div className="title"> Event Create Form</div>
       <div className="form">
         <div className="input-field">
           <label>Event title</label>
@@ -33,7 +30,17 @@ const EventForm = () => {
             className="input"
             placeholder="Enter a title"
             aria-label="title"
-            inputKey="eventTitle"
+            inputKey="title"
+          />
+        </div>
+        <div className="input-field">
+          <label>City</label>
+          <Input
+            type="text"
+            className="input"
+            placeholder="Enter a city"
+            aria-label="city"
+            inputKey="city"
           />
         </div>
         <div className="input-field">
@@ -59,10 +66,13 @@ const EventForm = () => {
         <SelectEvent
           choice={categories}
         />
+        <SelectEvent
+          choice={categories}
+        />
         <div className="input-field">
           <label>Date</label>
           <Input
-            type="date"
+            type="datetime-local"
             className="input"
             placeholder="Date"
             aria-label="Date"

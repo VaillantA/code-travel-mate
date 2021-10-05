@@ -40,9 +40,9 @@ const App = () => {
   const redirection = useSelector((state) => state.events.redirection);
   const loading = useSelector((state) => state.events.loading);
 
-  if (loading) {
-    return <Loading />;
-  }
+  // if (loading) {
+  //   return <Loading />;
+  // }
 
   return (
     <div className="app">

@@ -4,6 +4,7 @@ export const initialState = {
   description: '',
   resume: '',
   date: '',
+  city: '',
 
 };
 
@@ -18,6 +19,16 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         selectedCategoryID: action.category,
+      };
+    case 'SAVE_EVENT_CREATE':
+      return {
+        ...state,
+        // selectedCategoryID: action.value,
+        title: action.value,
+        description: action.value,
+        resume: action.value,
+        date: action.value,
+        city: action.value,
       };
     default:
       return state;

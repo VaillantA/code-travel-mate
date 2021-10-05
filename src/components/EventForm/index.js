@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import './style.scss';
 import SelectEvent from 'src/components/EventForm/SelectEvent';
+import Input from './Input';
 
 const EventForm = () => {
   useEffect(() => {
@@ -19,7 +20,7 @@ const EventForm = () => {
       <div className="form">
         <div className="input-field">
           <label>Event title</label>
-          <input type="text" className="input" />
+          <Input type="text" className="input" />
         </div>
         <div className="input-field">
           <label>Description</label>
@@ -27,14 +28,14 @@ const EventForm = () => {
         </div>
         <div className="input-field">
           <label>Resume</label>
-          <input type="text" className="input" />
+          <Input type="text" className="input" />
         </div>
         <SelectEvent
           choice={categories}
         />
         <div className="input-field">
           <label>Date</label>
-          <input type="date" className="input" />
+          <Input type="date" className="input" />
         </div>
         <button type="button" className="button">Register</button>
       </div>

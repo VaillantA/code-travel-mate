@@ -18,7 +18,7 @@ const SelectBanniere = ({ choice }) => {
     <select
       name="searchBar--category"
       className="searchBar--select"
-      value={category}
+      // value={category}
       onChange={handleSelect}
     >
       <option

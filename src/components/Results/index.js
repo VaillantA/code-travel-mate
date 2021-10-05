@@ -12,7 +12,7 @@ const Results = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
-      type: 'REDIRECT_FALSE'
+      type: 'REDIRECT_FALSE',
     });
   }, []);
 
@@ -26,6 +26,7 @@ const Results = () => {
         {listEvents.map((currentEvent) => (
           <Card
             key={currentEvent.id}
+            id={currentEvent.id}
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}

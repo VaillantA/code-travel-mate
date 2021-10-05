@@ -28,7 +28,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}
@@ -47,7 +47,7 @@ function Cards() {
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+              /* image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}
@@ -60,13 +60,13 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 9).map((currentEvent) => (
+          {listEvents.slice(6, 7).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
+             /*  image={currentEvent.categories[0].image} */
               liked={isLiked}
             />
           ))}

@@ -1,0 +1,153 @@
+.header-profil{
+  /* border: 10px solid red; */
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2em;
+}
+.infos{
+  margin-top: 1em;
+  font-size: 2em;
+  padding-right:0.5em ;
+  display: flex;
+  justify-content: space-between;
+  width:400px;
+}
+.infos li{
+  border-right: 1px solid rgb(153, 151, 151);
+  height: 30px;
+   vertical-align: middle;
+   display: inline-block; 
+  padding-right: 5px;
+  margin-bottom: 0.5em;
+}
+
+.infos li :last-child{
+  border-right: none;
+}
+ .description-text{
+   font-size: 1.5em;
+  width: 420px;
+   padding:10px ;
+   text-align: center;
+   border: 1px solid rgb(180, 180, 180);
+  margin-bottom: 1em;
+}
+.navList{
+  list-style: none;/* liste des puces */
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ccc;
+  /* pour la navigation mobile */
+  border-bottom: 1px solid #ccc;
+  /* ============================ */
+}
+
+.buttons {
+  width: 420px;
+  &-profil{
+    width: 200px;
+    padding-top:0.5em ;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+    border: none;
+    margin-right: 20px;
+  }
+  &-event{
+    width: 200px;
+    padding-top:0.5em ;
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+    border: none;
+  }
+
+}
+
+.navItem.active .navItem-text{
+  color:black;
+}
+/* GESTION DE LA PETITE BARRE EN HAUT */
+
+.navItem.active .navItem-icon path{
+  fill: black;
+}
+.navItem{
+  color: #cfdae8;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px ;
+  padding-bottom: 20px ;
+  width: 33%;
+  position: relative;
+  &-icon {
+    /* pour le mobile */
+    will-change: 24px;
+    height: 24px;
+    /* ============== */
+}
+  &-text {
+    /* pour le mobile */
+    display: none;
+    /* =============== */
+  font-weight: bold;
+  font-size: 13px;
+  color: #cfdae8;
+  letter-spacing: 1px;
+  }
+ 
+}
+
+.navItem-button{
+  display: flex;
+  align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/* pas de marges pour le dernier élément pour que les icones soir centrées en mobile */
+.navItem:last-child {
+  margin-right: 0;
+}
+  
+@media screen and (min-width:800px){
+  .navItem-text {
+    display: block;}
+  .navItem-icon { 
+    margin-right: 10px;
+    width: 2em;
+    height: 2em;
+}
+  .profil {
+    padding: 20px;
+  }
+
+   .navItem.active ::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: length($list: navItem);
+  background-color: black;
+  top: 0;
+  left: 0;
+  right: 0;
+
+} 
+  .navList{
+    border-bottom: none;
+    padding-bottom: none;
+  }
+  .navItem{
+    margin-right: 50px;
+    width: auto;
+  }
+ 
+}
+
+
+.cards{
+  width: calc(600*3); 
+  /* display: flex;
+  justify-content: space-between; */
+  
+}

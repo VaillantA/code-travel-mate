@@ -8,6 +8,7 @@ import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
 import NotFound from 'src/components/NotFound';
+import Profil from 'src/components/Profil';
 import './style.scss';
 import Cards from 'src/components/Cards';
 import Searchbar from 'src/components/Searchbar';
@@ -17,6 +18,9 @@ import EventDetail from 'src/components/EventDetail';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Home from '../Home';
+import ProfilCards from '../Profil/ProfilCards';
+ 'src/components/';
+
 
 // == Composant
 const App = () => {
@@ -34,19 +38,30 @@ const App = () => {
     });
   }, []);
 
+  
+
+  /* useEffect(() => {
+    dispatch({
+      type: 'FETCH_CREATEDEVENT',
+    });
+  }, []) */
+  
   return (
     <div className="app">
       <NavBar />
       <Switch>
         <Route path="/home">
           <Home />
-        </Route>
+      </Route>
         <Route path="/" exact>
           <Searchbar />
           <Cards />
         </Route>
         <Route path="/categories">
           <Categories />
+        </Route>
+        <Route path="/profil/:id">
+          <Profil />
         </Route>
         <Route path="/events">
           <Events />

@@ -50,7 +50,7 @@ const EventForm = () => {
             className="input"
             placeholder="Enter a description"
             aria-label="Description"
-            textareaKey="description"
+            textareaKey="content"
           />
         </div>
         <div className="input-field">

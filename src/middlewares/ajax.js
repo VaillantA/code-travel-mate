@@ -154,8 +154,8 @@ const ajax = (store) => (next) => (action) => {
       content: state.eventForm.description,
       resume: state.eventForm.resume,
       date: state.eventForm.date,
-      // categories: state.eventForm.selectedCategoryID,
-      city: state.eventForm.city,
+      categories: state.eventForm.selectedCategoryID,
+      city: state.eventForm.selectCityID,
     })
       .then((response) => {
         store.dispatch({

@@ -19,19 +19,19 @@ const SelectCity = ({ cities }) => {
       <div className="gender-select">
         <select
           name="searchBar--category"
-          // className="input"
+          className=""
           value={city}
           onChange={handleSelect}
         >
-          <option
+          {/* <option
             value=""
           >
             Choose a city
-          </option>
+          </option> */}
           {cities.map((currentCity) => (
             <option
               type="text"
-              value={currentCity.option}
+              value={currentCity.name}
               key={currentCity.id}
               className="searchBar--option"
             >

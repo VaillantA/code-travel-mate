@@ -5,6 +5,10 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
+  authorFirstname : "",
+  authorLastname: "",
+  eventImage: "",
+  eventCity: "",
   // eventsImages: [],
 };
 

@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Card from 'src/components/Card';
 import { useSelector } from 'react-redux';
 import './style.scss';
@@ -8,6 +9,7 @@ function Cards() {
 
   const listEvents = useSelector((state) => state.events.list);
 
+  listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)));
   
   return (
     <div className="slider">
@@ -20,7 +22,7 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(0, 3).map((currentEvent) => (
+          {(listEvents.sort((a, b) => b.participant - a.participant)).slice(0, 3).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}
@@ -60,7 +62,7 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 9).map((currentEvent) => (
+          {(listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)))).slice(6, 9).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}
@@ -79,4 +81,3 @@ function Cards() {
 }
 
 export default Cards;
-

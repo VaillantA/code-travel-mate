@@ -24,6 +24,11 @@ const EventDetail = () => {
       category: e.target.value,
     });
   };
+  const handleSubmit = () => {
+    dispatch({
+      type: 'SEARCH_SELECTED_EVENTS',
+    });
+  }
 
   const oneEvent = useSelector((state) => state.events.oneEvent);
   const authorFirstname = useSelector((state) => state.events.authorFirstname);
@@ -65,7 +70,7 @@ const EventDetail = () => {
           <button
             className="detailmenu--submitButton"
             type="button"
-            /* onClick={handleSubmit} */
+            onClick={handleSubmit}
           >
             GO !
           </button>

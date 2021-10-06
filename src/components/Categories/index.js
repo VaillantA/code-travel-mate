@@ -1,11 +1,18 @@
 /* eslint-disable max-len */
 import Card from 'src/components/Card';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './style.scss';
+import { useEffect } from 'react';
 
 const Categories = () => {
   const like = 193;
   const isLiked = true;
+  // const dispatch = useDispatch;
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_CATEGORIES',
+  //   });
+  // }, []);
 
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
@@ -14,7 +21,6 @@ const Categories = () => {
     <main>
       <div className="cards">
         {categories.map((currentCategory) => (
-
           <div className="category">
             <div className="event">
               <a href="#">

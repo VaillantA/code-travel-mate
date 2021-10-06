@@ -22,7 +22,7 @@ const Results = () => {
       <h1 className="results--title">
         Results of your search :
       </h1>
-      <div className="card--parent">
+      <div className="result--card--parent">
         {listEvents.map((currentEvent) => (
           <Card
             key={currentEvent.id}

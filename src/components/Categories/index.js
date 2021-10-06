@@ -7,12 +7,17 @@ import { useEffect } from 'react';
 const Categories = () => {
   const like = 193;
   const isLiked = true;
-  // const dispatch = useDispatch;
-  // useEffect(() => {
-  //   dispatch({
-  //     type: 'FETCH_CATEGORIES',
-  //   });
-  // }, []);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_EVENTS',
+    });
+  }, []);
 
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);

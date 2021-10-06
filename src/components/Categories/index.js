@@ -35,7 +35,7 @@ const Categories = () => {
               </a>
             </div>
             <div className="card--parent">
-              {listEvents.slice(0, 23).filter((event) => event.categories[0].name === (currentCategory.name)).slice(0, 3).map((currentEvent) => (
+              {listEvents.slice(0, 28).filter((event) => event.categories[0].name === (currentCategory.name)).slice(0, 3).map((currentEvent) => (
                 <Card
                   key={currentEvent.id}
                   id={currentEvent.id}

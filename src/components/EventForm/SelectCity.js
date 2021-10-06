@@ -20,14 +20,14 @@ const SelectCity = ({ cities }) => {
         <select
           name="searchBar--category"
           className=""
-          value={city}
+          // value={city}
           onChange={handleSelect}
         >
-          {/* <option
+          <option
             value=""
           >
             Choose a city
-          </option> */}
+          </option>
           {cities.map((currentCity) => (
             <option
               type="text"

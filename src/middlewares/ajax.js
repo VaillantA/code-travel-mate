@@ -45,7 +45,7 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'FETCH_ONE_EVENT') {
-    api.get(`/event/${action.id}`)
+    api.get(`/api/v1/event/${action.id}`)
       .then((response) => {
         store.dispatch({
           type: 'SAVE_ONE_EVENT',

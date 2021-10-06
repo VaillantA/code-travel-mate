@@ -12,7 +12,7 @@ const Results = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
-      type: 'REDIRECT_FALSE'
+      type: 'REDIRECT_FALSE',
     });
   }, []);
 
@@ -22,10 +22,11 @@ const Results = () => {
       <h1 className="results--title">
         Results of your search :
       </h1>
-      <div className="card--parent">
+      <div className="result--card--parent">
         {listEvents.map((currentEvent) => (
           <Card
             key={currentEvent.id}
+            id={currentEvent.id}
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}

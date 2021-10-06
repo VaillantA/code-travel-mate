@@ -63,7 +63,7 @@ const App = () => {
           <Events />
         </Route>
         <Route path="/detailsEvent/:id" exact>
-          <EventDetail />
+          {redirection ? <Redirect to="/results" /> : <EventDetail /> }
         </Route>
         <Route path="/results">
           {/* {loading ? <Loading /> : <Results />} */}

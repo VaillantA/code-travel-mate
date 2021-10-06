@@ -7,10 +7,19 @@
   margin-bottom:0.2em;
   margin-top: 1em;
 }
+.result--card--parent{
+  display: flex;
+  flex-wrap: wrap;
+}
+
 @media screen and (min-width:800px){
   .card--parent {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-   }
- }
+  }
+  .result--card--parent{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

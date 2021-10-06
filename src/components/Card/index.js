@@ -62,7 +62,7 @@ const Card = ({
       </div>
     </div>
   );
-}
+};
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,

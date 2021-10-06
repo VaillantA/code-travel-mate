@@ -54,7 +54,13 @@ const Searchbar = () => {
         <SelectBanniere
           choice={categories}
         />
-        {/*  <input type="date" className="searchBar--select"></input> */}
+        <button
+          type="button"
+          className="searchBar--buttonSubmitGO--hidden"
+          onClick={handleSubmit}
+        >
+          GO !
+        </button>
       </div>
       )}
     </div>

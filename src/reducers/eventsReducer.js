@@ -5,11 +5,6 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
-  authorFirstname : "",
-  authorLastname: "",
-  eventImage: "",
-  eventCity: "",
-  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {

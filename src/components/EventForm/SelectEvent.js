@@ -23,6 +23,7 @@ const SelectEvent = ({ choice }) => {
           className=""
           value={category}
           onChange={handleSelect}
+          // multiple
         >
           <option
             value=""
@@ -32,7 +33,7 @@ const SelectEvent = ({ choice }) => {
           {choice.map((currentChoice) => (
             <option
               type="text"
-              value={currentChoice.option}
+              value={currentChoice.id}
               key={currentChoice.id}
               className="searchBar--option"
             >

@@ -1,12 +1,13 @@
 export const initialState = {
   selectedCategoryID: '',
   title: '',
-  description: '',
+  content: '',
   resume: '',
   date: '',
   selectedCity: '',
   citiesList: [],
   selectCityID: '',
+  // selectedOptionsID: [],
 
 };
 
@@ -32,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         // selectedCategoryID: action.value,
         title: action.value,
-        description: action.value,
+        content: action.value,
         resume: action.value,
         date: action.value,
         selectedCity: action.value,

@@ -35,7 +35,7 @@ const SelectCity = ({ cities }) => {
               key={currentCity.id}
               className="searchBar--option"
             >
-              {currentCity.name}
+              {currentCity.id}
             </option>
           ))}
         </select>

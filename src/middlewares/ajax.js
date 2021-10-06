@@ -151,7 +151,7 @@ const ajax = (store) => (next) => (action) => {
     const state = store.getState();
     api.post('/api/v1/event/', {
       title: state.eventForm.title,
-      content: state.eventForm.description,
+      content: state.eventForm.content,
       resume: state.eventForm.resume,
       date: state.eventForm.date,
       categories: state.eventForm.selectedCategoryID,

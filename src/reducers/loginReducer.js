@@ -5,6 +5,7 @@ export const initialState = {
   email: '',
   password: '',
   pseudo: '',
+  token: '',
 
 };
 
@@ -28,12 +29,14 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         pseudo: action.pseudo,
         loginOpen: false,
+        token: action.token,
       };
     case 'LOGOUT':
       return {
         ...state,
         logged: false,
-        pseudo: 'Utilisateur anonyme',
+        pseudo: '',
+        token: '',
       };
 
     default:

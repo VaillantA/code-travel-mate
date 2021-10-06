@@ -5,13 +5,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Home from 'src/components/Home';
 
-
 import './style.scss';
 
 const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
   const isOpen = useSelector((state) => state.login.loginOpen);
-  const logged = useSelector ((state) => state.login.logged);
+  const logged = useSelector((state) => state.login.logged);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -24,6 +23,7 @@ const NavBar = () => {
       dispatch({
         type: 'LOGOUT',
       });
+      sessionStorage.clear();
     }
     else {
       dispatch({

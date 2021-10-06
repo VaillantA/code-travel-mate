@@ -20,6 +20,7 @@ import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
 import Cards from 'src/components/Cards';
 import Settings from 'src/components/Login';
+import Contact from 'src/components/Contact';
 
 
 // == Composant
@@ -76,6 +77,9 @@ const App = () => {
           <LoginForm />
         </Route>
         {/* <Redirect from="/jquery" to="/autre" /> */}
+        <Route path="/contact">
+          <Contact />
+        </Route>
         <Route>
           <NotFound />
         </Route>

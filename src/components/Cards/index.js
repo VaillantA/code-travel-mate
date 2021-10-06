@@ -37,12 +37,12 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Proches de vous
+              Les prochains événements
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(3, 6).map((currentEvent) => (
+          {(listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)))).slice(6, 9).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}
@@ -57,12 +57,12 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Les prochains événements
+              Proches de vous
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {(listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)))).slice(6, 9).map((currentEvent) => (
+          {listEvents.slice(3, 6).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}

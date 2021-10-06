@@ -65,6 +65,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'FETCH_EVENTS_FROM_CATEGORY') {
+    api.get(`/api/v1/search?search=&category=${action.id}`)
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_EVENTS_FROM_CATEGORY',
+          list: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   else if (action.type === 'SEARCH_SELECTED_EVENTS') {
     const stateCategory = store.getState().searchBar.selectedCategoryID;
     const stateCity = store.getState().searchBar.cityInProgress;

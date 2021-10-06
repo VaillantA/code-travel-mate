@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import Card from 'src/components/Card';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import './style.scss';
 import { useEffect } from 'react';
 
@@ -28,11 +29,11 @@ const Categories = () => {
         {categories.map((currentCategory) => (
           <div className="category">
             <div className="event">
-              <a href="#">
+              <Link to={`/category/${currentCategory.id}`}>
                 <h1 className="event-tittle">
                   {currentCategory.name}
                 </h1>
-              </a>
+              </Link>
             </div>
             <div className="card--parent">
               {listEvents.slice(0, 28).filter((event) => event.categories[0].name === (currentCategory.name)).slice(0, 3).map((currentEvent) => (

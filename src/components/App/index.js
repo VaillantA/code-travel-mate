@@ -22,6 +22,7 @@ import Cards from 'src/components/Cards';
 import Settings from 'src/components/Login';
 import Contact from 'src/components/Contact';
 import Category from '../Category';
+import MentionsLegales from '../MentionsLegales';
 
 
 // == Composant
@@ -83,6 +84,9 @@ const App = () => {
         {/* <Redirect from="/jquery" to="/autre" /> */}
         <Route path="/contact">
           <Contact />
+        </Route>
+        <Route path="/mentions-legales">
+          <MentionsLegales />
         </Route>
         <Route>
           <NotFound />

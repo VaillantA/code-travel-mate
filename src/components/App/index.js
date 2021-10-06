@@ -21,6 +21,7 @@ import Loading from 'src/components/Loading';
 import Cards from 'src/components/Cards';
 import Settings from 'src/components/Login';
 import Contact from 'src/components/Contact';
+import Category from '../Category';
 
 
 // == Composant
@@ -56,6 +57,9 @@ const App = () => {
         </Route>
         <Route path="/categories">
           <Categories />
+        </Route>
+        <Route path="/category/:id">
+          <Category />
         </Route>
         <Route path="/profil/:id">
           <Profil />

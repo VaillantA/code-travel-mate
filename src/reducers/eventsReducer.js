@@ -37,6 +37,13 @@ const reducer = (state = initialState, action = {}) => {
         redirection: true,
         loading: false,
       };
+    case 'SAVE_EVENTS_FROM_CATEGORY':
+      return {
+        ...state,
+        list: action.list,
+        redirection: true,
+        loading: false,
+      };
     case 'REDIRECT_FALSE':
       return {
         ...state,

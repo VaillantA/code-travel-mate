@@ -16,19 +16,27 @@ const EventDetail = () => {
     });
   }, []);
 
-  const categories = useSelector((state) => state.searchBar.categoriesList);
 
+  const categories = useSelector((state) => state.searchBar.categoriesList);
   const handleRadio = (e) => {
     dispatch({
       type: 'CHANGE_RADIO',
-      category: e.target.value,
+      category: e.target.value,  
     });
   };
   const handleSubmit = () => {
     dispatch({
       type: 'SEARCH_SELECTED_EVENTS',
     });
-  }
+  };
+  
+  const Increment = () => {
+    dispatch({
+      type: 'INCREMENT',
+      participant:oneEvent.participant+1,
+    });
+  };
+
 
   const oneEvent = useSelector((state) => state.events.oneEvent);
   const authorFirstname = useSelector((state) => state.events.authorFirstname);
@@ -106,13 +114,13 @@ const EventDetail = () => {
           </div>
           <div className="participation">
             <div className="participation--nbParticipants">
-              <p>Nombre de participants inscrits : {oneEvent.participant}</p>
+              <p>Nombre de participants inscrits : {oneEvent.participant }</p>
             </div>
             <div className="participation--comments">
               <p>Questions et commentaires</p>
             </div>
             <button
-              className="participation--button"
+              className="participation--button" onClick={Increment}
               type="button"
             >
               Participer !

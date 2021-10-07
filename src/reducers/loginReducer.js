@@ -5,7 +5,6 @@ export const initialState = {
   email: '',
   password: '',
   pseudo: '',
-
 };
 
 const reducer = (state = initialState, action = {}) => {

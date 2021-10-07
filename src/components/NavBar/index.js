@@ -59,7 +59,6 @@ const NavBar = () => {
           {logged
             ? <NavLink className="nav-links" to={`/profil/${userId}`}>Profile</NavLink>
             : <NavLink className="nav-links" to="/registration">Sign Up</NavLink>}
-
         </li>
       </ul>
       {/* <Button>Sign Up</Button> */}

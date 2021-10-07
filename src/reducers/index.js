@@ -9,7 +9,7 @@ import registerReducer from './registerFormReducer';
 const rootReducer = combineReducers({
   searchBar: searchBarReducer,
   events: eventsReducer,
-  profil : profilReducer,
+  profil: profilReducer,
   login: loginReducer,
   register: registerReducer,
 });

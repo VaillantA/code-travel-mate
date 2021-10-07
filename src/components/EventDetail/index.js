@@ -2,6 +2,7 @@ import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
+import Comments from 'src/components/EventDetail/Comments';
 import avatar from 'src/assets/images/avatar.png';
 import { useParams } from 'react-router-dom';
 
@@ -119,6 +120,7 @@ const EventDetail = () => {
             </button>
           </div>
         </div>
+        <Comments />
       </div>
     </>
   );

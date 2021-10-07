@@ -5,6 +5,18 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
+  listOfComments: [
+    {
+      id: 1,
+      author: 'Kevin Spencer',
+      message: 'Hi guys, do I have to bring something tonight?',
+    },
+    {
+      id: 2,
+      author: 'Jessica Switch',
+      message: 'Hey Kevin do u have a ball to play on thr beach ?',
+    },
+  ],
 };
 
 const reducer = (state = initialState, action = {}) => {

@@ -37,7 +37,7 @@ const EventDetail = () => {
         type: 'SUBSCRIPTION',
         eventID: id,
         userID: userID,
-        // token: 
+        // token:
       });
     }
     else {
@@ -51,6 +51,7 @@ const EventDetail = () => {
   const eventImage = useSelector((state) => state.events.eventImage);
   const eventCity = useSelector((state) => state.events.eventCity);
   const date = new Date(oneEvent.startAt).toLocaleString();
+  const subscribe = useSelector((state) => state.profil.subscribe);
 
   return (
     <>
@@ -131,7 +132,9 @@ const EventDetail = () => {
               type="button"
               onClick={handleSubscribe}
             >
-              Participer !
+              {subscribe
+                ? 'Annuler'
+                : 'Participer !'}
             </button>
           </div>
         </div>

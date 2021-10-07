@@ -64,12 +64,17 @@
 .card-like {
   width: 80%;
   margin: auto;
+  border: 3px red solid;
 }
 .card-like-icon {
-  height: 40px;
-  width: 30px;
   padding-left: 5px;
   color: #ff914d;
+}
+.card-like-counter {
+  color: #ff914d;
+  padding-left: 5px;
+  padding-top: 0.8em;
+  font-weight: bold;
 }
 .card-text {
   font-size: 1em;

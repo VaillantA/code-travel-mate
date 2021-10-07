@@ -45,7 +45,8 @@ const Card = ({
           <img className="card-image" src={image} alt="Logo" />
         </Link>
         <div className="card-like">
-          <Heart className=" card-like-icon" />
+          <Heart className=" card-like-icon" fill=" #ff914d" />
+          <p className=" card-like-counter" >124</p>
           <MessageCircle className=" card-like-icon" />
         </div>
         <div className="card-text">{resume}</div>

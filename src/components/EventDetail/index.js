@@ -19,6 +19,7 @@ const EventDetail = () => {
   }, []);
 
   const categories = useSelector((state) => state.searchBar.categoriesList);
+  const subscribe = useSelector((state) => state.profil.subscribe);
 
   const handleRadio = (e) => {
     dispatch({
@@ -32,12 +33,18 @@ const EventDetail = () => {
     });
   };
   const handleSubscribe = () => {
-    if (logged === true) {
+    if (logged === true && subscribe === false) {
       dispatch({
         type: 'SUBSCRIPTION',
         eventID: id,
         userID: userID,
-        // token:
+      });
+    }
+    else if (logged === true && subscribe === true) {
+      dispatch({
+        type: 'UNSUBSCRIBE',
+        eventID: id,
+        userID: userID,
       });
     }
     else {
@@ -51,7 +58,6 @@ const EventDetail = () => {
   const eventImage = useSelector((state) => state.events.eventImage);
   const eventCity = useSelector((state) => state.events.eventCity);
   const date = new Date(oneEvent.startAt).toLocaleString();
-  const subscribe = useSelector((state) => state.profil.subscribe);
 
   return (
     <>

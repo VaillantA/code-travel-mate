@@ -186,6 +186,24 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'UNSUBSCRIBE') {
+    api.put(`/api/v1/event/removal/${action.eventID}`, {
+      id: action.userID,
+    })
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_UNSUBSCRIBE',
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

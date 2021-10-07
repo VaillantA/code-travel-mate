@@ -41,6 +41,11 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         subscribe: true,
       };
+    case 'SAVE_UNSUBSCRIBE':
+      return {
+        ...state,
+        subscribe: false,
+      };
 
     default:
       return state;

@@ -115,6 +115,7 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
           pseudo: response.data.data.nickname,
+          id: response.data.data.id,
         });
       })
       .catch((error) => {

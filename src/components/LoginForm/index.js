@@ -75,6 +75,16 @@ const LoginForm = () => {
           />
         </div>
         <div className="input-field">
+          <label>Nationality</label>
+          <Input
+            type="text"
+            className="input"
+            placeholder="Enter your nationality"
+            aria-label="Nationality"
+            inputKey="nationality"
+          />
+        </div>
+        <div className="input-field">
           <label>Email Adress</label>
           <Input
             type="email"

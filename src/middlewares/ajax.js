@@ -136,6 +136,7 @@ const ajax = (store) => (next) => (action) => {
       gender: state.register.gender,
       description: state.register.description,
       age: parseInt(ageToInteger, 10),
+      nationality: state.register.nationality,
     })
       .then((response) => {
         store.dispatch({

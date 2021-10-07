@@ -10,6 +10,7 @@ export const initialState = {
   description: '',
   age: '',
   token: '',
+  nationality: '',
 
 };
 
@@ -33,6 +34,7 @@ const reducer = (state = initialState, action = {}) => {
         gender: action.value,
         description: action.value,
         age: parseInt(action.value, action.value),
+        nationality: action.value,
       };
     case 'CHANGE_SELECTED':
       return {

@@ -171,12 +171,16 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
-  /* else if (action.type === 'FETCH_CREATEDEVENT') {
-    api.get('/api/v1/user/113')
+  else if (action.type === 'SUBSCRIPTION') {
+    const state = store.getState();
+    // console.log(state.login.token);
+    api.put(`/api/v1/event/${action.eventID}/subscription`, {
+      token: state.login.token,
+      userID: action.userID,
+    })
       .then((response) => {
         store.dispatch({
-          type: 'SAVE_CREATEDEVENT',
-          createdEvent: response.data,
+          type: 'SAVE_SUBSCRIPTION',
         });
       })
       .catch((error) => {
@@ -187,7 +191,7 @@ const ajax = (store) => (next) => (action) => {
       })
       .finally(() => {
       });
-  } */
+  }
   next(action);
 };
 

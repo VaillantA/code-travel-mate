@@ -32,7 +32,7 @@ const reducer = (state = initialState, action = {}) => {
         confirmpassword: action.value,
         gender: action.value,
         description: action.value,
-        age: action.value,
+        age: parseInt(action.value, action.value),
       };
     case 'CHANGE_SELECTED':
       return {

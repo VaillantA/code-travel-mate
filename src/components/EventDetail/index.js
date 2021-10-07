@@ -8,6 +8,8 @@ import { useParams } from 'react-router-dom';
 const EventDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const logged = useSelector((state) => state.login.logged);
+  const userID = useSelector((state) => state.login.userID);
 
   useEffect(() => {
     dispatch({
@@ -16,12 +18,12 @@ const EventDetail = () => {
     });
   }, []);
 
-
   const categories = useSelector((state) => state.searchBar.categoriesList);
+
   const handleRadio = (e) => {
     dispatch({
       type: 'CHANGE_RADIO',
-      category: e.target.value,  
+      category: e.target.value,
     });
   };
   const handleSubmit = () => {
@@ -29,14 +31,19 @@ const EventDetail = () => {
       type: 'SEARCH_SELECTED_EVENTS',
     });
   };
-  
-  const Increment = () => {
-    dispatch({
-      type: 'INCREMENT',
-      participant:oneEvent.participant+1,
-    });
+  const handleSubscribe = () => {
+    if (logged === true) {
+      dispatch({
+        type: 'SUBSCRIPTION',
+        eventID: id,
+        userID: userID,
+        // token: 
+      });
+    }
+    else {
+      alert('You must be logged in to register for an event');
+    }
   };
-
 
   const oneEvent = useSelector((state) => state.events.oneEvent);
   const authorFirstname = useSelector((state) => state.events.authorFirstname);
@@ -62,7 +69,7 @@ const EventDetail = () => {
                   <input
                     name="categories"
                     type="radio"
-                    value={currentCategoryRadio.name}
+                    value={currentCategoryRadio.id}
                     id={currentCategoryRadio.id}
                   />
                   <label
@@ -114,14 +121,15 @@ const EventDetail = () => {
           </div>
           <div className="participation">
             <div className="participation--nbParticipants">
-              <p>Nombre de participants inscrits : {oneEvent.participant }</p>
+              <p>Nombre de participants inscrits : {oneEvent.participant}</p>
             </div>
             <div className="participation--comments">
               <p>Questions et commentaires</p>
             </div>
             <button
-              className="participation--button" onClick={Increment}
+              className="participation--button"
               type="button"
+              onClick={handleSubscribe}
             >
               Participer !
             </button>

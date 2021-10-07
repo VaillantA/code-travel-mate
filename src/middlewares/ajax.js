@@ -65,6 +65,23 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'FETCH_EVENTS_FROM_CATEGORY') {
+    api.get(`/api/v1/search?search=&category=${action.id}`)
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_EVENTS_FROM_CATEGORY',
+          list: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   else if (action.type === 'SEARCH_SELECTED_EVENTS') {
     const stateCategory = store.getState().searchBar.selectedCategoryID;
     const stateCity = store.getState().searchBar.cityInProgress;
@@ -98,6 +115,7 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
           pseudo: response.data.data.nickname,
+          id: response.data.data.id,
         });
       })
       .catch((error) => {
@@ -112,6 +130,7 @@ const ajax = (store) => (next) => (action) => {
       lastname: state.register.lastname,
       nickname: state.register.pseudo,
       email: state.register.email,
+      /* age : state .register.parseInt(age), */
       password: state.register.password,
       gender: state.register.gender,
       description: state.register.description,
@@ -120,7 +139,6 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',
-
         });
       })
       .catch((error) => {
@@ -150,12 +168,13 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
-  /* else if (action.type === 'FETCH_CREATEDEVENT') {
-    api.get('/api/v1/user/113')
+  else if (action.type === 'SUBSCRIPTION') {
+    api.post(`/api/v1/event/${action.eventID}/subscription`, {
+      id: action.userID,
+    })
       .then((response) => {
         store.dispatch({
-          type: 'SAVE_CREATEDEVENT',
-          createdEvent: response.data,
+          type: 'SAVE_SUBSCRIPTION',
         });
       })
       .catch((error) => {
@@ -166,7 +185,7 @@ const ajax = (store) => (next) => (action) => {
       })
       .finally(() => {
       });
-  } */
+  }
   next(action);
 };
 

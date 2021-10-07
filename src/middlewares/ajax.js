@@ -169,7 +169,7 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'SUBSCRIPTION') {
-    api.post(`/api/v1/event/${action.eventID}/subscription`, {
+    api.put(`/api/v1/event/subscription/${action.eventID}`, {
       id: action.userID,
     })
       .then((response) => {

@@ -9,7 +9,9 @@ const Footer = () => (
         Contact
       </Link>
       <p>Plan du site</p>
-      <p>Mentions légales</p>
+      <Link to="/mentions-legales">
+        Mentions legales
+      </Link>
     </div>
   </div>
 );

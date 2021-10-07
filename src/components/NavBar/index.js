@@ -11,6 +11,7 @@ const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
   const isOpen = useSelector((state) => state.login.loginOpen);
   const logged = useSelector((state) => state.login.logged);
+  const userId = useSelector((state) => state.login.userId);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -56,7 +57,10 @@ const NavBar = () => {
           <Link className="nav-links" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
-          <NavLink className="nav-links" to="/registration">Sign Up</NavLink>
+          {logged
+            ? <NavLink className="nav-links" to={`/profil/${userId}`}>Profile</NavLink>
+            : <NavLink className="nav-links" to="/registration">Sign Up</NavLink>}
+
         </li>
       </ul>
       {/* <Button>Sign Up</Button> */}

@@ -33,7 +33,7 @@ const reducer = (state = initialState, action = {}) => {
     case 'CHANGE_RADIO':
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategoryID: action.category,
       };
     case 'SAVE_CATEGORIES':
       return {

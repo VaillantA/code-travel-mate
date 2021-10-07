@@ -30,6 +30,7 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: action.pseudo,
         loginOpen: false,
         token: action.token,
+        userId: action.id,
       };
     case 'LOGOUT':
       return {

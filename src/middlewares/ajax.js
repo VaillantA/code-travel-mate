@@ -116,6 +116,7 @@ const ajax = (store) => (next) => (action) => {
           type: 'SAVE_USER_LOGIN',
           pseudo: response.data.data.nickname,
           token: response.data.token,
+          id: response.data.data.id,
         });
       })
       .catch((error) => {
@@ -133,7 +134,7 @@ const ajax = (store) => (next) => (action) => {
       password: state.register.password,
       gender: state.register.gender,
       description: state.register.description,
-      // age: state.register.age,
+      // age: state.register.age.toString(),
     })
       .then((response) => {
         store.dispatch({

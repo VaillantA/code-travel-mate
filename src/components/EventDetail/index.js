@@ -54,7 +54,7 @@ const EventDetail = () => {
                   <input
                     name="categories"
                     type="radio"
-                    value={currentCategoryRadio.name}
+                    value={currentCategoryRadio.id}
                     id={currentCategoryRadio.id}
                   />
                   <label

@@ -51,10 +51,11 @@ const LoginForm = () => {
             inputKey="lastname"
           />
         </div>
-        {/* <div className="input-field">
+        <div className="input-field">
           <label>Age</label>
           <Input
-            type="text"
+            type="number"
+            step="1"
             min="0"
             max="100"
             className="input"
@@ -62,7 +63,7 @@ const LoginForm = () => {
             aria-label="age"
             inputKey="age"
           />
-        </div> */}
+        </div>
         <div className="input-field">
           <label>Pseudo</label>
           <Input

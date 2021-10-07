@@ -37,6 +37,7 @@ const EventDetail = () => {
         type: 'SUBSCRIPTION',
         eventID: id,
         userID: userID,
+        // token: 
       });
     }
     else {
@@ -102,7 +103,7 @@ const EventDetail = () => {
             </div>
           </div>
           <div className="eventDescription">
-            <img className="eventDescription--picture" src={eventImage} />
+            <img className="eventDescription--picture" src={eventImage} alt />
             <div className="eventDescription--text">
               <p>{oneEvent.content}</p>
             </div>

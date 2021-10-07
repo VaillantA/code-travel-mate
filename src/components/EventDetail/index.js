@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
 import avatar from 'src/assets/images/avatar.png';
 import { useParams } from 'react-router-dom';
+import Map from 'src/components/Map';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -94,7 +95,7 @@ const EventDetail = () => {
             </div>
             <div className="eventDescription--informations">
               <div className="eventDescription--informations--map">
-                //todo map
+                <Map />
               </div>
               <div className="eventDescription--informations--date">
                 <p>Début de l'événement : {date}</p>

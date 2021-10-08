@@ -19,12 +19,12 @@ const Category = () => {
       type: 'REDIRECT_FALSE',
     });
   }, []);
-  // const currentCat = useSelector((state) => (state.))
+  
   const listEvents = useSelector((state) => (state.events.list));
   // console.log(listEvents);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
   return (
-    <div>
+    <div className="category">
       <h1 className="category--title">
         {currentCategoryName}
       </h1>

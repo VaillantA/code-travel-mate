@@ -14,3 +14,22 @@
     }
   }
 }
+
+.notfound {
+  margin-top: 50px;
+}
+.images {
+  display: flex;
+}
+.image {
+    animation: rotation 2s infinite linear;
+    max-height:200px;
+}
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

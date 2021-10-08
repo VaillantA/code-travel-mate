@@ -41,6 +41,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
+        redirection: true,
+        loading: false,
       };
     case 'REDIRECT_FALSE':
       return {

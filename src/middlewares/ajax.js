@@ -68,9 +68,11 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_EVENTS_FROM_CATEGORY') {
     api.get(`/api/v1/search?search=&category=${action.id}`)
       .then((response) => {
+        console.log(response.data);
         store.dispatch({
           type: 'SAVE_EVENTS_FROM_CATEGORY',
           list: response.data,
+          // image: response.data.categories[0].image,
         });
       })
       .catch((error) => {
@@ -85,7 +87,7 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'SEARCH_SELECTED_EVENTS') {
     const stateCategory = store.getState().searchBar.selectedCategoryID;
     const stateCity = store.getState().searchBar.cityInProgress;
-    api.get(`api/v1/search?search=${stateCity}&category=${stateCategory}`)
+    api.get(`/api/v1/search?search=${stateCity}&category=${stateCategory}`)
       .then((response) => {
         store.dispatch({
           type: 'SAVE_SELECTED_EVENTS',

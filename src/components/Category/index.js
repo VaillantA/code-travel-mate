@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
 import { useParams } from 'react-router-dom';
-import Card from 'src/components/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import './style.scss';
 import { useEffect } from 'react';
+import Card from 'src/components/Card';
+import './style.scss';
 
 const Category = () => {
   const { id } = useParams();
@@ -19,13 +19,15 @@ const Category = () => {
       type: 'REDIRECT_FALSE',
     });
   }, []);
+  // const currentCat = useSelector((state) => (state.))
   const listEvents = useSelector((state) => (state.events.list));
+  // console.log(listEvents);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
   return (
-    <>
-    <h1 className="category--title">
-      {currentCategoryName}
-    </h1>
+    <div>
+      <h1 className="category--title">
+        {currentCategoryName}
+      </h1>
       <div className="result--card--parent">
         {listEvents.map((currentEvent) => (
           <Card
@@ -34,14 +36,12 @@ const Category = () => {
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}
-            image={currentEvent.categories[0].image}
-            /* liked={isLiked} */
+            // image={currentEvent.categories[0].image}
           />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
 export default Category;
-

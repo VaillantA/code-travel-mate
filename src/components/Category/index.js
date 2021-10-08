@@ -36,7 +36,7 @@ const Category = () => {
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}
-            // image={currentEvent.categories[0].image}
+            image={currentEvent.categories.length ? currentEvent.categories[0].image : ''}
           />
         ))}
       </div>

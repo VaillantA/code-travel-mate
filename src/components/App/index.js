@@ -39,7 +39,7 @@ const App = () => {
     });
   }, []);
   const data = JSON.parse(sessionStorage.getItem('key'));
-  console.log(data);
+  // console.log(data);
   if (data) {
     dispatch({
       type: 'SAVE_USER_LOGIN',
@@ -70,7 +70,7 @@ const App = () => {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/category/:id">
+        <Route path="/category/:id" exact>
           <Category />
         </Route>
         <Route path="/profil/:id">

@@ -70,7 +70,7 @@ const App = () => {
         <Route path="/categories">
           <Categories />
         </Route>
-        <Route path="/category/:id">
+        <Route path="/category/:id" exact>
           <Category />
         </Route>
         <Route path="/profil/:id">

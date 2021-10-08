@@ -22,6 +22,7 @@ const Category = () => {
   
   const listEvents = useSelector((state) => (state.events.list));
   // console.log(listEvents);
+  console.log(listEvents[0].categories[0].image);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
   return (
     <div className="category">
@@ -36,7 +37,7 @@ const Category = () => {
             title={currentEvent.title}
             resume={currentEvent.resume}
             date={currentEvent.startAt}
-            // image={currentEvent.categories[0].image}
+            image={currentEvent.categories.length ? currentEvent.categories[0].image : '' }
           />
         ))}
       </div>

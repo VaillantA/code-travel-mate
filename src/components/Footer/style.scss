@@ -9,3 +9,13 @@
   justify-content: space-around;
 }
 
+@media screen and (max-width:500px){
+.footer{
+  flex-direction: column;
+  text-align: center;
+}
+.footerItem{
+    margin-bottom: 1em;
+  }
+}
+

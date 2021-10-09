@@ -58,44 +58,56 @@ const EventDetail = () => {
   const eventImage = useSelector((state) => state.events.eventImage);
   const eventCity = useSelector((state) => state.events.eventCity);
   const date = new Date(oneEvent.startAt).toLocaleString();
+  const isClicked = useSelector((state) => state.searchBar.searchbarBurgerOpen);
+
+  const handleClick = () => {
+    dispatch({
+      type: 'SEARCHBAR_BURGEN_OPEN',
+    });
+  };
 
   return (
     <>
       <div className="detail">
-        <div className="detail--menu">
+        <div className="detail--menu--head">
           <h2 className="menu--title">
             Find your event
           </h2>
-          <Input
-            className="menu--input"
-          />
-          <div className="menu--radio">
-            {categories.map((currentCategoryRadio) => (
-              <div className="radio--choice" key={currentCategoryRadio.id}>
-                <div onClick={handleRadio}>
-                  <input
-                    name="categories"
-                    type="radio"
-                    value={currentCategoryRadio.id}
-                    id={currentCategoryRadio.id}
-                  />
-                  <label
-                    htmlFor={currentCategoryRadio.id}
-                    className="menu--label"
-                  >
-                    {currentCategoryRadio.name}
-                  </label>
-                </div>
-              </div>
-            ))}
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={isClicked ? 'fas fa-times' : 'fas fa-search'} />
           </div>
-          <button
-            className="detailmenu--submitButton"
-            type="button"
-            onClick={handleSubmit}
-          >
-            GO !
-          </button>
+          <div className={isClicked ? 'detail--menu active' : 'detail--menu'}>
+            <Input
+              className="menu--input"
+            />
+            <div className="menu--radio">
+              {categories.map((currentCategoryRadio) => (
+                <div className="radio--choice" key={currentCategoryRadio.id}>
+                  <div onClick={handleRadio}>
+                    <input
+                      name="categories"
+                      type="radio"
+                      value={currentCategoryRadio.id}
+                      id={currentCategoryRadio.id}
+                    />
+                    <label
+                      htmlFor={currentCategoryRadio.id}
+                      className="menu--label"
+                    >
+                      {currentCategoryRadio.name}
+                    </label>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <button
+              className="detailmenu--submitButton"
+              type="button"
+              onClick={handleSubmit}
+            >
+              GO !
+            </button>
+          </div>
         </div>
         <div className="detail--event">
           <div className="event--titleAndAuthor">
@@ -115,24 +127,13 @@ const EventDetail = () => {
               <p>{oneEvent.content}</p>
             </div>
             <div className="eventDescription--informations">
-              <div className="eventDescription--informations--map">
-                //todo map
-              </div>
-              <div className="eventDescription--informations--date">
-                <p>Début de l'événement : {date}</p>
-              </div>
-              <div className="eventDescription--informations--address">
-                <p>Lieu de l'événement : {eventCity}</p>
-              </div>
+              <p className="eventDescription--informations--title">Informations complémentaires</p>
+              <p className="eventDescription--informations--date">Début de l'événement : <span>{date}</span></p>
+              <p className="eventDescription--informations--address">Lieu de l'événement : <span>{eventCity}</span></p>
+              <p className="eventDescription--informations--participant">Nombre de participants : <span>{oneEvent.participant}</span></p>
             </div>
           </div>
           <div className="participation">
-            <div className="participation--nbParticipants">
-              <p>Nombre de participants inscrits : {oneEvent.participant}</p>
-            </div>
-            <div className="participation--comments">
-              <p>Questions et commentaires</p>
-            </div>
             <button
               className="participation--button"
               type="button"

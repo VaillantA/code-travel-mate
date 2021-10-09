@@ -73,10 +73,10 @@ const EventDetail = () => {
           <h2 className="menu--title">
             Find your event
           </h2>
-          <div className="menu-icon" onClick={handleClick}>
+          <div className="detail--menu-icon" onClick={handleClick}>
             <i className={isClicked ? 'fas fa-times' : 'fas fa-search'} />
           </div>
-          <div className={isClicked ? 'detail--menu active' : 'detail--menu'}>
+          <div className={isClicked ? 'detail--menu actif' : 'detail--menu'}>
             <Input
               className="menu--input"
             />
@@ -122,7 +122,7 @@ const EventDetail = () => {
             </div>
           </div>
           <div className="eventDescription">
-            <img className="eventDescription--picture" src={eventImage} alt />
+            <img className="eventDescription--picture" src={eventImage} />
             <div className="eventDescription--text">
               <p>{oneEvent.content}</p>
             </div>

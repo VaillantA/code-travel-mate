@@ -1,17 +1,26 @@
+@use 'src/styles/vars';
+
 .detail{
   display: flex;
+  min-height: 80vh;
+  background-color: #f1faee;
 }
-.menu-icon {
+.detail--menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.detail--menu-icon {
   display: none;
 }
-.detail--menu{
+.detail--menu--head{
   width: 20%;
-  background-color: rgb(247, 199, 136);
+  background-color: vars.$primary-color;
   padding: 1em;
 }
 .menu--title{
   margin-bottom: 1em;
-  padding-top: 0.6em;
+  // padding-top: 0.6em;
   font-weight: bold;
 }
 .detail--event{
@@ -20,7 +29,7 @@
 .menu--input{
   border-radius: 5px;
   border: none;
-  width: 80%;
+  // width: 80%;
   height: 3em;
   margin-bottom: 1em;
   padding-left: 0.5em;
@@ -29,8 +38,9 @@
   margin-left: 0.3em;
 }
 .menu--radio{
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  width: 100%;;
 }
 .radio--choice{
   margin-bottom: 0.5em;
@@ -39,11 +49,12 @@
   border-radius: 5px;
   border: none;
   width: 5em;
-  height: 3em;
-  background-color: #ff5757;
+  height: 1.5em;
+  background-color: vars.$dark-color;
+  margin: 1em;
 }
 .detailmenu--submitbutton:hover {
-  border: solid, 2px, rgb(139, 5, 17);
+  border: solid, 2px, vars.$alt-color;
 }
 .event--titleAndAuthor{
   margin: 2em;
@@ -56,7 +67,7 @@
   font-size: 1.5em;
 }
 .event--avatar{
-  width: 10%;
+  width: 5em;
 }
 .event--author{
   width: 25%;
@@ -71,7 +82,7 @@
     margin: 1em
   }
   &--text{
-    background-color: rgb(247, 199, 136) ;
+    background-color: vars.$primary-color;
     border-radius: 2%;
     padding: 1em;
     width: 30%;
@@ -79,7 +90,7 @@
     margin: 1em;
   }
   &--informations{
-    background-color: rgb(247, 199, 136) ;
+    background-color: vars.$primary-color;
     border-radius: 2%;
     width: 30%;
     margin: 1em;
@@ -121,7 +132,7 @@
   border: none;
   width: 8em;
   height: 3em;
-  background-color: #ff5757;
+  background-color: vars.$dark-color;
   }
 }
 @media screen and (max-width:800px){
@@ -132,6 +143,9 @@
   .detail--event{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
+    margin-top: 80px;
+    justify-content: center;
   }
   .event--titleAndAuthor{
     width: 100%;
@@ -166,13 +180,13 @@
     min-width: 100%;
     position: absolute;
     top: 80px;
-    background-color: rgb(247, 199, 136);
+    background-color: vars.$primary-color;
     opacity: 1;
   }
-  .menu-icon {
+  .detail--menu-icon {
     display: block;
     position: absolute;
-    top:0;
+    top: 8px;
     right: 0;
     transform: translate(-100%, 60%);
     font-size: 1.8rem;
@@ -180,30 +194,34 @@
   }
   .detail--menu{
     width: 100%;
-    // height: 100%;
+    height: 80vh;
     min-width: 100%;
     position: absolute;
     top: 80px;
     left: -100%;
     opacity: 1;
-    background-color: rgb(247, 199, 136);
+    background-color: vars.$primary-color;
     transition: all 0.5s ease;
+    padding: 1em;
   }
-  .detail--menu.active{
-    background-color: rgb(247, 199, 136);
+  .detail--menu.actif{
+    background-color: vars.$primary-color;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+    text-align: center;
   }
   .menu--title{
-    font-size: 2em;
+    font-size: 1.5em;
+    margin: 0;
   }
   .menu--input{
     margin: auto, 1em, auto, 1em;
   }
   .menu--radio{
     padding-left: 2em;
+    text-align: left;
   }
   .radio--choice{
     margin-bottom: 2em;
@@ -220,4 +238,11 @@
     font-size: 1.5em;
   }
 
+}
+
+@media screen and (min-width:1200px){
+.detail{
+  max-width: 80%;
+  margin: auto;
+}
 }

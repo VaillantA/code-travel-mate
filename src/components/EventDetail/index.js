@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
 import avatar from 'src/assets/images/avatar.png';
 import { useParams } from 'react-router-dom';
+import panorama from 'src/assets/Image/panorama.jpg';
 
 const EventDetail = () => {
   const { id } = useParams();
@@ -112,7 +113,7 @@ const EventDetail = () => {
           </div>
         </div>
         <div className="detail--event">
-          <div className="event--titleAndAuthor">
+          <div className="event--titleAndAuthor" style={{ backgroundImage: `url(${panorama})` }}>
             <h2 className="event--title">
               {oneEvent.title}
             </h2>
@@ -123,6 +124,7 @@ const EventDetail = () => {
               <p>Author: <span>{authorFirstname} {authorLastname}, {authorAge}</span></p>
             </div>
           </div>
+          <hr />
           <div className="eventDescription">
             <img className="eventDescription--picture" src={eventImage} />
             <div className="eventDescription--text">
@@ -147,13 +149,13 @@ const EventDetail = () => {
                 : 'Participer !'}
             </button>
           </div>
-          {subscribe && (
+          {/* {subscribe && ( */}
           <div className="participation--message">
             <p>
               You are registered for this event ! See you soon
             </p>
           </div>
-          )}
+          {/* )} */}
         </div>
       </div>
     </>

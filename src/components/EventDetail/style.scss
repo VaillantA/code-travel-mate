@@ -4,18 +4,20 @@
   display: flex;
   min-height: 80vh;
   background-color: #f1faee;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.39);
 }
 .detail--menu {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  line-height: 2;
 }
 .detail--menu-icon {
   display: none;
 }
 .detail--menu--head{
   width: 20%;
-  background-color: vars.$primary-color;
+  background-color: vars.$light-color;
   padding: 1em;
 }
 .menu--title{
@@ -46,56 +48,78 @@
   margin-bottom: 0.5em;
 }
 .detailmenu--submitButton{
-  border-radius: 5px;
-  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 8px;
+  // border: 2px solid #7a5796;
+  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+
   width: 5em;
-  height: 1.5em;
+  height: 1.8em;
   background-color: vars.$dark-color;
   margin: 1em;
 }
-.detailmenu--submitbutton:hover {
-  border: solid, 2px, vars.$alt-color;
-}
+// .detailmenu--submitbutton:hover {
+//   border: solid, 2px, vars.$alt-color;
+// }
 .event--titleAndAuthor{
   margin: 2em;
   display: flex;
+  align-items: center;
   height: 4em;
+  line-height: 2;
 }
 .event--title{
   width: 70%;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
 }
 .event--avatar{
   width: 5em;
 }
 .event--author{
   width: 25%;
+  & span{
+    font-weight: bold;
+  }
 }
 .eventDescription{
   margin: 2em;
   display: flex;
+  line-height: 1.5;
 
   &--picture{
-    padding: 1em;
+    // padding: 1em;
+    border-radius: 5px;
     width: 30%;
-    margin: 1em
+    margin: 1em;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.63);
+    object-fit: cover;
+
   }
   &--text{
-    background-color: vars.$primary-color;
+    background-color: vars.$light-color;
     border-radius: 2%;
     padding: 1em;
     width: 30%;
     text-align: justify;
     margin: 1em;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+
+    &--title{
+      margin: 1em;
+      font-weight: bold;
+      font-style: italic;
+    }
   }
   &--informations{
-    background-color: vars.$primary-color;
+    background-color: vars.$light-color;
     border-radius: 2%;
     width: 30%;
     margin: 1em;
     display: flex;
     flex-direction: column;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
 
     &--title{
       margin: 1em;
@@ -126,15 +150,21 @@
 .participation{
   display: flex;
   justify-content: center;
- 
+  margin-top: 1em;
+
   &--button{
-  border-radius: 5px;
-  border: none;
-  width: 8em;
-  height: 3em;
-  background-color: vars.$dark-color;
-  }
+    color: white;
+    font-weight: bold;
+    box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+
+    border-radius: 8px;
+    border: none;
+    width: 8em;
+    height: 3em;
+    background-color: vars.$dark-color;
+    }
 }
+
 @media screen and (max-width:800px){
   .event--titleAndAuthor{
     margin: 2em;
@@ -180,7 +210,7 @@
     min-width: 100%;
     position: absolute;
     top: 80px;
-    background-color: vars.$primary-color;
+    background-color: vars.$light-color;
     opacity: 1;
   }
   .detail--menu-icon {
@@ -200,12 +230,12 @@
     top: 80px;
     left: -100%;
     opacity: 1;
-    background-color: vars.$primary-color;
+    background-color: vars.$light-color;
     transition: all 0.5s ease;
     padding: 1em;
   }
   .detail--menu.actif{
-    background-color: vars.$primary-color;
+    background-color: vars.$light-color;
     left: 0;
     opacity: 1;
     transition: all 0.5s ease;

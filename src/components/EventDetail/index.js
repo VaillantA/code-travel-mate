@@ -55,6 +55,7 @@ const EventDetail = () => {
   const oneEvent = useSelector((state) => state.events.oneEvent);
   const authorFirstname = useSelector((state) => state.events.authorFirstname);
   const authorLastname = useSelector((state) => state.events.authorLastname);
+  const authorAge = useSelector((state) => state.events.authorAge);
   const eventImage = useSelector((state) => state.events.eventImage);
   const eventCity = useSelector((state) => state.events.eventCity);
   const date = new Date(oneEvent.startAt).toLocaleString();
@@ -118,12 +119,13 @@ const EventDetail = () => {
               <img className="avatar" src={avatar} />
             </div>
             <div className="event--author">
-              <p>Author: {authorFirstname} {authorLastname}</p>
+              <p>Author: <span>{authorFirstname} {authorLastname}, {authorAge}</span></p>
             </div>
           </div>
           <div className="eventDescription">
             <img className="eventDescription--picture" src={eventImage} />
             <div className="eventDescription--text">
+              <p className="eventDescription--text--title">What's going to happen ?</p>
               <p>{oneEvent.content}</p>
             </div>
             <div className="eventDescription--informations">

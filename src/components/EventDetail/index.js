@@ -149,13 +149,13 @@ const EventDetail = () => {
                 : 'Participer !'}
             </button>
           </div>
-          {/* {subscribe && ( */}
+          {subscribe && (
           <div className="participation--message">
             <p>
               You are registered for this event ! See you soon
             </p>
           </div>
-          {/* )} */}
+          )}
         </div>
       </div>
     </>

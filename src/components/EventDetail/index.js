@@ -46,6 +46,7 @@ const EventDetail = () => {
         eventID: id,
         userID: userID,
       });
+      alert('You are no longer registered for this event');
     }
     else {
       alert('You must be logged in to register for an event');
@@ -146,6 +147,13 @@ const EventDetail = () => {
                 : 'Participer !'}
             </button>
           </div>
+          {subscribe && (
+          <div className="participation--message">
+            <p>
+              You are registered for this event ! See you soon
+            </p>
+          </div>
+          )}
         </div>
       </div>
     </>

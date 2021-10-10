@@ -163,6 +163,22 @@
     height: 3em;
     background-color: vars.$dark-color;
     }
+  
+  &--message{
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5em;
+    & p{
+      width: 10em;
+      padding: 0.8em;
+      color: brown;
+      font-weight: bold;
+      font-style: italic;
+      background-color: burlywood;
+      border-radius: 5px;
+      box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+    }
+  }
 }
 
 @media screen and (max-width:800px){

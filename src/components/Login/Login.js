@@ -60,7 +60,7 @@ const Login = () => {
             inputKey="password"
           />
         </div>
-        <button type="button" className="button" onClick={handleClick}>Log In</button>
+        <button type="submit" className="button" onClick={handleClick}>Log In</button>
       </form>
     </div>
   );

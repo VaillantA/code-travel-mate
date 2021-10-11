@@ -1,8 +1,11 @@
-.contactPage--text{
-  font-size: 3em;
-  text-align: center;
-  margin: 1em;
-  font-weight: bold;
+.contactPage{
+  height: 70vh;
+  &--text{
+    font-size: 3em;
+    text-align: center;
+    margin: 1em;
+    font-weight: bold;
+  }
 }
 .contactForm{
   width: 60%;
@@ -14,15 +17,31 @@
   align-items: center;
   &--nameInput{
     height: 3em;
+    padding-left: 1em;
+    border-radius: 5px;
   }
   &--nameInput, &--messageInput{
     width: 60%;
     margin-top: 3em;
+    padding-left: 1em;
+    border-radius: 5px;
   }
   &--button{
     margin: 2em;
     height: 3em;
     width: 6em;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width:800px){
+  .contactPage--text{
+    font-size: 2em;
+  }
+  .contactForm{
+  width: 80%;
+  &--nameInput, &--messageInput{
+    width: 80%;
+  }
   }
 }
 

@@ -5,6 +5,7 @@
   padding-right: 1em;
 	border-radius: 15px;
   background-color: white;
+  padding-top: 1em;
 }
 .card:last-child{
   margin-right: 0;
@@ -16,8 +17,7 @@
   flex-wrap: nowrap;
   display: flex;
   flex-direction: row;
-  align-items: center;
-   /* border: 2px red solid;  */
+  align-items: center; 
 }
 .profile {
   width: 2.9rem;
@@ -36,11 +36,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  vertical-align: middle;  
+  vertical-align: middle; 
 }
 .card-title {
   flex: 0.5;
-font-size: medium;
+font-size: 1.3em;
+font-weight: lighter;
 margin-bottom: 0;
 margin-top: 0;
 } 
@@ -57,13 +58,13 @@ margin-bottom: 20px;
 margin-top: 20px;
 width: 90%;
 margin: auto;
-margin-top: 10px;
+margin-top: 1em;
 }
 .card-like {
   width: 90%;
   margin: auto;
-  
-  /* border: 3px red solid; */
+  display: flex;
+  justify-content: flex-end;
 }
 .card-like-icon {
   height: 40px;
@@ -82,7 +83,7 @@ color :#92908d;
   text-align: left;
   // white-space: normal;
   line-height: 1.4;
-  margin-bottom: 1em;
+ /*  margin-bottom: em; */
   width: 90%;
   margin: auto;
 }
@@ -93,7 +94,6 @@ color :#92908d;
   color: black;
   font-weight: bold;
   text-align: center;
-  margin-bottom:0.2em;
   margin-top: 1em;
   
 } 
@@ -117,12 +117,13 @@ color :#92908d;
     padding-bottom: 0.5em;
   }
   .event{
-    font-size: 1em;
+    font-size: 1.2em;
     padding-top: 3em;
     padding-bottom: 0.2em;
-    border-bottom: solid 1px rgb(172, 171, 171);
+    border-bottom: groove 2px rgb(172, 171, 171);
     width: 80%;
     margin: auto;
+    margin-bottom:1em;
   }
 
   .card-header {
@@ -143,19 +144,23 @@ color :#92908d;
     max-width: 80%;
     border-radius: 40px;
   }
-  .buttons-ripples {background-image: linear-gradient(to right, #AA076B 0%, #61045F  51%, #AA076B  100%)}
+  .buttons-ripples {background-image: linear-gradient(to right, #AA076B 0%, #2A0944  51%, #AA076B  100%)}
   .buttons-ripples {
     border: none;
-     margin: 10px;
-     padding: 15px 45px;
-     text-align: center;
-     text-transform: uppercase;
-     transition: 0.5s;
-     background-size: 200% auto;
-     color: white;            
-     box-shadow: 0 0 20px #eee;
-     border-radius: 10px;
-     display: block;
+     margin-bottom: 10px; 
+     margin-top: 10px; 
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 8px;
+    display: block;
    }
    .buttons-ripples:hover {
      background-position: right center; /* change the direction of the change here */

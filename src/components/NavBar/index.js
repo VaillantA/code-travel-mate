@@ -54,7 +54,7 @@ const NavBar = () => {
           <NavLink className="nav-links" to="/about-us">About Us</NavLink>
         </li>
         <li>
-          <Link className="nav-links" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
+          <Link className="nav-links" to="/home" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
           {logged

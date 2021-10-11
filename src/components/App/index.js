@@ -21,7 +21,8 @@ import Loading from 'src/components/Loading';
 import Cards from 'src/components/Cards';
 import Contact from 'src/components/Contact';
 import MentionsLegales from 'src/components/MentionsLegales';
-// import Settings from 'src/components/Login';
+// import Login from 'src/components/Login/Login';
+import Settings from 'src/components/Login';
 import EventForm from 'src/components/EventForm';
 import AboutUs from 'src/components/AboutUs';
 
@@ -59,7 +60,7 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
-      {/* <Settings /> */}
+      <Settings />
       {/* <EventForm /> */}
       <Switch>
         <Route path="/home">

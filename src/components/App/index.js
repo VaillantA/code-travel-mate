@@ -64,8 +64,11 @@ const App = () => {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/home">
+        <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
+        </Route>
+        <Route path="/results">
+          <Results />
         </Route>
         <Route path="/categories">
           <Categories />
@@ -84,10 +87,6 @@ const App = () => {
         </Route>
         <Route path="/detailsEvent/:id" exact>
           {redirection ? <Redirect to="/results" /> : <EventDetail /> }
-        </Route>
-        <Route path="/results">
-          {/* {loading ? <Loading /> : <Results />} */}
-          <Results />
         </Route>
         <Route path="/Login">
           <Login />

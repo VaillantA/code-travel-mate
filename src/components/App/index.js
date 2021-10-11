@@ -11,7 +11,8 @@ import Results from 'src/components/Results';
 import Categories from 'src/components/Categories';
 import Events from 'src/components/Events';
 import LoginForm from 'src/components/LoginForm';
-import Login from 'src/components/Login';
+import Login from 'src/components/Login/Login';
+import Settings from 'src/components/Login';
 import NotFound from 'src/components/NotFound';
 import Profil from 'src/components/Profil';
 import Category from 'src/components/Category';
@@ -59,7 +60,7 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
-      {/* <Settings /> */}
+      <Settings />
       {/* <EventForm /> */}
       <Switch>
         <Route path="/home">

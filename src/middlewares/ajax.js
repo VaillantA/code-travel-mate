@@ -1,4 +1,5 @@
 import axios from 'axios';
+import swal from 'sweetalert';
 
 const api = axios.create({
   baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
@@ -163,6 +164,11 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',
         });
+        swal({
+          title: 'Good job!',
+          text: 'Congratulations, your account has been created',
+          icon: 'success',
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -240,6 +246,11 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch({
           type: 'SAVE_EVENT_CREATE',
+        });
+        swal({
+          title: 'Good job!',
+          text: 'Congratulations, your event has been created',
+          icon: 'success',
         });
       })
       .finally(() => {

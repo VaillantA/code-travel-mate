@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 import './style.scss';
 import Input from './Input';
@@ -18,8 +19,9 @@ const LoginForm = () => {
       value: event.target.value,
     });
   };
+  // const history = useHistory();
   const handleSubmit = (event) => {
-    console.log('COucou petite péruche');
+    // history.push('/home');
     event.preventDefault();
     dispatch({
       type: 'REGISTER',
@@ -135,7 +137,8 @@ const LoginForm = () => {
             textareaKey="description"
           />
         </div>
-        <button type="submit" className="button">Register</button>
+        {/* <Redirect to="/somewhere/else" /> */}
+        <button href="/" type="submit" className="button">Register</button>
       </form>
     </div>
   );

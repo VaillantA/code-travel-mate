@@ -1,6 +1,7 @@
 import './style.scss';
 import background_searchbar from 'src/assets/Image/background.jpg';
 import { useSelector, useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import SelectBanniere from './SelectBanniere';
 import Input from './Input';
 
@@ -9,6 +10,11 @@ const Searchbar = () => {
   const categories = useSelector((state) => state.searchBar.categoriesList);
 
   const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
   const handleClick = () => {
     dispatch({
       type: 'BURGER_SEARCH',

@@ -13,11 +13,6 @@ const Card = ({
   image,
 }) => {
   const eventDate = new Date(date).toLocaleString();
-  /* const dispatch = useDispatch(); */
-  /* const handleSubmit = () => {
-    dispatch({
-      type: 'SAVE_LIKED',
-    }); */
 
   return (
     <div className="card">
@@ -32,7 +27,6 @@ const Card = ({
             key={id}
             to={`/detailsEvent/${id}`}
             /* title={`${title}`} */
-            exact
           >
             <h5 className="card-title">{title}</h5>
           </Link>
@@ -45,7 +39,6 @@ const Card = ({
         <Link
           to={`/detailsEvent/${id}`}
           alt="card-image"
-          exact
         >
           <img className="card-image" src={image} alt="Logo" />
         </Link>
@@ -61,7 +54,6 @@ const Card = ({
           {/* <Ripples color="#fff" during={1200}> */}
           <Link
             to={`/detailsEvent/${id}`}
-            exact
           >
             <button type="button" className="buttons-ripples">View Details</button>
           </Link>

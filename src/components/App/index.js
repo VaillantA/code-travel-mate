@@ -28,16 +28,16 @@ import MentionsLegales from '../MentionsLegales';
 // == Composant
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({
-      type: 'FETCH_EVENTS',
-    });
-  }, []);
-  useEffect(() => {
-    dispatch({
-      type: 'FETCH_CATEGORIES',
-    });
-  }, []);
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_EVENTS',
+  //   });
+  // }, []);
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_CATEGORIES',
+  //   });
+  // }, []);
   const data = JSON.parse(sessionStorage.getItem('key'));
   // console.log(data);
   if (data) {

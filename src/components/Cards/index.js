@@ -1,22 +1,19 @@
 import Card from 'src/components/Card';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 import './style.scss';
 
 function Cards() {
-  const like = 193;
-  const isLiked = true;
-  /* const { id } = useParams();
-   */
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_EVENTS',
+  //   });
+  // }, []);
 
   const listEvents = useSelector((state) => state.events.list);
-  
-  /* useEffect(() => {
-    dispatch({
-      type: 'FETCH_LIKED',
-      id: id,
-    });
-  }, []); */
-  
+
   return (
     <div className="slider">
       <div className="cards">
@@ -36,7 +33,7 @@ function Cards() {
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              liked={isLiked}
+              // liked={isLiked}
               /* likes = {currentEvent.likes} */
             />
           ))}
@@ -57,7 +54,7 @@ function Cards() {
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              liked={isLiked}
+              // liked={isLiked}
             />
           ))}
         </div>
@@ -77,7 +74,7 @@ function Cards() {
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              liked={isLiked}
+              // liked={isLiked}
             />
           ))}
         </div>

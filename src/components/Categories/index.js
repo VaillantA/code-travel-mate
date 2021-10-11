@@ -27,7 +27,7 @@ const Categories = () => {
     <main>
       <div className="cards">
         {categories.map((currentCategory) => (
-          <div className="category">
+          <div className="category" key={currentCategory.id}>
             <div className="event">
               <Link to={`/category/${currentCategory.id}`}>
                 <h1 className="event-tittle">

@@ -5,9 +5,17 @@ import './style.scss';
 function Cards() {
   const like = 193;
   const isLiked = true;
+  /* const { id } = useParams();
+   */
 
   const listEvents = useSelector((state) => state.events.list);
-
+  
+  /* useEffect(() => {
+    dispatch({
+      type: 'FETCH_LIKED',
+      id: id,
+    });
+  }, []); */
   
   return (
     <div className="slider">
@@ -29,6 +37,7 @@ function Cards() {
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
               liked={isLiked}
+              /* likes = {currentEvent.likes} */
             />
           ))}
         </div>

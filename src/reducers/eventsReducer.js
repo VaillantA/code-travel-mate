@@ -5,6 +5,7 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
+  /* isLiked : false, */
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -50,6 +51,11 @@ const reducer = (state = initialState, action = {}) => {
         redirection: false,
         loading: false,
       };
+      /* case 'SAVE_LIKED':
+      return {
+        ...state,
+        isLiked: true,
+      }; */
     default:
       return state;
   }

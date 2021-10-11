@@ -64,7 +64,7 @@ const App = () => {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/" exact>
+        <Route path="/home" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
         </Route>
         <Route path="/results">

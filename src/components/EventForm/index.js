@@ -56,16 +56,6 @@ const EventForm = () => {
             textareaKey="content"
           />
         </div>
-        {/* <div className="input-field">
-          <label>Add en image </label>
-          <Input
-            type="file"
-            className="input"
-            placeholder="Enter a title"
-            aria-label="title"
-            inputKey="title"
-          />
-        </div> */}
         <div className="input-field">
           <label>Resume</label>
           <Input

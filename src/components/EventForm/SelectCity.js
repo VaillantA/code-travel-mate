@@ -31,11 +31,11 @@ const SelectCity = ({ cities }) => {
           {cities.map((currentCity) => (
             <option
               type="text"
-              value={currentCity.name}
+              value={currentCity.id}
               key={currentCity.id}
               className="searchBar--option"
             >
-              {currentCity.name}
+              {currentCity.name} {currentCity.id}
             </option>
           ))}
         </select>

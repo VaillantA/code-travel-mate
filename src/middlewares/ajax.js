@@ -154,7 +154,7 @@ const ajax = (store) => (next) => (action) => {
       content: state.eventForm.content,
       resume: state.eventForm.resume,
       date: state.eventForm.date,
-      categories: state.eventForm.selectedCategoryID,
+      categories: [state.eventForm.selectedCategoryID],
       city: state.eventForm.selectCityID,
     })
       .then((response) => {

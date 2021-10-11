@@ -1,7 +1,7 @@
 /* import PropTypes from 'prop-types'; */
 import { useSelector } from 'react-redux';
 import Card from 'src/components/Card';
-import './style.scss';
+/* import './style.scss'; */
 
 const FavorisCards = () => {
   /* const categories = useSelector((state) => (state.searchBar.categoriesList)); */

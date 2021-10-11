@@ -61,7 +61,7 @@ const App = () => {
     <div className="app">
       <NavBar />
       <Settings />
-      {/* <EventForm /> */}
+      <EventForm />
       <Switch>
         <Route path="/home">
           <Home />

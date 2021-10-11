@@ -1,7 +1,7 @@
 /* import PropTypes from 'prop-types'; */
 import { useSelector } from 'react-redux';
 import Card from 'src/components/Card';
-import './style.scss';
+/* import './style.scss'; */
 
 const ProfilCards = () => {
   /* const categories = useSelector((state) => (state.searchBar.categoriesList)); */
@@ -12,13 +12,7 @@ const ProfilCards = () => {
         {/* {categories.slice(0, 3).map((currentCategory) => ( */}
 
           <div className="category">
-            <div className="">
-              <a href="#">
-                {/* <h1 className="event-tittle">
-                  {currentCategory.name}
-                </h1> */}
-              </a>
-            </div> 
+            
             <div className="card-header">
               {listEvents.slice(0, 3).map((currentEvent) => (
                 <Card

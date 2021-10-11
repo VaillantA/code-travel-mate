@@ -50,11 +50,9 @@ const Card = ({
           <img className="card-image" src={image} alt="Logo" />
         </Link>
         <div className="card-like">
-          <Heart className=" card-like-icon" fill="#ff914d" /* {onclick ? '#ff914d' : ''} */ />
+          <Heart className=" card-like-icon" /* fill="#ff914d" */ /* {onclick ? '#ff914d' : ''} */ />
          {/*  <p className=" card-like-counter">{likes}</p> */}
-         <button /* onClick={handleSubmit} */>
           <MessageCircle className=" card-like-icon" />
-          </button>
         </div>
         <div className="card-text">{resume}</div>
         <div className="divButton">

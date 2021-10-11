@@ -2,7 +2,7 @@
 import Card from 'src/components/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import './style.scss';
+/* import './style.scss'; */
 import { useEffect } from 'react';
 
 const Categories = () => {

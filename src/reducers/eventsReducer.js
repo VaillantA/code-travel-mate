@@ -49,7 +49,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         redirection: false,
-        loading: false,
+        // loading: false,
       };
       /* case 'SAVE_LIKED':
       return {

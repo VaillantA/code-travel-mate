@@ -14,7 +14,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
-        loading: false,
       };
     case 'SAVE_ONE_EVENT':
       return {

@@ -28,16 +28,16 @@ import AboutUs from 'src/components/AboutUs';
 // == Composant
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch({
-      type: 'FETCH_EVENTS',
-    });
-  }, []);
-  useEffect(() => {
-    dispatch({
-      type: 'FETCH_CATEGORIES',
-    });
-  }, []);
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_EVENTS',
+  //   });
+  // }, []);
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_CATEGORIES',
+  //   });
+  // }, []);
   const data = JSON.parse(sessionStorage.getItem('key'));
   // console.log(data);
   if (data) {
@@ -65,8 +65,11 @@ const App = () => {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/" exact>
+        <Route path="/home" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
+        </Route>
+        <Route path="/results">
+          <Results />
         </Route>
         <Route path="/categories">
           <Categories />
@@ -85,10 +88,6 @@ const App = () => {
         </Route>
         <Route path="/detailsEvent/:id" exact>
           {redirection ? <Redirect to="/results" /> : <EventDetail /> }
-        </Route>
-        <Route path="/results">
-          {/* {loading ? <Loading /> : <Results />} */}
-          <Results />
         </Route>
         <Route path="/Login">
           <Login />

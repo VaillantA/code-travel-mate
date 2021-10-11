@@ -41,7 +41,7 @@ const NavBar = () => {
       </div>
       <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <NavLink className="nav-links" to="/" exact>Home</NavLink>
+          <NavLink className="nav-links" to="/home" exact>Home</NavLink>
         </li>
         {/* <li>
           <NavLink className="nav-links" to="/events">Event</NavLink>

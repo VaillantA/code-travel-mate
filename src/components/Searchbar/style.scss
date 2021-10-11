@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 
 .banniere {
   width: 100%;
@@ -31,37 +32,42 @@
 }
 
 .searchBar--buttonSubmitGO {
+  font-size: 0.8em;
   border-radius: 5px;
   border: none;
   width: 5em;
   height: 3em;
-  background-color: #ff5757;
+  background: linear-gradient(#a04ae2, vars.$dark-color);
+  color: #fff;
+  font-weight: bold;
 }
 
 .searchBar--buttonSubmitMobile {
   display: none;
 }
 
-.searchBar--buttonSubmitGO:hover {
-  border: solid, 2px, rgb(139, 5, 17);
-}
 
 @media screen and (max-width: 800px) {
+  .searchBar--hidden{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    flex-wrap: wrap;
+    margin-top: 1em;
+  }
   .banniere{
     width: 100%;
   }
   .banniere--searchBar, .searchBar--input {
     display: none;
   }
- 
   .searchBar--input--hidden {
     border-radius: 5px;
     border: none;
     width: 200px;
     height: 30px;
-    margin-top: 30px;
+    // margin-top: 30px;
   }
-  
   .searchBar--buttonSubmitMobile {
     display: block;
     margin: auto;
@@ -69,13 +75,25 @@
     border: none;
     width: 200px;
     height: 30px;
-    background-color: #ff5757;
+    background: linear-gradient(#a04ae2, vars.$dark-color);
+    color: #fff;
+    font-weight: bold;
   }
   .searchBar--buttonSubmitGO--hidden {
     border-radius: 5px;
     border: none;
     width: 5em;
     height: 3em;
-    background-color: #ff5757;
+    background: linear-gradient(#a04ae2, vars.$dark-color);
+    color: #fff;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 340px) and (max-width: 480px) {
+  .searchBar--hidden{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1em;
   }
 }

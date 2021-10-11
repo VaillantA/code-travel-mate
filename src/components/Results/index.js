@@ -1,8 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-
 import { useEffect } from 'react';
-
-
 import Card from 'src/components/Card';
 import Searchbar from '../Searchbar';
 import './style.scss';

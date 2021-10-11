@@ -52,6 +52,7 @@ const ajax = (store) => (next) => (action) => {
           oneEvent: response.data,
           authorFirstname: response.data.creator.firstname,
           authorLastname: response.data.creator.lastname,
+          authorAge: response.data.creator.age,
           oneEventCity: response.data.city.name,
           eventImage: response.data.categories[0].image,
         });
@@ -68,9 +69,11 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_EVENTS_FROM_CATEGORY') {
     api.get(`/api/v1/search?search=&category=${action.id}`)
       .then((response) => {
+        console.log(response.data);
         store.dispatch({
           type: 'SAVE_EVENTS_FROM_CATEGORY',
           list: response.data,
+          // image: response.data.categories[0].image,
         });
       })
       .catch((error) => {
@@ -85,7 +88,7 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'SEARCH_SELECTED_EVENTS') {
     const stateCategory = store.getState().searchBar.selectedCategoryID;
     const stateCity = store.getState().searchBar.cityInProgress;
-    api.get(`api/v1/search?search=${stateCity}&category=${stateCategory}`)
+    api.get(`/api/v1/search?search=${stateCity}&category=${stateCategory}`)
       .then((response) => {
         store.dispatch({
           type: 'SAVE_SELECTED_EVENTS',
@@ -132,6 +135,7 @@ const ajax = (store) => (next) => (action) => {
       lastname: state.register.lastname,
       nickname: state.register.pseudo,
       email: state.register.email,
+      /* age : state .register.parseInt(age), */
       password: state.register.password,
       gender: state.register.gender,
       description: state.register.description,
@@ -141,7 +145,6 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',
-
         });
       })
       .catch((error) => {
@@ -171,12 +174,13 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
-  /* else if (action.type === 'FETCH_CREATEDEVENT') {
-    api.get('/api/v1/user/113')
+  else if (action.type === 'SUBSCRIPTION') {
+    api.put(`/api/v1/event/subscription/${action.eventID}`, {
+      id: action.userID,
+    })
       .then((response) => {
         store.dispatch({
-          type: 'SAVE_CREATEDEVENT',
-          createdEvent: response.data,
+          type: 'SAVE_SUBSCRIPTION',
         });
       })
       .catch((error) => {
@@ -187,7 +191,25 @@ const ajax = (store) => (next) => (action) => {
       })
       .finally(() => {
       });
-  } */
+  }
+  else if (action.type === 'UNSUBSCRIBE') {
+    api.put(`/api/v1/event/removal/${action.eventID}`, {
+      id: action.userID,
+    })
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_UNSUBSCRIBE',
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   next(action);
 };
 

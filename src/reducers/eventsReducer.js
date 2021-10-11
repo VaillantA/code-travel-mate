@@ -21,6 +21,7 @@ const reducer = (state = initialState, action = {}) => {
         oneEvent: action.oneEvent,
         authorFirstname: action.authorFirstname,
         authorLastname: action.authorLastname,
+        authorAge: action.authorAge,
         eventImage: action.eventImage,
         eventCity: action.oneEventCity,
       };
@@ -41,6 +42,8 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
+        redirection: true,
+        loading: false,
       };
     case 'REDIRECT_FALSE':
       return {

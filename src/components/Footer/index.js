@@ -5,11 +5,11 @@ const Footer = () => (
   <div className="footer--separateur">
     <hr />
     <div className="footer">
-      <Link to="/contact">
+      <Link to="/contact" className="footerItem">
         Contact
       </Link>
-      <p>Plan du site</p>
-      <Link to="/mentions-legales">
+      <p className="footerItem">Plan du site</p>
+      <Link to="/mentions-legales" className="footerItem">
         Mentions legales
       </Link>
     </div>

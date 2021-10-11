@@ -1,5 +1,6 @@
 export const initialState = {
   burgerOpen: false,
+  searchBurgerOpen: false,
   burgerSearch: false,
   categoriesList: [],
   cityInProgress: '',
@@ -14,6 +15,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         burgerOpen: !state.burgerOpen,
+      };
+    case 'SEARCHBAR_BURGEN_OPEN':
+      return {
+        ...state,
+        searchbarBurgerOpen: !state.searchbarBurgerOpen,
       };
     case 'BURGER_SEARCH':
       return {

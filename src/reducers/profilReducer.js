@@ -1,22 +1,23 @@
 export const initialState = {
-    profilCardsOpen: false, 
-    favoritesOpen : false,
-    image : "",  
-    nickname : "",
-    age : "",
-    language : "",
-    nationality : "",
-    createdEventList : [] ,
-    eventsList : [],
-  
+  profilCardsOpen: false,
+  favoritesOpen: false,
+  image: '',
+  nickname: '',
+  age: '',
+  language: '',
+  nationality: '',
+  createdEventList: [],
+  eventsList: [],
+  subscribe: false,
+
 };
 
 const reducer = (state = initialState, action = {}) => {
   switch (action.type) {
     case 'DISPLAY_PROFILCARDS':
-      return{
+      return {
         ...state,
-        profilCardsOpen:!state.profilCardsOpen,
+        profilCardsOpen: !state.profilCardsOpen,
       };
     case 'DISPLAY_FAVORITESCARDS':
       return {
@@ -26,22 +27,26 @@ const reducer = (state = initialState, action = {}) => {
     case 'SAVE_USER':
       return {
         ...state,
-       /*  [action.key]:action.user, */
-       image : action.user.image,
-       nickname : action.user.nickname,
-       age: action.user.age,
-       nationality: action.user.nationality,
-       createdEventListlist : action.user.createdEvent,
-       eventsList : action.user.events, 
-       
+        /*  [action.key]:action.user, */
+        image: action.user.image,
+        nickname: action.user.nickname,
+        age: action.user.age,
+        nationality: action.user.nationality,
+        createdEventList: action.user.createdEvent,
+        eventsList: action.user.events,
+
       };
-      /* case 'SAVE_CREATEDEVENT':
+    case 'SAVE_SUBSCRIPTION':
       return {
         ...state,
-        [action.key]:action.createdEvent,
-      }; */
-      
-      
+        subscribe: true,
+      };
+    case 'SAVE_UNSUBSCRIBE':
+      return {
+        ...state,
+        subscribe: false,
+      };
+
     default:
       return state;
   }

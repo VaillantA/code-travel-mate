@@ -10,17 +10,17 @@ const AboutUs = () => (
     <h1>Meet the team</h1>
     <div className="peoples">
       <div className="person">
-        <h2>Benjamin</h2>
         <div className="div-image">
           <img src={ben} alt="" className="image" />
         </div>
-        <h3>Product Owner / Lead developer back</h3>
+        {/* <h2 className="text">Benjamin</h2> */}
+        <h3 className="text"> Benjamin Product Owner / Lead developer back</h3>
       </div>
       <div className="person">
-        <h2>Siré</h2>
         <div className="div-image">
           <img src={sire} alt="" className="image" />
         </div>
+        <h2>Siré</h2>
         <h3>Scrum Master</h3>
       </div>
       <div className="person">

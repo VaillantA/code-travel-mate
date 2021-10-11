@@ -1,5 +1,6 @@
 import axios from 'axios';
 import swal from 'sweetalert';
+import { useHistory } from 'react-router';
 
 const api = axios.create({
   baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
@@ -165,9 +166,11 @@ const ajax = (store) => (next) => (action) => {
           type: 'SAVE_USER_REGISTER',
         });
         swal({
-          title: 'Good job!',
-          text: 'Congratulations, your account has been created',
+          title: 'Congratulations ',
+          text: 'Your account has been created',
           icon: 'success',
+        }).then(() => {
+          window.location = '/home';
         });
       })
       .catch((error) => {

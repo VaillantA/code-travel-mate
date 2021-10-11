@@ -69,7 +69,6 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_EVENTS_FROM_CATEGORY') {
     api.get(`/api/v1/search?search=&category=${action.id}`)
       .then((response) => {
-        console.log(response.data);
         store.dispatch({
           type: 'SAVE_EVENTS_FROM_CATEGORY',
           list: response.data,

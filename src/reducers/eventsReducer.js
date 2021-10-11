@@ -14,7 +14,6 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
-        loading: false,
       };
     case 'SAVE_ONE_EVENT':
       return {
@@ -43,14 +42,14 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.list,
-        redirection: true,
+        // redirection: true,
         loading: false,
       };
     case 'REDIRECT_FALSE':
       return {
         ...state,
         redirection: false,
-        loading: false,
+        // loading: false,
       };
       /* case 'SAVE_LIKED':
       return {

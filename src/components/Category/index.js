@@ -3,10 +3,12 @@ import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Card from 'src/components/Card';
+import Loading from 'src/components/Loading';
 import './style.scss';
 
 const Category = () => {
   const { id } = useParams();
+  const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
@@ -22,6 +24,10 @@ const Category = () => {
   const listEvents = useSelector((state) => (state.events.list));
   // console.log(listEvents);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div>
       <h1 className="category--title">

@@ -52,6 +52,7 @@ const ajax = (store) => (next) => (action) => {
           oneEvent: response.data,
           authorFirstname: response.data.creator.firstname,
           authorLastname: response.data.creator.lastname,
+          authorAge: response.data.creator.age,
           oneEventCity: response.data.city.name,
           eventImage: response.data.categories[0].image,
         });

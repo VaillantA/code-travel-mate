@@ -22,6 +22,7 @@ const reducer = (state = initialState, action = {}) => {
         oneEvent: action.oneEvent,
         authorFirstname: action.authorFirstname,
         authorLastname: action.authorLastname,
+        authorAge: action.authorAge,
         eventImage: action.eventImage,
         eventCity: action.oneEventCity,
       };

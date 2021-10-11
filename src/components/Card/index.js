@@ -49,14 +49,17 @@ const Card = ({
         >
           <img className="card-image" src={image} alt="Logo" />
         </Link>
+        <div className="card-bottom">
         <div className="card-like">
-          <Heart className=" card-like-icon" fill="#ff914d" /* {onclick ? '#ff914d' : ''} */ />
+          <Heart className=" card-like-icon" /* fill="#ff914d" */ /* {onclick ? '#ff914d' : ''} */ />
          {/*  <p className=" card-like-counter">{likes}</p> */}
-         <button /* onClick={handleSubmit} */>
+         {/* <button  onClick={handleSubmit} > */}
           <MessageCircle className=" card-like-icon" />
-          </button>
+          {/* </button> */}
         </div>
+        
         <div className="card-text">{resume}</div>
+        </div>
         <div className="divButton">
           {/* <Ripples color="#fff" during={1200}> */}
           <Link

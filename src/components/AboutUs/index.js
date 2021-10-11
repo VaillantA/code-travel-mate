@@ -15,6 +15,7 @@ const AboutUs = () => (
         </div>
         <div className="person-text">
         <h2 className="person-name">Benjamin</h2>
+        <h3 className="tittle-work">Back-end developer </h3>
         <h3 className="tittle-work">Product Owner / Lead developer back</h3>
         </div>
       </div>
@@ -24,6 +25,7 @@ const AboutUs = () => (
         </div>
         <div className="person-text">
         <h2 className="person-name">Siré</h2>
+        <h3 className="tittle-work">Front-end developer </h3>
         <h3>Scrum Master</h3>
         </div>
       </div>
@@ -33,6 +35,7 @@ const AboutUs = () => (
         </div>
         <div className="person-text">
         <h2 className="person-name">Tai</h2>
+        <h3 className="tittle-work">Back-end developer </h3>
         <h3>Git Master</h3>
         </div>
       </div>
@@ -42,6 +45,7 @@ const AboutUs = () => (
         </div>
         <div className="person-text">
         <h2 className="person-name">Claire</h2>
+        <h3 className="tittle-work">Front-end developer </h3>
         <h3>Référente technique / Lead designer</h3>
         </div>
       </div>

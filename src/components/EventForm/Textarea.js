@@ -1,20 +1,19 @@
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 
-const Input = ({ inputKey, ...props }) => {
-  const value = useSelector((state) => state[inputKey]);
+const Textarea = ({ textareaKey, ...props }) => {
+  const value = useSelector((state) => state[textareaKey]);
   const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch({
-      type: 'CHANGE_VALUE_LOGIN_FORM',
+      type: 'CHANGE_VALUE_EVENT_FORM',
       newValue: event.target.value,
-      key: inputKey,
+      key: textareaKey,
     });
   };
   return (
 
-    <input
-      required="required"
+    <textarea
       value={value}
       onChange={handleChange}
       {...props}
@@ -22,8 +21,8 @@ const Input = ({ inputKey, ...props }) => {
   );
 };
 
-Input.propTypes = {
-  inputKey: PropTypes.string.isRequired,
+Textarea.propTypes = {
+  textareaKey: PropTypes.string.isRequired,
 };
 
-export default Input;
+export default Textarea;

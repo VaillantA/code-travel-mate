@@ -27,8 +27,6 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_CATEGORIES') {
     api.get('/api/v1/category')
       .then((response) => {
-        // console.log(response.data);
-        // console.log(response.data.image);
         store.dispatch({
           type: 'SAVE_CATEGORIES',
           categories: response.data,
@@ -44,9 +42,27 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  else if (action.type === 'FETCH_CITIES') {
+    api.get('/api/v1/city')
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_CITIES',
+          cities: response.data,
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/api/v1/event/${action.id}`)
       .then((response) => {
+        // console.log(response.data);
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
@@ -115,6 +131,7 @@ const ajax = (store) => (next) => (action) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
         console.log(response);
         sessionStorage.setItem('key', JSON.stringify(response.data));
+        // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
           pseudo: response.data.data.nickname,
@@ -205,6 +222,24 @@ const ajax = (store) => (next) => (action) => {
         console.log(error);
         store.dispatch({
           type: 'RECEIVE_ERROR',
+        });
+      })
+      .finally(() => {
+      });
+  }
+  else if (action.type === 'CREATE_EVENT') {
+    const state = store.getState();
+    api.post('/api/v1/event/', {
+      title: state.eventForm.title,
+      content: state.eventForm.content,
+      resume: state.eventForm.resume,
+      date: state.eventForm.date,
+      categories: [state.eventForm.selectedCategoryID],
+      city: parseInt(state.eventForm.selectedCityID, 10),
+    })
+      .then((response) => {
+        store.dispatch({
+          type: 'SAVE_EVENT_CREATE',
         });
       })
       .finally(() => {

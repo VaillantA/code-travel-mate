@@ -5,6 +5,7 @@ import profilReducer from './profilReducer';
 
 import loginReducer from './loginReducer';
 import registerReducer from './registerFormReducer';
+import eventFormReducer from './eventFormReducer';
 
 const rootReducer = combineReducers({
   searchBar: searchBarReducer,
@@ -12,6 +13,7 @@ const rootReducer = combineReducers({
   profil : profilReducer,
   login: loginReducer,
   register: registerReducer,
+  eventForm: eventFormReducer,
 });
 
 export default rootReducer;

@@ -6,7 +6,7 @@ const Input = ({ inputKey, ...props }) => {
   const dispatch = useDispatch();
   const handleChange = (event) => {
     dispatch({
-      type: 'CHANGE_VALUE_LOGIN_FORM',
+      type: 'CHANGE_VALUE_EVENT_FORM',
       newValue: event.target.value,
       key: inputKey,
     });

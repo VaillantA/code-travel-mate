@@ -9,14 +9,12 @@ function Cards() {
    */
 
   const listEvents = useSelector((state) => state.events.list);
-  
   /* useEffect(() => {
     dispatch({
       type: 'FETCH_LIKED',
       id: id,
     });
   }, []); */
-  
   return (
     <div className="slider">
       <div className="cards">

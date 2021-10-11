@@ -14,16 +14,16 @@ import LoginForm from 'src/components/LoginForm';
 import Login from 'src/components/Login';
 import NotFound from 'src/components/NotFound';
 import Profil from 'src/components/Profil';
-/* import Searchbar from 'src/components/Searchbar';
- */import Footer from 'src/components/Footer';
+import Category from 'src/components/Category';
+import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
 import Loading from 'src/components/Loading';
 import Cards from 'src/components/Cards';
-import Settings from 'src/components/Login';
 import Contact from 'src/components/Contact';
+import MentionsLegales from 'src/components/MentionsLegales';
+// import Settings from 'src/components/Login';
+import EventForm from 'src/components/EventForm';
 import AboutUs from 'src/components/AboutUs';
-import Category from '../Category';
-import MentionsLegales from '../MentionsLegales';
 
 // == Composant
 const App = () => {
@@ -59,7 +59,8 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
-      <Settings />
+      {/* <Settings /> */}
+      {/* <EventForm /> */}
       <Switch>
         <Route path="/home">
           <Home />

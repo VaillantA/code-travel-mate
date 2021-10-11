@@ -69,9 +69,9 @@ const EventForm = () => {
         <SelectEvent
           choice={categories}
         />
-        <SelectEvent
+        {/* <SelectEvent
           choice={categories}
-        />
+        /> */}
         <div className="input-field">
           <label>Date</label>
           <Input

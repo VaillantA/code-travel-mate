@@ -155,7 +155,7 @@ const ajax = (store) => (next) => (action) => {
       resume: state.eventForm.resume,
       date: state.eventForm.date,
       categories: [state.eventForm.selectedCategoryID],
-      city: state.eventForm.selectCityID,
+      city: parseInt(state.eventForm.selectedCityID, 10),
     })
       .then((response) => {
         store.dispatch({

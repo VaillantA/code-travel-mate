@@ -86,8 +86,8 @@ const App = () => {
         <Route path="/about-us">
           <AboutUs />
         </Route>
-        <Route path="/detailsEvent/:id">
-          <EventDetail />
+        <Route path="/detailsEvent/:id" exact>
+          {redirection ? <Redirect to="/results" /> : <EventDetail /> }
         </Route>
         <Route path="/Login">
           <Login />

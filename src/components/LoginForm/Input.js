@@ -14,6 +14,7 @@ const Input = ({ inputKey, ...props }) => {
   return (
 
     <input
+      required="required"
       value={value}
       onChange={handleChange}
       {...props}

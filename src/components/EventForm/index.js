@@ -18,7 +18,7 @@ const EventForm = () => {
       type: 'FETCH_CITIES',
     });
   }, []);
-  const handleClick = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
       type: 'CREATE_EVENT',
@@ -32,7 +32,7 @@ const EventForm = () => {
   return (
     <div className="container">
       <div className="title"> Event Create Form</div>
-      <div className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input-field">
           <label htmlFor="name">Event title</label>
           <Input
@@ -59,6 +59,7 @@ const EventForm = () => {
         <div className="input-field">
           <label>Resume</label>
           <Input
+            required="required"
             type="text"
             className="input"
             placeholder="Enter a resume"
@@ -82,8 +83,8 @@ const EventForm = () => {
             inputKey="date"
           />
         </div>
-        <button type="button" className="button" onClick={handleClick}>Create an event</button>
-      </div>
+        <button type="submit" className="button">Create an event</button>
+      </form>
     </div>
 
   );

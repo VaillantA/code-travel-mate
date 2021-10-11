@@ -18,7 +18,7 @@ const LoginForm = () => {
       value: event.target.value,
     });
   };
-  const handleClick = (event) => {
+  const handleSubmit = (event) => {
     console.log('COucou petite péruche');
     event.preventDefault();
     dispatch({
@@ -31,7 +31,7 @@ const LoginForm = () => {
       <div className="title">
         Registration Form
       </div>
-      <div className="form">
+      <form className="form" onSubmit={handleSubmit}>
         <div className="input-field">
           <label>First Name</label>
           <Input
@@ -124,8 +124,8 @@ const LoginForm = () => {
             textareaKey="description"
           />
         </div>
-        <button type="button" className="button" onClick={handleClick}>Register</button>
-      </div>
+        <button type="submit" className="button">Register</button>
+      </form>
     </div>
   );
 };

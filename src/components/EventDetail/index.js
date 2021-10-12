@@ -172,7 +172,7 @@ const EventDetail = () => {
             >
               {subscribe
                 ? 'Unsubscribe'
-                : 'Suscribe !'}
+                : 'Subscribe !'}
             </button>
           </div>
           {subscribe && (

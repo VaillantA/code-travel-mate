@@ -23,7 +23,7 @@ import Cards from 'src/components/Cards';
 import Contact from 'src/components/Contact';
 import MentionsLegales from 'src/components/MentionsLegales';
 // import Settings from 'src/components/Login';
-import EventForm from 'src/components/EventForm';
+// import EventForm from 'src/components/EventForm';
 import AboutUs from 'src/components/AboutUs';
 
 // == Composant
@@ -40,13 +40,14 @@ const App = () => {
     });
   }, []);
   const data = JSON.parse(sessionStorage.getItem('key'));
-  // console.log(data);
+  console.log(data);
   if (data) {
     dispatch({
       type: 'SAVE_USER_LOGIN',
       logged: true,
       pseudo: data.data.nickname,
       token: data.token,
+      userId: data.data.id,
     });
   }
 
@@ -61,7 +62,7 @@ const App = () => {
     <div className="app">
       <NavBar />
       <Settings />
-      <EventForm />
+      {/* <EventForm /> */}
       <Switch>
         <Route path="/home">
           <Home />
@@ -75,7 +76,7 @@ const App = () => {
         <Route path="/category/:id" exact>
           <Category />
         </Route>
-        <Route path="/profil/:id">
+        <Route path="/profil">
           <Profil />
         </Route>
         <Route path="/events">

@@ -54,11 +54,11 @@ const NavBar = () => {
           <NavLink className="nav-links--link" to="/about-us">About Us</NavLink>
         </li>
         <li>
-          <NavLink className="nav-links--link" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</NavLink>
+          <Link className="nav-links--link" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
           {logged
-            ? <NavLink className="nav-links--link" to={`/profil/${userId}`}>Profile</NavLink>
+            ? <NavLink className="nav-links--link" to="/profil">Profile</NavLink>
             : <NavLink className="nav-links--link" to="/registration">Sign Up</NavLink>}
         </li>
       </ul>

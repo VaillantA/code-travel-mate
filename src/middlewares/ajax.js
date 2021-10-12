@@ -189,6 +189,7 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'FETCH_USER') {
+    console.log(action.id);
     api.get(`/api/v1/user/${action.id}`)
       .then((response) => {
         console.log(response.data);
@@ -253,7 +254,6 @@ const ajax = (store) => (next) => (action) => {
       city: parseInt(state.eventForm.selectedCityID, 10),
     })
       .then((response) => {
-        const userId = useSelector((state) => state.login.userId);
         store.dispatch({
           type: 'SAVE_EVENT_CREATE',
         });
@@ -262,7 +262,7 @@ const ajax = (store) => (next) => (action) => {
           text: 'Congratulations, your event has been created',
           icon: 'success',
         }).then(() => {
-          window.location = '/home';
+          window.location = '/profil';
         });
       })
       .catch((error) => {

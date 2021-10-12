@@ -1,3 +1,4 @@
+@use 'src/styles/vars';
 
 .card {
 	color: black;
@@ -144,8 +145,10 @@ color :#92908d;
     max-width: 80%;
     border-radius: 40px;
   }
-  .buttons-ripples {background-image: linear-gradient(to right, #AA076B 0%, #2A0944  51%, #AA076B  100%)}
+  // .buttons-ripples {background-image: linear-gradient(to right, #AA076B 0%, #2A0944  51%, #AA076B  100%)}
   .buttons-ripples {
+    background-color: #A2416B;
+    font-weight: bold;
     border: none;
      margin-bottom: 10px; 
      margin-top: 10px; 

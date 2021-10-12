@@ -39,6 +39,11 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: '',
         token: '',
       };
+    // case 'REDIRECT_TO':
+    //   return {
+    //     ...state,
+    //     redirectTo: action.value,
+    //   };
 
     default:
       return state;

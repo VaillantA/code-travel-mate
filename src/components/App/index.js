@@ -53,8 +53,9 @@ const App = () => {
   }
 
   const redirection = useSelector((state) => state.events.redirection);
-  const loggedIn = useSelector((state) => state.login.loggedIn);
   const loading = useSelector((state) => state.events.loading);
+  const isLogged = useSelector((state) => state.login.logged);
+  // const redirectTo = useSelector((state) => state.login.redirectTo);
 
   // if (loading) {
   //   return <Loading />;
@@ -68,7 +69,6 @@ const App = () => {
       <Switch>
         <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
-         {/*  {loggedIn ? <Redirect to="/profil" /> : <Login /> } */}
         </Route>
         <Route path="/results">
           <Results />
@@ -80,8 +80,8 @@ const App = () => {
           <Category />
         </Route>
         <Route path="/profil">
-          <Profil />
-        </Route> 
+          {isLogged ? <Profil /> : <Redirect to="/" />}
+        </Route>
         <Route path="/events">
           <Events />
         </Route>

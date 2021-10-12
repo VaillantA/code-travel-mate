@@ -23,7 +23,7 @@ const Settings = () => {
       </div>
       {logged && (
         <p className="connected">
-          Connecté en tant que {pseudo}
+          Connected as {pseudo}
           {/* <button onClick={handleLogout} type="button">Log Out</button> */}
         </p>
       )}

@@ -39,6 +39,11 @@ const reducer = (state = initialState, action = {}) => {
         eventsList: action.user.events,
 
       };
+    // case 'SAVE_USER_EVENTS':
+    //   return {
+    //     ...state,
+    //     eventsList: action.userEvents,
+    //   };
     case 'SAVE_SUBSCRIPTION':
       return {
         ...state,

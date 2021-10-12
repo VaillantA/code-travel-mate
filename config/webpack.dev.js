@@ -44,6 +44,8 @@ module.exports = merge(common, {
     historyApiFallback: true,
     contentBase: paths.build,
     clientLogLevel: 'warn',
+    host: '0.0.0.0',
+    allowedHosts: ['.vpnuser.lan'],
     overlay: true,
     stats: 'minimal',
     open: false,

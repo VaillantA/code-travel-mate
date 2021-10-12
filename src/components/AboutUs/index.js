@@ -8,8 +8,7 @@ import antoine from 'src/assets/Image/antoine.png';
 import claire from 'src/assets/Image/claire.png';
 
 const AboutUs = () => (
-  <>
-    <EventForm />
+ 
     <div className="about-us">
       <h1 className="about-title">Meet the team</h1>
       <div className="peoples">
@@ -25,21 +24,21 @@ const AboutUs = () => (
           <div className="div-image">
             <img src={sire} alt="" className="image" />
           </div>
-          <h3 className="text"> Siré: Scrum Master</h3>
+          <h3 className="text"> Siré: Scrum Master / Developer front</h3>
         </div>
 
         <div className="person">
           <div className="div-image">
             <img src={tai} alt="" className="image" />
           </div>
-          <h3 className="text"> Tai: Git Master</h3>
+          <h3 className="text"> Tai: Git Master / Developer back</h3>
         </div>
         <div className="person">
 
           <div className="div-image">
             <img src={claire} alt="" className="image" />
           </div>
-          <h3 className="text"> Claire: Technical referent / Lead designer</h3>
+          <h3 className="text"> Claire: Technical referent / Lead designer / Developer front</h3>
         </div>
         <div className="person">
           <div className="div-image">
@@ -50,8 +49,6 @@ const AboutUs = () => (
 
       </div>
     </div>
-  </>
-
 );
 
 export default AboutUs;

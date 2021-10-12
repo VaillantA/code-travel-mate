@@ -24,7 +24,7 @@ const Contact = () => (
         placeholder="Entrez votre message"
         required
       />
-      <input type="hidden" name="_next" value="https://yourdomain.co/thanks.html"></input>
+      <input type="hidden" name="_next" value="http://localhost:8080/"></input>
       <button
         className="contactForm--button"
         type="submit"

@@ -16,15 +16,8 @@ const NotFound = () => {
   return (
     <div className="not-found">
       <h1 className="title-h1">This page does not exist, just like this mug :</h1>
-      <img src={mug} alt="" />
-      {/* <div className="images">
-        <img src={fabio} alt="" className="image" />
-        <img src={anais} alt="" className="image" />
-        <img src={alexis} alt="" className="image" />
-      </div> */}
-
-
-      <p><Link className="not-found-link" to="/">Retourner à l'accueil</Link></p>
+      <img src={mug} alt="" className="mug-image" />
+      <p><Link className="not-found-link" to="/">Back to home page</Link></p>
     </div>
   );
 };

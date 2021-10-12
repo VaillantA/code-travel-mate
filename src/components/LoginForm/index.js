@@ -28,6 +28,7 @@ const LoginForm = () => {
   };
 
   return (
+    <div className="site-container">
     <div className="container">
       <div className="title">
         Registration Form
@@ -139,6 +140,7 @@ const LoginForm = () => {
         {/* <Redirect to="/somewhere/else" /> */}
         <button href="/" type="submit" className="button">Register</button>
       </form>
+    </div>
     </div>
   );
 };

@@ -26,12 +26,12 @@ const EventDetail = () => {
     });
   }, []);
 
-  // useEffect(() => {
-  //   dispatch({
-  //     type: 'FETCH_USER_EVENTS',
-  //     userId: userId,
-  //   });
-  // }, []);
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_USER_EVENTS',
+      userId: userId,
+    });
+  }, []);
 
   const categories = useSelector((state) => state.searchBar.categoriesList);
   const subscribe = useSelector((state) => state.profil.subscribe);

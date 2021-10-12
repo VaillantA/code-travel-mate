@@ -6,21 +6,33 @@
   align-items: center;
   margin-bottom: 2em;
 }
+.header-profil-avatar {
+  border-radius: 50%;
+  padding: 2px;
+  background: white;
+}
 .infos{
   margin-top: 1em;
-  font-size: 2em;
+  font-size: 1.5em;
+  text-align: center;
   padding-right:0.5em ;
   display: flex;
   justify-content: space-between;
-  width:400px;
+  width:200px;
+}
+
+.buttons-profil{
+  border: 2px red solid;
 }
 .infos li{
-  border-right: 1px solid rgb(153, 151, 151);
-  height: 30px;
+  /* border: 1px solid rgb(153, 151, 151); */
+  background-color: rgb(252, 247, 247);
+  width: length($list: infos);
+  padding: 6px;
    vertical-align: middle;
    display: inline-block; 
-  padding-right: 5px;
-  margin-bottom: 0.5em;
+  /* margin-bottom: 0.5em; */
+  margin-right: 1em;
 }
 
 .infos li :last-child{
@@ -92,7 +104,7 @@
     /* =============== */
   font-weight: bold;
   font-size: 13px;
-  color: #cfdae8;
+  /* color: #cfdae8; */
   letter-spacing: 1px;
   }
  

@@ -5,7 +5,7 @@ import Card from 'src/components/Card';
 
 const FavorisCards = () => {
   /* const categories = useSelector((state) => (state.searchBar.categoriesList)); */
-  const listEvents = useSelector((state) => state.profil.eventsList);
+  const createdEventList = useSelector((state) => state.profil.createdEventList);
   return (
     <section className="cards">
      <div className="cards">
@@ -20,7 +20,7 @@ const FavorisCards = () => {
               </a>
             </div> 
             <div className="card-header">
-              {listEvents.slice(0, 3).map((currentEvent) => (
+              {createdEventList.slice(0, 3).map((currentEvent) => (
                 <Card
                   key={currentEvent.id}
                   title={currentEvent.title}

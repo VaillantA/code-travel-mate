@@ -26,7 +26,8 @@ const Profil = () => {
 
   return (
     <div className="profil site-container">
-      <Header /* nickname={nickname} age = {age} nationality = {nationality} language={language} */ />
+      <Header />
+      {/* <ProfilCards/> */}
     </div>
   );
 };

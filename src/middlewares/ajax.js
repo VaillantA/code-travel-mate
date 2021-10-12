@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 import { useSelector } from 'react-redux';
 
 const api = axios.create({
-  baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
+  baseURL: 'http://tai-patrick-buth-khun.vpnuser.lan:8000/',
 });
 
 const ajax = (store) => (next) => (action) => {
@@ -130,7 +130,7 @@ const ajax = (store) => (next) => (action) => {
     })
       .then((response) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
-        console.log(response);
+        // console.log(response);
         sessionStorage.setItem('key', JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
@@ -141,7 +141,11 @@ const ajax = (store) => (next) => (action) => {
       })
       .catch((error) => {
         console.log(error);
-        alert('No match found, please try again');
+        swal({
+          title: 'Oops',
+          text: 'No match found, please try again',
+          icon: 'error',
+        });
       });
   }
   else if (action.type === 'REGISTER') {
@@ -208,7 +212,7 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'SUBSCRIPTION') {
     api.put(`/api/v1/event/subscription/${action.eventID}`, {
-      id: action.userID,
+      id: action.userId,
     })
       .then((response) => {
         store.dispatch({
@@ -273,6 +277,24 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
+  // else if (action.type === 'FETCH_USER_EVENTS') {
+  //   api.get(`/api/v1/user/${action.userId}`)
+  //     .then((response) => {
+  //       // console.log((response.data));
+  //       store.dispatch({
+  //         type: 'SAVE_USER_EVENTS',
+  //         userEvents: response.data.events,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //       store.dispatch({
+  //         type: 'RECEIVE_ERROR',
+  //       });
+  //     })
+  //     .finally(() => {
+  //     });
+  // }
   next(action);
 };
 

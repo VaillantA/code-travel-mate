@@ -1,16 +1,17 @@
 import './style.scss';
 import { useSelector, useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
 import avatar from 'src/assets/images/avatar.png';
-import { useParams } from 'react-router-dom';
 import panorama from 'src/assets/Image/panorama.jpg';
+import swal from 'sweetalert';
 
 const EventDetail = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const logged = useSelector((state) => state.login.logged);
-  const userID = useSelector((state) => state.login.userID);
+  const userId = useSelector((state) => state.login.userId);
 
   useEffect(() => {
     dispatch({
@@ -19,8 +20,25 @@ const EventDetail = () => {
     });
   }, []);
 
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
+
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_USER_EVENTS',
+  //     userId: userId,
+  //   });
+  // }, []);
+
   const categories = useSelector((state) => state.searchBar.categoriesList);
   const subscribe = useSelector((state) => state.profil.subscribe);
+  // const eventsList = useSelector((state) => state.profil.eventsList);
+  // console.log(eventsList);
+  // console.log(eventsList[0].id);
+  // const isThisEventSubscribe = eventsList.filter((event) => event.id === id);
 
   const handleRadio = (e) => {
     dispatch({
@@ -38,19 +56,27 @@ const EventDetail = () => {
       dispatch({
         type: 'SUBSCRIPTION',
         eventID: id,
-        userID: userID,
+        userId: userId,
       });
     }
     else if (logged === true && subscribe === true) {
       dispatch({
         type: 'UNSUBSCRIBE',
         eventID: id,
-        userID: userID,
+        userId: userId,
       });
-      alert('You are no longer registered for this event');
+      swal({
+        title: 'Bye bye!',
+        text: 'You have been unsubscribed from the event',
+        icon: 'info',
+      });
     }
     else {
-      alert('You must be logged in to register for an event');
+      swal({
+        title: 'Warning',
+        text: 'You must be logged in to register',
+        icon: 'warning',
+      });
     }
   };
 
@@ -118,24 +144,24 @@ const EventDetail = () => {
               {oneEvent.title}
             </h2>
             <div className="event--avatar">
-              <img className="avatar" src={avatar} />
+              <img className="avatar" src={avatar} alt="" />
             </div>
             <div className="event--author">
-              <p>Author: <span>{authorFirstname} {authorLastname}, {authorAge}</span></p>
+              <p>Author: <span>{authorFirstname} {authorLastname} {authorAge}</span></p>
             </div>
           </div>
           <hr />
           <div className="eventDescription">
-            <img className="eventDescription--picture" src={eventImage} />
+            <img className="eventDescription--picture" src={eventImage} alt="" />
             <div className="eventDescription--text">
               <p className="eventDescription--text--title">What's going to happen ?</p>
               <p>{oneEvent.content}</p>
             </div>
             <div className="eventDescription--informations">
-              <p className="eventDescription--informations--title">Informations complémentaires</p>
-              <p className="eventDescription--informations--date">Début de l'événement : <span>{date}</span></p>
-              <p className="eventDescription--informations--address">Lieu de l'événement : <span>{eventCity}</span></p>
-              <p className="eventDescription--informations--participant">Nombre de participants : <span>{oneEvent.participant}</span></p>
+              <p className="eventDescription--informations--title">Additional informations</p>
+              <p className="eventDescription--informations--date">Start of the event : <span>{date}</span></p>
+              <p className="eventDescription--informations--address">Location : <span>{eventCity}</span></p>
+              <p className="eventDescription--informations--participant">Number of participants : <span>{oneEvent.participant}</span></p>
             </div>
           </div>
           <div className="participation">
@@ -145,8 +171,8 @@ const EventDetail = () => {
               onClick={handleSubscribe}
             >
               {subscribe
-                ? 'Annuler'
-                : 'Participer !'}
+                ? 'Unsubscribe'
+                : 'Suscribe !'}
             </button>
           </div>
           {subscribe && (

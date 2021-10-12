@@ -19,7 +19,7 @@
   width: 20%;
   background-color: vars.$light-color;
   padding: 1em;
-  box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+  // box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
 }
 .menu--title{
   margin-bottom: 1em;
@@ -66,23 +66,29 @@
   line-height: 2;
 }
 .event--title{
-  background-color: rgba(255, 235, 205, 0.61);
+  background-color: rgba(255, 235, 205, 0.80);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
   box-shadow: 0px 0px 5px rgba(255, 235, 205, 0.5);
   width: 70%;
   text-align: center;
   font-size: 2em;
 }
 .event--avatar{
-  background-color: rgba(255, 235, 205, 0.61);
+  background-color: rgba(255, 235, 205, 0.8);
   width: 5em;
 }
 .event--author p{
-  background-color: rgba(255, 235, 205, 0.61);
+  background-color: rgba(255, 235, 205, 0.8);
   padding-right: 1em;
   height: 100%;
-  & span{
-    font-weight: bold;
-  }
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+    & span{
+      font-weight: bold;
+      
+    }
 }
 .eventDescription{
   margin: 2em;
@@ -155,6 +161,7 @@
   &--button{
     color: white;
     font-weight: bold;
+    font-size: 14px;
     box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
     border-radius: 8px;
     border: none;
@@ -204,11 +211,11 @@
 
 @media screen and (max-width:800px){
   .event--titleAndAuthor{
-    // padding: 0 4em;
+    // padding-top: 0px;
     background-position: center;
     background-repeat: no-repeat;
     // object-fit: fill;
-    // margin-bottom: 2em;
+    padding-top: none;
     display: flex;
     flex-wrap: wrap;
   }
@@ -225,6 +232,7 @@
   .detail--event{
     // display: flex;
     // flex-wrap: wrap;
+    margin-bottom: none;
     width: 100%;
     margin-top: 80px;
     justify-content: center;

@@ -1,4 +1,6 @@
 import axios from 'axios';
+import swal from 'sweetalert';
+import { useSelector } from 'react-redux';
 
 const api = axios.create({
   baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
@@ -130,7 +132,6 @@ const ajax = (store) => (next) => (action) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
         console.log(response);
         sessionStorage.setItem('key', JSON.stringify(response.data));
-        // localStorage.setItem(JSON.stringify(`${response.data.id}`), JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
           pseudo: response.data.data.nickname,
@@ -162,17 +163,32 @@ const ajax = (store) => (next) => (action) => {
         store.dispatch({
           type: 'SAVE_USER_REGISTER',
         });
+        swal({
+          title: 'Congratulations ',
+          text: 'Your account has been created',
+          icon: 'success',
+        }).then(() => {
+          window.location = '/';
+        });
       })
       .catch((error) => {
         console.log(error);
         store.dispatch({
           type: 'RECEIVE_ERROR',
         });
+        swal({
+          title: 'Oops',
+          text: 'Something went wrong, please try again',
+          icon: 'error',
+        }).then(() => {
+          window.location = '/registration';
+        });
       })
       .finally(() => {
       });
   }
   else if (action.type === 'FETCH_USER') {
+    console.log(action.id);
     api.get(`/api/v1/user/${action.id}`)
       .then((response) => {
         console.log(response.data);
@@ -239,6 +255,19 @@ const ajax = (store) => (next) => (action) => {
       .then((response) => {
         store.dispatch({
           type: 'SAVE_EVENT_CREATE',
+        });
+        swal({
+          title: 'Good job!',
+          text: 'Congratulations, your event has been created',
+          icon: 'success',
+        }).then(() => {
+          window.location = '/profil';
+        });
+      })
+      .catch((error) => {
+        console.log(error);
+        store.dispatch({
+          type: 'RECEIVE_ERROR',
         });
       })
       .finally(() => {

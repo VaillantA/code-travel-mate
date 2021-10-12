@@ -41,25 +41,25 @@ const NavBar = () => {
       </div>
       <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <NavLink className="nav-links" to="/" exact>Home</NavLink>
+          <NavLink className="nav-links--link" to="/" exact>Home</NavLink>
         </li>
         {/* <li>
           <NavLink className="nav-links" to="/events">Event</NavLink>
         </li> */}
 
         <li>
-          <NavLink className="nav-links" to="/categories">Categories</NavLink>
+          <NavLink className="nav-links--link" to="/categories">Categories</NavLink>
         </li>
         <li>
-          <NavLink className="nav-links" to="/about-us">About Us</NavLink>
+          <NavLink className="nav-links--link" to="/about-us">About Us</NavLink>
         </li>
         <li>
-          <Link className="nav-links" to="/home" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
+          <Link className="nav-links--link" to="/" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
           {logged
-            ? <NavLink className="nav-links" to={`/profil/${userId}`}>Profile</NavLink>
-            : <NavLink className="nav-links" to="/registration">Sign Up</NavLink>}
+            ? <NavLink className="nav-links--link" to="/profil">Profile</NavLink>
+            : <NavLink className="nav-links--link" to="/registration">Sign Up</NavLink>}
         </li>
       </ul>
       {/* <Button>Sign Up</Button> */}

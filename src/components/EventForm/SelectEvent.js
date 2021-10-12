@@ -36,7 +36,6 @@ const SelectEvent = ({ choice }) => {
               value={currentChoice.id}
               key={currentChoice.id}
               className="searchBar--option"
-            
             >
               {currentChoice.name}
             </option>

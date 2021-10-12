@@ -6,6 +6,7 @@ export const initialState = {
   password: '',
   pseudo: '',
   token: '',
+  userId: '',
 
 };
 
@@ -30,7 +31,7 @@ const reducer = (state = initialState, action = {}) => {
         pseudo: action.pseudo,
         loginOpen: false,
         token: action.token,
-        userId: action.id,
+        userId: action.userId,
       };
     case 'LOGOUT':
       return {

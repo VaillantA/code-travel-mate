@@ -4,7 +4,10 @@
 body {
     font-family:Arial, Helvetica, sans-serif;
     background-color: #F8F8FF;
-    
+}
+
+.site-container {
+  min-height: calc(100vh - 160px);
 }
 
 

@@ -138,6 +138,14 @@ const ajax = (store) => (next) => (action) => {
           token: response.data.token,
           id: response.data.data.id,
         });
+
+        // store.dispatch({
+        //   type: 'REDIRECT_TO',
+        //   value: '/profil',
+        // });
+
+        // TODO: trouver mieux ?
+        window.location.href = '/profil';
       })
       .catch((error) => {
         console.log(error);

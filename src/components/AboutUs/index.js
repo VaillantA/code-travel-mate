@@ -8,8 +8,7 @@ import antoine from 'src/assets/Image/antoine.png';
 import claire from 'src/assets/Image/claire.png';
 
 const AboutUs = () => (
-  <>
-    <EventForm />
+ 
     <div className="about-us">
       <h1 className="about-title">Meet the team</h1>
       <div className="peoples">
@@ -50,8 +49,6 @@ const AboutUs = () => (
 
       </div>
     </div>
-  </>
-
 );
 
 export default AboutUs;

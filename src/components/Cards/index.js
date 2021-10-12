@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import Card from 'src/components/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
@@ -24,7 +25,7 @@ function Cards() {
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(0, 3).map((currentEvent) => (
+          {(listEvents.sort((a, b) => b.participant - a.participant)).slice(0, 3).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}
@@ -32,28 +33,6 @@ function Cards() {
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              // liked={isLiked}
-              /* likes = {currentEvent.likes} */
-            />
-          ))}
-        </div>
-        <div className="event">
-          <a href="#">
-            <h1 className="event-tittle">
-              Proches de vous
-            </h1>
-          </a>
-        </div>
-        <div className="card--parent">
-          {listEvents.slice(3, 6).map((currentEvent) => (
-            <Card
-              key={currentEvent.id}
-              id={currentEvent.id}
-              title={currentEvent.title}
-              resume={currentEvent.resume}
-              date={currentEvent.startAt}
-              image={currentEvent.categories[0].image}
-              // liked={isLiked}
             />
           ))}
         </div>
@@ -61,6 +40,25 @@ function Cards() {
           <a href="#">
             <h1 className="event-tittle">
               Les prochains événements
+            </h1>
+          </a>
+        </div>
+        <div className="card--parent">
+          {(listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)))).slice(6, 9).map((currentEvent) => (
+            <Card
+              key={currentEvent.id}
+              id={currentEvent.id}
+              title={currentEvent.title}
+              resume={currentEvent.resume}
+              date={currentEvent.startAt}
+              image={currentEvent.categories[0].image}
+            />
+          ))}
+        </div>
+        <div className="event">
+          <a href="#">
+            <h1 className="event-tittle">
+              Proches de vous
             </h1>
           </a>
         </div>
@@ -84,4 +82,3 @@ function Cards() {
 }
 
 export default Cards;
-

@@ -4,10 +4,12 @@ export const initialState = {
   image: '',
   nickname: '',
   age: '',
+  description:'',
   language: '',
   nationality: '',
   createdEventList: [],
   eventsList: [],
+  createdEventList:[],
   subscribe: false,
 
 };
@@ -31,6 +33,7 @@ const reducer = (state = initialState, action = {}) => {
         image: action.user.image,
         nickname: action.user.nickname,
         age: action.user.age,
+        description: action.user.description,
         nationality: action.user.nationality,
         createdEventList: action.user.createdEvent,
         eventsList: action.user.events,

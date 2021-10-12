@@ -17,6 +17,7 @@ body, html {
 .result--card--parent{
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media screen and (min-width:800px){

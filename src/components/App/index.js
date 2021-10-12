@@ -63,10 +63,7 @@ const App = () => {
       <Settings />
       {/* <EventForm /> */}
       <Switch>
-        <Route path="/home">
-          <Home />
-        </Route>
-        <Route path="/home" exact>
+        <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }
         </Route>
         <Route path="/results">

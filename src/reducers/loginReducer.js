@@ -7,7 +7,6 @@ export const initialState = {
   pseudo: '',
   token: '',
   userId: '',
-
 };
 
 const reducer = (state = initialState, action = {}) => {

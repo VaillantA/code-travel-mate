@@ -14,7 +14,7 @@ const NotFound = () => {
     document.title = 'Vous etes perdu';
   }, []);
   return (
-    <div className="not-found">
+    <div className="not-found site-container">
       <h1 className="title-h1">This page does not exist, just like this mug :</h1>
       <img src={mug} alt="" className="mug-image" />
       <p><Link className="not-found-link" to="/">Back to home page</Link></p>

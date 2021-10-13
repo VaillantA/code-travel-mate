@@ -1,10 +1,19 @@
 import axios from 'axios';
 import swal from 'sweetalert';
-import { useSelector } from 'react-redux';
+
 
 const api = axios.create({
   baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
+  // headers: { Authorization: `Bearer ${token}` },
 });
+// const token = sessionStorage.getItem('token');
+const data = JSON.parse(sessionStorage.getItem('key'));
+const token = data.token;
+console.log(token);
+
+if (token) {
+  api.defaults.headers.common.Authorization = `bearer ${token}`;
+}
 
 const ajax = (store) => (next) => (action) => {
   if (action.type === 'FETCH_EVENTS') {
@@ -220,7 +229,7 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'SUBSCRIPTION') {
     api.put(`/api/v1/event/subscription/${action.eventID}`, {
-      id: action.userId,
+      // id: action.userId,
     })
       .then((response) => {
         store.dispatch({
@@ -238,7 +247,7 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'UNSUBSCRIBE') {
     api.put(`/api/v1/event/removal/${action.eventID}`, {
-      id: action.userID,
+      // id: action.userID,
     })
       .then((response) => {
         store.dispatch({
@@ -263,6 +272,7 @@ const ajax = (store) => (next) => (action) => {
       date: state.eventForm.date,
       categories: [state.eventForm.selectedCategoryID],
       city: parseInt(state.eventForm.selectedCityID, 10),
+      token: state.login.token,
     })
       .then((response) => {
         store.dispatch({

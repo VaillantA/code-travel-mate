@@ -26,8 +26,13 @@ const Categories = () => {
   return (
     <main>
       <div className="cards">
+        {/* <div className="cards--categories--ancre">
+          categories.map((currentCategory) => (
+            <a href=`#${currentCategory.name}`>{currentCategory.name}</a>
+          ))
+        </div> */}
         {categories.map((currentCategory) => (
-          <div className="category" key={currentCategory.id}>
+          <div className="category" key={currentCategory.id} id={currentCategory.name}>
             <div className="event">
               <Link to={`/category/${currentCategory.id}`}>
                 <h1 className="event-tittle">

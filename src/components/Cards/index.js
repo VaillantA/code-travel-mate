@@ -20,7 +20,7 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Les plus populaires
+              The most popular
             </h1>
           </a>
         </div>
@@ -39,7 +39,7 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Les prochains événements
+              Next events
             </h1>
           </a>
         </div>
@@ -58,7 +58,7 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Proches de vous
+              Close to you 
             </h1>
           </a>
         </div>

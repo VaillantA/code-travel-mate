@@ -1,106 +1,104 @@
-
-.card{
-  width: 100%;
-}
+@use 'src/styles/vars';
 
 .card {
 	color: black;
 	padding-left: 1em; 
   padding-right: 1em;
 	border-radius: 15px;
-	transition: 200ms;
+  background-color: white;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
 }
 .card:last-child{
   margin-right: 0;
 }
 .card-header {
-  width: 80%;
+  /* width: 80%; */
   margin: auto;
   display: flex;
   flex-wrap: nowrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
 }
 .profile {
-	width: 2.5rem;
-	height: 2.5rem;
-	border-radius: 50%;
-	margin: 10px;
-	font-size: 1em;
-	font-weight: bold;
-  padding-top: 1%;
+  width: 2.9rem;
+  height: 2.9rem;
+  justify-content: center;
+  margin-right: 1em; 
 }
 
 .avatar {
-	vertical-align: middle;
-  max-width: 80%; 
-  border-radius: 40px;
-  // margin-bottom: 100px;
+  max-width: 80%;
+  border-radius: 50%;
+  vertical-align: center;
 }
 .card-title-group {
-	justify-content: center;
-  height: auto;
+ justify-content: center; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  vertical-align: middle; 
 }
 .card-title {
   flex: 0.5;
-  font-size: large;
-  margin-bottom: 0;
-  margin-top: 0;
-  font-size: 1em;
+font-size: 1.3em;
+font-weight: lighter;
+margin-bottom: 0;
+margin-top: 0;
 } 
 .card-date {
 	flex: 0.3;
-	font-size: 0.7em;
-  padding-bottom: 1em;
+font-size: small;
+margin-bottom: 10px;
 }
 .card-image {
   display: flex;
-  justify-content: center; 
-	border-radius: 10px;
-	margin-bottom: 1em;
-	margin-top: 1em;
-  // width: 60%; 
-  margin: auto;
- 
+justify-content: center;
+border-radius: 10px;
+margin-bottom: 20px;
+margin-top: 20px;
+width: 90%;
+margin: auto;
+margin-top: 1em;
 }
 .card-like {
-  width: 80%;
+  width: 90%;
   margin: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 .card-like-icon {
   height: 40px;
-  width: 30px;
-  padding-left: 5px;
-  color: #ff914d;
+width: 30px;
+padding-left: 5px;
+color :#92908d;  
 }
+/* .card-like-counter {
+  color: #ff914d;
+  padding-left: 5px;
+  padding-top: 0.8em;
+  font-weight: bold;
+} */
 .card-text {
   font-size: 1em;
   text-align: left;
   // white-space: normal;
   line-height: 1.4;
-  margin-bottom: 1em;
-  width: 80%;
+ /*  margin-bottom: em; */
+  width: 90%;
   margin: auto;
 }
 
-.buttons-ripples {
-  border: 1px; 
-  color: #fff;
-  font-weight: bold;
-  font-family: 'Lato', sans-serif;
-  border-radius: 50px;
-  background-color: #ff914d;
-  padding-top: 0.7em;
-  padding-bottom: 0.7em;
-  padding-left: 1.5em;
-  padding-right: 1.5em;
-}
 .event{
   text-transform: uppercase;
   font-size: 15px;
   color: black;
   font-weight: bold;
   text-align: center;
-  margin-bottom:0.2em;
   margin-top: 1em;
+  margin-bottom: 1em;
   
 } 
 
@@ -108,9 +106,10 @@
   margin-top: 0;
 } */
 .divButton {
-  display: flex;
- justify-content: center; 
+  display: none;
+  /* justify-content: center;  */
 }
+
 @media screen and (min-width:800px){
   .card {
     width: 30%;
@@ -123,12 +122,13 @@
     padding-bottom: 0.5em;
   }
   .event{
-    font-size: 1em;
+    font-size: 1.2em;
     padding-top: 3em;
     padding-bottom: 0.2em;
-    border-bottom: solid 1px rgb(172, 171, 171);
+    border-bottom: groove 2px rgb(172, 171, 171);
     width: 80%;
     margin: auto;
+    margin-bottom:1em;
   }
 
   .card-header {
@@ -149,19 +149,35 @@
     max-width: 80%;
     border-radius: 40px;
   }
-
- /*  .card-image {
-    width: 80%;
+  // .buttons-ripples {background-image: linear-gradient(to right, #AA076B 0%, #2A0944  51%, #AA076B  100%)}
+  .buttons-ripples {
+    background-color: #A2416B;
+    font-weight: bold;
+    border: none;
+     margin-bottom: 10px; 
+     margin-top: 10px; 
+    padding-top: 0.7em;
+    padding-bottom: 0.7em;
+    padding-left: 1em;
+    padding-right: 1em;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 8px;
+    display: block;
+   }
+   .buttons-ripples:hover {
+     background-position: right center; /* change the direction of the change here */
+     color: #fff;
+     text-decoration: none;
+   } 
+   .divButton {
+    display: flex;
+    justify-content: center; 
   }
-
-  .card-like {
-    width: 80%;
-  }
-  
-  .card-text {
-    width: 80%;
-  } */
-  
 }
 
 

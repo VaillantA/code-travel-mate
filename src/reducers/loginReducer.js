@@ -5,7 +5,8 @@ export const initialState = {
   email: '',
   password: '',
   pseudo: '',
-
+  token: '',
+  userId: '',
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -20,7 +21,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         loginOpen: !state.loginOpen,
       };
-    case 'SAVE_USER':
+    case 'SAVE_USER_LOGIN':
       return {
         ...state,
         logged: true,
@@ -28,13 +29,22 @@ const reducer = (state = initialState, action = {}) => {
         password: '',
         pseudo: action.pseudo,
         loginOpen: false,
+        token: action.token,
+        userId: action.userId,
       };
     case 'LOGOUT':
       return {
         ...state,
         logged: false,
-        pseudo: 'Utilisateur anonyme',
+        pseudo: '',
+        token: '',
       };
+    // case 'REDIRECT_TO':
+    //   return {
+    //     ...state,
+    //     redirectTo: action.value,
+    //   };
+
     default:
       return state;
   }

@@ -7,7 +7,7 @@ const Input = ({ className }) => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    /* console.log('message ok'); */
+
     dispatch({
       type: 'CHANGE_MESSAGE',
       city: event.target.value,
@@ -18,7 +18,7 @@ const Input = ({ className }) => {
     <input
       name="searchBar--search"
       className={className}
-      placeholder="Ville"
+      placeholder="City"
       onChange={handleChange}
       value={cityInProgress}
     />

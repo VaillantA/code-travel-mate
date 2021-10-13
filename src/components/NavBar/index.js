@@ -5,13 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Home from 'src/components/Home';
 
-
 import './style.scss';
 
 const NavBar = () => {
   const isClicked = useSelector((state) => state.searchBar.burgerOpen);
   const isOpen = useSelector((state) => state.login.loginOpen);
-  const logged = useSelector ((state) => state.login.logged);
+  const logged = useSelector((state) => state.login.logged);
+  const userId = useSelector((state) => state.login.userId);
 
   const dispatch = useDispatch();
   const handleClick = () => {
@@ -24,6 +24,7 @@ const NavBar = () => {
       dispatch({
         type: 'LOGOUT',
       });
+      sessionStorage.clear();
     }
     else {
       dispatch({
@@ -34,29 +35,31 @@ const NavBar = () => {
 
   return (
     <nav className="NavbarItems">
-      <Link to="/home"><h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1></Link>
+      <Link to="/"><h1 className="navbar-logo">Travel Mate <i className="fas fa-globe-africa" /></h1></Link>
       <div className="menu-icon" onClick={handleClick}>
         <i className={isClicked ? 'fas fa-times' : 'fas fa-bars'} />
       </div>
       <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <NavLink className="nav-links" to="/home" exact>Home</NavLink>
+          <NavLink className="nav-links--link" to="/" exact>Home</NavLink>
         </li>
-        <li>
+        {/* <li>
           <NavLink className="nav-links" to="/events">Event</NavLink>
-        </li>
+        </li> */}
 
         <li>
-          <NavLink className="nav-links" to="/categories">Categories</NavLink>
+          <NavLink className="nav-links--link" to="/categories">Categories</NavLink>
         </li>
         <li>
-          <NavLink className="nav-links" to="/about-us">About Us</NavLink>
+          <NavLink className="nav-links--link" to="/about-us">About Us</NavLink>
         </li>
         <li>
-          <Link className="nav-links" to="" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
+          <Link className="nav-links--link" to="/" onClick={handleClickToggle}>{logged ? 'Log out' : 'Log in'}</Link>
         </li>
         <li>
-          <NavLink className="nav-links" to="/registration">Sign Up</NavLink>
+          {logged
+            ? <NavLink className="nav-links--link" to="/profil">Profile</NavLink>
+            : <NavLink className="nav-links--link" to="/registration">Sign Up</NavLink>}
         </li>
       </ul>
       {/* <Button>Sign Up</Button> */}

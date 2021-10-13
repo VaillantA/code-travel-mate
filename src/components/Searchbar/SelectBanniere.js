@@ -18,12 +18,17 @@ const SelectBanniere = ({ choice }) => {
     <select
       name="searchBar--category"
       className="searchBar--select"
-      value={category}
+      // value={category}
       onChange={handleSelect}
     >
+      <option
+        value=""
+      >
+        Choose a category
+      </option>
       {choice.map((currentChoice) => (
         <option
-          value={currentChoice.name}
+          value={currentChoice.id}
           key={currentChoice.id}
           className="searchBar--option"
         >

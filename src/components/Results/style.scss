@@ -1,0 +1,33 @@
+@use 'src/styles/vars';
+
+body, html {
+  font-family: 'Roboto Condensed', sans-serif;
+}
+.results--title {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  padding: 1em;
+  // margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: black;
+  background-color: vars.$light-color;
+  font-weight: bold;
+  text-align: center;
+}
+.result--card--parent{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@media screen and (min-width:800px){
+  .card--parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  .result--card--parent{
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

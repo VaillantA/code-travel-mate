@@ -14,27 +14,25 @@ const Login = () => {
   const logged = useSelector((state) => state.login.logged);
 
   const dispatch = useDispatch();
-  // const handleClick = (event) => {
-  //   console.log('COucou petite péruche');
-  //   event.preventDefault();
-  //   if (logged === true) {
-  //     dispatch({
-  //       type: 'LOGOUT',
-  //     });
-  //   }
-  //   else {
-  //     dispatch({
-  //       type: 'LOGIN',
-  //     });
-  //   }
-  // };
   const handleClick = (event) => {
-    console.log('COucou petite péruche');
     event.preventDefault();
-    dispatch({
-      type: 'LOGIN',
-    });
+    if (logged === true) {
+      dispatch({
+        type: 'LOGOUT',
+      });
+    }
+    else {
+      dispatch({
+        type: 'LOGIN',
+      });
+    }
   };
+  // const handleClick = (event) => {
+  //   event.preventDefault();
+  //   dispatch({
+  //     type: 'LOGIN',
+  //   });
+  // };
 
   return (
     <div className="container">
@@ -62,7 +60,7 @@ const Login = () => {
             inputKey="password"
           />
         </div>
-        <button type="button" className="button" onClick={handleClick}>Log In</button>
+        <button type="submit" className="button" onClick={handleClick}>Log In</button>
       </form>
     </div>
   );

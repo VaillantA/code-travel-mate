@@ -1,0 +1,16 @@
+.ML{
+  margin: 2em;
+  background-color: rgb(233, 227, 217);
+  padding: 1em;
+
+  &--title{
+    font-size: 1em;
+    font-weight: bold;
+    margin: 1em;
+  }
+  &--text{
+    margin-bottom: 2em;
+  }
+}
+
+

@@ -1,73 +1,77 @@
-/* import "src/components/App/styles.scss"; */
+/* eslint-disable max-len */
 import Card from 'src/components/Card';
-import landscape from 'src/assets/images/licensed-image.jpeg';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
 import './style.scss';
-import { StaticRouter } from 'react-router';
 
 function Cards() {
-  const like = 193;
-  const isLiked = true;
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch({
+  //     type: 'FETCH_EVENTS',
+  //   });
+  // }, []);
 
   const listEvents = useSelector((state) => state.events.list);
-
   return (
     <div className="slider">
       <div className="cards">
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Les plus populaires
+              The most popular
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(0, 3).map((currentEvent) => (
+          {(listEvents.sort((a, b) => b.participant - a.participant)).slice(0, 3).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              liked={isLiked}
             />
           ))}
         </div>
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Proches de vous
+              Next events
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(3, 6).map((currentEvent) => (
+          {(listEvents.sort((a, b) => (new Date(a.startAt) - new Date(b.startAt)))).slice(6, 9).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
               image={currentEvent.categories[0].image}
-              liked={isLiked}
             />
           ))}
         </div>
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Les prochains événements
+              Close to you 
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 7).map((currentEvent) => (
+          {listEvents.slice(6, 9).map((currentEvent) => (
             <Card
               key={currentEvent.id}
+              id={currentEvent.id}
               title={currentEvent.title}
               resume={currentEvent.resume}
               date={currentEvent.startAt}
-              // image={currentEvent.categories[0].image}
-              liked={isLiked}
+              image={currentEvent.categories[0].image}
+              // liked={isLiked}
             />
           ))}
         </div>
@@ -78,14 +82,3 @@ function Cards() {
 }
 
 export default Cards;
-
-
-// {listEvents.slice(0, 3).map((currentEvent) => (
-//   <Card
-//     key={currentEvent.id}
-//     title={currentEvent.title}
-//     resume={currentEvent.resume}
-//     date={currentEvent.startAt}
-//     image={currentEvent.image}
-//     liked={isLiked}
-//   />

@@ -1,9 +1,12 @@
 export const initialState = {
   burgerOpen: false,
+  searchBurgerOpen: false,
   burgerSearch: false,
   categoriesList: [],
   cityInProgress: '',
+  selectedCategoryID: '',
   selectedCategory: '',
+  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {
@@ -12,6 +15,11 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         burgerOpen: !state.burgerOpen,
+      };
+    case 'SEARCHBAR_BURGEN_OPEN':
+      return {
+        ...state,
+        searchbarBurgerOpen: !state.searchbarBurgerOpen,
       };
     case 'BURGER_SEARCH':
       return {
@@ -26,17 +34,24 @@ const reducer = (state = initialState, action = {}) => {
     case 'CHANGE_SELECT':
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategoryID: action.category,
       };
     case 'CHANGE_RADIO':
       return {
         ...state,
-        selectedCategory: action.category,
+        selectedCategoryID: action.category,
       };
     case 'SAVE_CATEGORIES':
       return {
         ...state,
         categoriesList: action.categories,
+        image: action.image,
+      };
+    case 'REDIRECT_FALSE':
+      return {
+        ...state,
+        cityInProgress: '',
+        selectedCategoryID: '',
       };
     default:
       return state;

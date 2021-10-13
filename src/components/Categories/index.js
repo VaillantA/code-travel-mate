@@ -1,33 +1,50 @@
+/* eslint-disable max-len */
 import Card from 'src/components/Card';
-import { useSelector } from 'react-redux';
-import './style.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+/* import './style.scss'; */
+import { useEffect } from 'react';
 
 const Categories = () => {
-  const recipeAuthor = 'Jhon,';
   const like = 193;
   const isLiked = true;
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_EVENTS',
+    });
+  }, []);
 
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
-  console.log(categories);
 
   return (
     <main>
       <div className="cards">
-        {categories.slice(0, 3).map((currentCategory) => (
-
-          <div className="category">
+        {/* <div className="cards--categories--ancre">
+          categories.map((currentCategory) => (
+            <a href=`#${currentCategory.name}`>{currentCategory.name}</a>
+          ))
+        </div> */}
+        {categories.map((currentCategory) => (
+          <div className="category" key={currentCategory.id} id={currentCategory.name}>
             <div className="event">
-              <a href="#">
+              <Link to={`/category/${currentCategory.id}`}>
                 <h1 className="event-tittle">
                   {currentCategory.name}
                 </h1>
-              </a>
+              </Link>
             </div>
-            <div className="card-header">
-              {listEvents.slice(0, 3).map((currentEvent) => (
+            <div className="card--parent">
+              {listEvents.slice(0, 28).filter((event) => event.categories[0].name === (currentCategory.name)).slice(0, 3).map((currentEvent) => (
                 <Card
                   key={currentEvent.id}
+                  id={currentEvent.id}
                   title={currentEvent.title}
                   resume={currentEvent.resume}
                   date={currentEvent.startAt}

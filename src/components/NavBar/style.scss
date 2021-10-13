@@ -28,7 +28,7 @@ body, html {
   font-size: 1.6rem;
 }
 
-.fa-times{
+.menu-icon .fa-times{
 color: #fff;
 }
 .fa-bars{
@@ -47,13 +47,13 @@ color: #fff;
   margin-right: 2rem;
 }
 
-.nav-links {
+.nav-links--link {
   color: white;
   text-decoration: none;
   padding: 0.5rem 1rem;
 }
 
-.nav-links:hover {
+.nav-links--link:hover {
   background-color: #fff6ea;
   color: #3B185F;
   border-radius: 5px;
@@ -131,8 +131,8 @@ color: #fff;
     font-size: 1.8rem;
     cursor: pointer;
   }
-  button {
-    display: none;
-  }
+  // button {
+  //   display: none;
+  // }
 
 }

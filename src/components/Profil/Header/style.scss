@@ -21,18 +21,16 @@
   width:200px;
 }
 
-.buttons-profil{
-  border: 2px red solid;
-}
+
 .infos li{
   /* border: 1px solid rgb(153, 151, 151); */
-  background-color: rgb(252, 247, 247);
+/*   background-color: #DA70D6; */
   width: length($list: infos);
   padding: 6px;
    vertical-align: middle;
    display: inline-block; 
+   font-weight: lighter;
   /* margin-bottom: 0.5em; */
-  margin-right: 1em;
 }
 
 .infos li :last-child{
@@ -43,8 +41,9 @@
   width: 420px;
    padding:10px ;
    text-align: center;
-   border: 1px solid rgb(180, 180, 180);
+   /* border: 1px solid rgb(180, 180, 180); */
   margin-bottom: 1em;
+  margin-top: 1em;
 }
 .navList{
   list-style: none;/* liste des puces */
@@ -121,7 +120,21 @@
 .navItem:last-child {
   margin-right: 0;
 }
-  
+.navItem.active ::after {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: length($list: navItem);
+  /* background-color: black; */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #2A0944;
+
+} 
+.navItem.active{
+  background: none;
+}
 @media screen and (min-width:800px){
   .navItem-text {
     display: block;}
@@ -134,17 +147,21 @@
     padding: 20px;
   }
 
-   .navItem.active ::before {
+/*    .navItem.active ::before {
   content: '';
   position: absolute;
   height: 1px;
   width: length($list: navItem);
-  background-color: black;
   top: 0;
   left: 0;
   right: 0;
+  background: #2A0944;
 
-} 
+} */ 
+
+.navItem.active{
+  background: none;
+}
   .navList{
     border-bottom: none;
     padding-bottom: none;

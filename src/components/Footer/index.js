@@ -6,11 +6,11 @@ const Footer = () => (
     <hr />
     <div className="footer">
       <Link to="/contact" className="footerItem">
-        Contact
+        Contact us
       </Link>
-      <p className="footerItem">Plan du site</p>
+      <p className="footerItem">Privacy policy</p>
       <Link to="/mentions-legales" className="footerItem">
-        Mentions legales
+        Legales mentions
       </Link>
     </div>
   </div>

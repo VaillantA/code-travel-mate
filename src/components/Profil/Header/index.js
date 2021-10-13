@@ -47,11 +47,11 @@ const Header = (id) => {
           </div>
           <div className="buttons">
             <button className="buttons-profil" type="button">
-              <p>modifier le profil</p>
+              <p>Edit profile</p>
             </button>
             <Link to='/EventForm'   >
             <button className="buttons-event" type="button">
-              <p>créer un événement</p>
+              <p>Create Event</p>
             </button>
             </Link>
           </div>

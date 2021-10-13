@@ -3,7 +3,7 @@ import swal from 'sweetalert';
 import { useSelector } from 'react-redux';
 
 const api = axios.create({
-  baseURL: 'http://tai-patrick-buth-khun.vpnuser.lan:8000',
+  baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
 });
 
 const ajax = (store) => (next) => (action) => {

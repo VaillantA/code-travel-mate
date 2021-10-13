@@ -18,6 +18,11 @@ const EventForm = () => {
       type: 'FETCH_CITIES',
     });
   }, []);
+  useEffect(() => {
+    dispatch({
+      type: 'FETCH_CATEGORIES',
+    });
+  }, []);
   const handleSubmit = (event) => {
     event.preventDefault();
     dispatch({
@@ -26,10 +31,12 @@ const EventForm = () => {
   };
   // const selectedOptionsID = useSelector((state) => state.eventForm.selectedOptionsID);
   const categories = useSelector((state) => state.searchBar.categoriesList);
+  console.log(categories);
   const cities = useSelector((state) => state.eventForm.citiesList);
 
   
   return (
+    <div className="site-container">
     <div className="container">
       <div className="title"> Event Create Form</div>
       <form className="form" onSubmit={handleSubmit}>
@@ -86,7 +93,7 @@ const EventForm = () => {
         <button type="submit" className="button">Create an event</button>
       </form>
     </div>
-
+  </div>
   );
 };
 

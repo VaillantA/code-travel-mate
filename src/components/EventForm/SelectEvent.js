@@ -28,7 +28,7 @@ const SelectEvent = ({ choice }) => {
           <option
             value=""
           >
-            Choisissez une catégorie
+            Choose a category
           </option>
           {choice.map((currentChoice) => (
             <option

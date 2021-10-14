@@ -59,12 +59,12 @@ function Cards() {
         <div className="event">
           <a href="#">
             <h1 className="event-tittle">
-              Close to you 
+              Close to you
             </h1>
           </a>
         </div>
         <div className="card--parent">
-          {listEvents.slice(6, 9).map((currentEvent) => (
+          {listEvents.slice(10, 13).map((currentEvent) => (
             <Card
               key={currentEvent.id}
               id={currentEvent.id}

@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 const Categories = () => {
   const like = 193;
   const isLiked = true;
-  const loading = useSelector((state) => state.events.loading);
+  const loading = useSelector((state) => state.events.loading)
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({

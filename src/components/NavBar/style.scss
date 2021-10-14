@@ -89,7 +89,8 @@ color: #fff;
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    // height: 100%;
+    height: 450px;
     min-width: 100%;
     position: absolute;
     top: 80px;
@@ -104,14 +105,14 @@ color: #fff;
     transition: all 0.5s ease;
     z-index: 1;
   }
-  .nav-links {
+  .nav-links--link {
     text-align: center;
     padding: 2rem;
     width: 100%;
     display: table;
   }
  
-  .nav-links:hover {
+  .nav-links--link:hover {
     background-color: #fff;
     color:#3B185F;
   }

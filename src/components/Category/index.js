@@ -10,7 +10,6 @@ const Category = () => {
   const { id } = useParams();
   const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
-  
   useEffect(() => {
     dispatch({
       type: 'LOAD_TRUE',

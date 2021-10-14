@@ -4,7 +4,7 @@ import './style.scss';
 
 const Loading = () => (
   <div className="loading site-container">
-    <div className="test">
+    <div className="globe--container">
       <i className="fas fa-globe-africa" id="globe-load" />
     </div>
   </div>

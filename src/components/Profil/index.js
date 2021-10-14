@@ -10,11 +10,6 @@ import Header from './Header';
 
 const Profil = () => {
   const userId = useSelector((state) => state.login.userId);
-  // console.log(userId);
-  // if (!userId {
-
-  // })
-
 
   const dispatch = useDispatch();
   useEffect(() => {
@@ -23,11 +18,12 @@ const Profil = () => {
       id: parseInt(userId, 10),
     });
   }, []);
-
+  useEffect(() => {
+    document.title = 'Profile';
+  }, []);
   return (
     <div className="profil site-container">
       <Header />
-      {/* <ProfilCards/> */}
     </div>
   );
 };

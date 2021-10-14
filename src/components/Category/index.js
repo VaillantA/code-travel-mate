@@ -21,13 +21,8 @@ const Category = () => {
       id: id,
     });
   }, []);
-/*   useEffect(() => {
-    dispatch({
-      type: 'REDIRECT_FALSE',
-    });
-  }, []); */
+
   const listEvents = useSelector((state) => (state.events.list));
-  // console.log(listEvents);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
 
   if (loading) {

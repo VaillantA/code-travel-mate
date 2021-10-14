@@ -7,7 +7,6 @@ export const initialState = {
   redirection: false,
   loading: true,
   oneEvent: [],
-  /* isLiked : false, */
 };
 
 const reducer = (state = initialState, action = {}) => {

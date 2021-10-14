@@ -11,7 +11,7 @@ import './style.scss';
 // == Composant
 const NotFound = () => {
   useEffect(() => {
-    document.title = 'Vous etes perdu';
+    document.title = 'You are lost';
   }, []);
   return (
     <div className="not-found site-container">

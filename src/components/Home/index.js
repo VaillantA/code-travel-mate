@@ -15,6 +15,9 @@ const Home = () => {
       type: 'FETCH_EVENTS',
     });
   }, []);
+  useEffect(() => {
+    document.title = 'Travel-Mate';
+  }, []);
 
   return (
     <div className="home">

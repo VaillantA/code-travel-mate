@@ -43,10 +43,6 @@ const EventDetail = () => {
 
   const categories = useSelector((state) => state.searchBar.categoriesList);
   const subscribe = useSelector((state) => state.profil.subscribe);
-  // const eventsList = useSelector((state) => state.profil.eventsList);
-  // console.log(eventsList);
-  // console.log(eventsList[0].id);
-  // const isThisEventSubscribe = eventsList.filter((event) => event.id === id);
 
   const handleRadio = (e) => {
     dispatch({

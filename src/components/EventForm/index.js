@@ -29,9 +29,9 @@ const EventForm = () => {
       type: 'CREATE_EVENT',
     });
   };
-  // const selectedOptionsID = useSelector((state) => state.eventForm.selectedOptionsID);
+
   const categories = useSelector((state) => state.searchBar.categoriesList);
-  console.log(categories);
+  
   const cities = useSelector((state) => state.eventForm.citiesList);
 
   

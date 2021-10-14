@@ -18,25 +18,16 @@ import Profil from 'src/components/Profil';
 import Category from 'src/components/Category';
 import Footer from 'src/components/Footer';
 import Home from 'src/components/Home';
-import Loading from 'src/components/Loading';
-import Cards from 'src/components/Cards';
 import Contact from 'src/components/Contact';
 import MentionsLegales from 'src/components/MentionsLegales';
-// import Login from 'src/components/Login/Login';
 import EventForm from 'src/components/EventForm';
-
 import AboutUs from 'src/components/AboutUs';
 
 // == Composant
 const App = () => {
   const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch({
-  //     type: 'FETCH_CATEGORIES',
-  //   });
-  // }, []);
   const data = JSON.parse(sessionStorage.getItem('key'));
-  // console.log(data);
+
   if (data) {
     dispatch({
       type: 'SAVE_USER_LOGIN',
@@ -46,14 +37,9 @@ const App = () => {
       userId: data.data.id,
     });
   }
-
   const redirection = useSelector((state) => state.events.redirection);
   const isLogged = useSelector((state) => state.login.logged);
-  // const redirectTo = useSelector((state) => state.login.redirectTo);
 
-  // if (loading) {
-  //   return <Loading />;
-  // }
 
   return (
     <div className="app">

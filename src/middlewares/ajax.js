@@ -20,8 +20,6 @@ const ajax = (store) => (next) => (action) => {
   if (action.type === 'FETCH_EVENTS') {
     api.get('/api/v1/event')
       .then((response) => {
-        // console.log(response.data);
-        // console.log(response.data.categories);
         store.dispatch({
           type: 'SAVE_EVENTS',
           events: response.data,
@@ -74,7 +72,6 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_ONE_EVENT') {
     api.get(`/api/v1/event/${action.id}`)
       .then((response) => {
-        // console.log(response.data);
         store.dispatch({
           type: 'SAVE_ONE_EVENT',
           oneEvent: response.data,
@@ -140,7 +137,6 @@ const ajax = (store) => (next) => (action) => {
     })
       .then((response) => {
         api.defaults.headers.common.Authorization = `bearer ${response.data.token}`;
-        // console.log(response);
         sessionStorage.setItem('key', JSON.stringify(response.data));
         store.dispatch({
           type: 'SAVE_USER_LOGIN',
@@ -148,11 +144,6 @@ const ajax = (store) => (next) => (action) => {
           token: response.data.token,
           id: response.data.data.id,
         });
-
-        // store.dispatch({
-        //   type: 'REDIRECT_TO',
-        //   value: '/profil',
-        // });
 
         // TODO: trouver mieux ?
         window.location.href = '/profil';
@@ -210,10 +201,8 @@ const ajax = (store) => (next) => (action) => {
       });
   }
   else if (action.type === 'FETCH_USER') {
-    console.log(action.id);
     api.get(`/api/v1/user/${action.id}`)
       .then((response) => {
-        console.log(response.data);
         store.dispatch({
           type: 'SAVE_USER',
           user: response.data,
@@ -248,7 +237,6 @@ const ajax = (store) => (next) => (action) => {
   }
   else if (action.type === 'UNSUBSCRIBE') {
     api.put(`/api/v1/event/removal/${action.eventID}`, {
-      // id: action.userID,
     })
       .then((response) => {
         store.dispatch({
@@ -296,24 +284,6 @@ const ajax = (store) => (next) => (action) => {
       .finally(() => {
       });
   }
-  // else if (action.type === 'FETCH_USER_EVENTS') {
-  //   api.get(`/api/v1/user/${action.userId}`)
-  //     .then((response) => {
-  //       // console.log((response.data));
-  //       store.dispatch({
-  //         type: 'SAVE_USER_EVENTS',
-  //         userEvents: response.data.events,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       console.log(error);
-  //       store.dispatch({
-  //         type: 'RECEIVE_ERROR',
-  //       });
-  //     })
-  //     .finally(() => {
-  //     });
-  // }
   next(action);
 };
 

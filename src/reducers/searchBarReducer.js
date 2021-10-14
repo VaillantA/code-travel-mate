@@ -6,7 +6,6 @@ export const initialState = {
   cityInProgress: '',
   selectedCategoryID: '',
   selectedCategory: '',
-  // eventsImages: [],
 };
 
 const reducer = (state = initialState, action = {}) => {

@@ -26,7 +26,6 @@ const Card = ({
           <Link
             key={id}
             to={`/detailsEvent/${id}`}
-            /* title={`${title}`} */
           >
             <h5 className="card-title">{title}</h5>
           </Link>
@@ -43,19 +42,16 @@ const Card = ({
           <img className="card-image" src={image} alt="Logo" />
         </Link>
         <div className="card-like">
-          <Heart className=" card-like-icon" /* fill="#ff914d" */ /* {onclick ? '#ff914d' : ''} */ />
-         {/*  <p className=" card-like-counter">{likes}</p> */}
+          <Heart className=" card-like-icon" />
           <MessageCircle className=" card-like-icon" />
         </div>
         <div className="card-text">{resume}</div>
         <div className="divButton">
-          {/* <Ripples color="#fff" during={1200}> */}
           <Link
             to={`/detailsEvent/${id}`}
           >
             <button type="button" className="buttons-ripples">View Details</button>
           </Link>
-          {/* </Ripples> */}
         </div>
       </div>
     </div>

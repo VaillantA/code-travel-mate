@@ -23,6 +23,9 @@ const Categories = () => {
       type: 'FETCH_EVENTS',
     });
   }, []);
+  useEffect(() => {
+    document.title = 'Categories';
+  }, []);
 
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);

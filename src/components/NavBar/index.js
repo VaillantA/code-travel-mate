@@ -19,6 +19,11 @@ const NavBar = () => {
       type: 'BURGEN_OPEN',
     });
   };
+  const handleHome = () => {
+    dispatch({
+      type: 'REDIRECT_FALSE',
+    });
+  };
   const handleClickToggle = () => {
     if (logged === true) {
       dispatch({
@@ -41,7 +46,7 @@ const NavBar = () => {
       </div>
       <ul className={isClicked ? 'nav-menu active' : 'nav-menu'}>
         <li>
-          <NavLink className="nav-links--link" to="/" exact>Home</NavLink>
+          <NavLink className="nav-links--link" to="/" exact onClick={handleHome()}>Home</NavLink>
         </li>
         {/* <li>
           <NavLink className="nav-links" to="/events">Event</NavLink>

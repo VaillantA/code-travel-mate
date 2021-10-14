@@ -45,7 +45,6 @@ const App = () => {
     <div className="app">
       <NavBar />
       <Settings />
-      {/* <EventForm /> */}
       <Switch>
         <Route path="/" exact>
           {redirection ? <Redirect to="/results" /> : <Home /> }

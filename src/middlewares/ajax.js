@@ -1,20 +1,15 @@
 import axios from 'axios';
 import swal from 'sweetalert';
 
-
 const api = axios.create({
   baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
-  // headers: { Authorization: `Bearer ${token}` },
 });
-// const token = sessionStorage.getItem('token');
+
 if (sessionStorage.getItem('key')) {
   const data = JSON.parse(sessionStorage.getItem('key'));
   const token = data.token;
   api.defaults.headers.common.Authorization = `bearer ${token}`;
 }
-
-
-
 
 const ajax = (store) => (next) => (action) => {
   if (action.type === 'FETCH_EVENTS') {

@@ -1,11 +1,14 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import Card from 'src/components/Card';
+import Loading from 'src/components/Loading';
 import Searchbar from '../Searchbar';
+
 import './style.scss';
 
 const Results = () => {
   const listEvents = useSelector((state) => state.events.list);
+  const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
@@ -13,6 +16,9 @@ const Results = () => {
     });
   }, []);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <>
       <Searchbar />

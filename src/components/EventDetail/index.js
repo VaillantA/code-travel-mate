@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Input from 'src/components/Searchbar/Input';
 import avatar from 'src/assets/images/avatar.png';
 import panorama from 'src/assets/Image/panorama.jpg';
+import Loading from 'src/components/Loading';
 import swal from 'sweetalert';
 
 const EventDetail = () => {
@@ -12,6 +13,7 @@ const EventDetail = () => {
   const dispatch = useDispatch();
   const logged = useSelector((state) => state.login.logged);
   const userId = useSelector((state) => state.login.userId);
+  const loading = useSelector((state) => state.events.loading);
 
   useEffect(() => {
     dispatch({
@@ -95,6 +97,9 @@ const EventDetail = () => {
     });
   };
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <>
       <div className="detail">

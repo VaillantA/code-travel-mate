@@ -14,7 +14,7 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         list: action.events,
-        loading: false,
+        // loading: false,
       };
     case 'SAVE_ONE_EVENT':
       return {
@@ -25,6 +25,7 @@ const reducer = (state = initialState, action = {}) => {
         authorAge: action.authorAge,
         eventImage: action.eventImage,
         eventCity: action.oneEventCity,
+        loading: false,
       };
     case 'RECEIVE_ERROR':
       return {
@@ -44,7 +45,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         list: action.list,
         redirection: true,
-        // loading: false,
+        loading: false,
       };
     case 'REDIRECT_FALSE':
       return {

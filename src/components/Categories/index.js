@@ -27,9 +27,9 @@ const Categories = () => {
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
 
-  if (loading) {
+  /* if (loading) {
     return <Loading />;
-  }
+  } */
   return (
     <main>
       <div className="cards">

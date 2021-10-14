@@ -7,7 +7,7 @@ const Contact = () => (
     </h1>
     <form
       className="contactForm"
-      action="https://formsubmit.co/b56675639b1132fd3a633c015c362ef5"
+      action="https://formsubmit.co/travel.mate.demo2021@gmail.com"
       method="POST">
       <input
         className="contactForm--nameInput"

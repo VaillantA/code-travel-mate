@@ -20,6 +20,7 @@
   height: 3em;
   background: white;
   padding-right: 1em;
+
 }
 
 .searchBar--input {
@@ -31,6 +32,12 @@
   padding: 1em;
 }
 
+.searchBar--input::placeholder {
+  color: black;
+  opacity: 1;
+  font-size: 14px;
+  font-weight: bold;
+}
 .searchBar--buttonSubmitGO {
   font-size: 0.8em;
   border-radius: 5px;

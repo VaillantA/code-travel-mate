@@ -7,6 +7,11 @@ const Home = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
+      type: 'LOAD_TRUE',
+    });
+  }, []);
+  useEffect(() => {
+    dispatch({
       type: 'FETCH_EVENTS',
     });
   }, []);

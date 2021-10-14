@@ -10,6 +10,12 @@ const Category = () => {
   const { id } = useParams();
   const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch({
+      type: 'LOAD_TRUE',
+    });
+  }, []);
   useEffect(() => {
     dispatch({
       type: 'FETCH_EVENTS_FROM_CATEGORY',

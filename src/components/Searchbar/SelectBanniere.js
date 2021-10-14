@@ -23,6 +23,7 @@ const SelectBanniere = ({ choice }) => {
     >
       <option
         value=""
+        className="searchBar--option"
       >
         Choose a category
       </option>

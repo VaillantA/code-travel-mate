@@ -18,7 +18,7 @@ const Input = ({ className }) => {
     <input
       name="searchBar--search"
       className={className}
-      placeholder="City"
+      placeholder="Enter a city"
       onChange={handleChange}
       value={cityInProgress}
     />

@@ -1,3 +1,5 @@
+// import state from "sweetalert/typings/modules/state";
+
 export const initialState = {
   list: [],
   category: [],
@@ -53,11 +55,11 @@ const reducer = (state = initialState, action = {}) => {
         redirection: false,
         // loading: false,
       };
-      /* case 'SAVE_LIKED':
+    case 'LOAD_TRUE':
       return {
         ...state,
-        isLiked: true,
-      }; */
+        loading: true,
+      };
     default:
       return state;
   }

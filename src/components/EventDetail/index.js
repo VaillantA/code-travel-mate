@@ -17,6 +17,12 @@ const EventDetail = () => {
 
   useEffect(() => {
     dispatch({
+      type: 'LOAD_TRUE',
+    });
+  }, []);
+
+  useEffect(() => {
+    dispatch({
       type: 'FETCH_ONE_EVENT',
       id: id,
     });

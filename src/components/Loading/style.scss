@@ -1,13 +1,15 @@
 .loading{
-  height: 80vh;
   display: flex;
   justify-content: center;
   align-items: center;
   -webkit-animation: rotation 5s linear infinite;
-
+}
+.test{
+  height: 10em;
+  width: 10em;
 }
 #globe-load{
-  font-size: 5em;
+  font-size: 10em;
   @-webkit-keyframes rotation {
     0%   { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(360deg); }

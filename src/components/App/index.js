@@ -32,11 +32,6 @@ const App = () => {
   const dispatch = useDispatch();
   // useEffect(() => {
   //   dispatch({
-  //     type: 'FETCH_EVENTS',
-  //   });
-  // }, []);
-  // useEffect(() => {
-  //   dispatch({
   //     type: 'FETCH_CATEGORIES',
   //   });
   // }, []);
@@ -53,7 +48,6 @@ const App = () => {
   }
 
   const redirection = useSelector((state) => state.events.redirection);
-  const loading = useSelector((state) => state.events.loading);
   const isLogged = useSelector((state) => state.login.logged);
   // const redirectTo = useSelector((state) => state.login.redirectTo);
 

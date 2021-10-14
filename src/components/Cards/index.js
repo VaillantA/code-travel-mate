@@ -6,12 +6,13 @@ import { useEffect } from 'react';
 import './style.scss';
 
 function Cards() {
-  // const dispatch = useDispatch();
-  // useEffect(() => {
-  //   dispatch({
-  //     type: 'FETCH_EVENTS',
-  //   });
-  // }, []);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch({
+      type: 'LOAD_TRUE',
+    });
+  }, []);
 
   const listEvents = useSelector((state) => state.events.list);
   return (

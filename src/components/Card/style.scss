@@ -9,6 +9,10 @@
   padding-top: 1em;
   padding-bottom: 1em;
   margin-bottom: 1em;
+  &:hover{
+    -webkit-transform: scale(1.05);
+    box-shadow: 10px 5px 10px grey;
+  }
 }
 .card:last-child{
   margin-right: 0;

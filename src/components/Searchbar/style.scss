@@ -4,12 +4,11 @@
   width: 100%;
   height: 300px;
   padding: 100px 20px 100px 20px;
-}
-
-.banniere--searchBar {
-  display: flex;
-  justify-content: center;
-  align-items: baseline;
+  &--searchBar {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+  }
 }
 
 .searchBar--select {
@@ -20,7 +19,6 @@
   height: 3em;
   background: white;
   padding-right: 1em;
-
 }
 
 .searchBar--input {

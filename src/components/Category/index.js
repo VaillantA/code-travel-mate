@@ -25,9 +25,9 @@ const Category = () => {
   // console.log(listEvents);
   const currentCategoryName = useSelector((state) => (state.events.list[0].categories[0].name));
 
-  if (loading) {
+  /* if (loading) {
     return <Loading />;
-  }
+  } */
   return (
     <div>
       <h1 className="category--title">

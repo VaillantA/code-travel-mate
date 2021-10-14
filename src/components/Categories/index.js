@@ -11,7 +11,7 @@ import { useEffect } from 'react';
 const Categories = () => {
   const like = 193;
   const isLiked = true;
-  const loading = useSelector((state) => state.events.loading);
+  // const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
@@ -27,9 +27,9 @@ const Categories = () => {
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
 
-  /* if (loading) {
-    return <Loading />;
-  } */
+  // if (loading) {
+  //   return <Loading />;
+  // }
   return (
     <main>
       <div className="cards">

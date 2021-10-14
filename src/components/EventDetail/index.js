@@ -186,13 +186,11 @@ const EventDetail = () => {
                 : 'Subscribe !'}
             </button>
           </div>
-          {subscribe && (
-          <div className="participation--message">
+          <div className={subscribe ? ("participation--message") : ("participation--message--hidden")}>
             <p>
               You are registered for this event ! See you soon
             </p>
           </div>
-          )}
         </div>
       </div>
     </>

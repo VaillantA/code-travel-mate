@@ -54,7 +54,7 @@
 }
 .detailmenu--submitButton{
   color: white;
-  background: linear-gradient(#a04ae2, vars.$dark-color);
+  background: linear-gradient(#c2859f, #6d515d);
   font-weight: bold;
   border-radius: 8px;
   border: none;
@@ -62,6 +62,12 @@
   width: 8em;
   height: 2.5em;
   margin: 1em;
+  transition: transform 0.1s;
+
+    &:hover{
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.527);
+      transform: translate(2px, 3px);
+    }
 }
 .event--titleAndAuthor{
   padding: 4em;
@@ -172,14 +178,22 @@
     border: none;
     width: 8em;
     height: 3em;
-    background: linear-gradient(#a04ae2, vars.$dark-color);
+    background: linear-gradient(#c2859f, #6d515d);
+    transition: transform 0.1s;
+
+    &:hover{
+      box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.527);
+      transform: translate(2px, 3px);
     }
+  }
   
   &--message{
     display: flex;
     justify-content: flex-end;
     font-size: 1.5em;
     margin-right: 1em;
+    transition: 0.5s transform;
+
     & p{
       width: 10em;
       padding: 0.8em;
@@ -189,6 +203,21 @@
       background-color: burlywood;
       border-radius: 5px;
       box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+    }
+    &--hidden{
+      display: flex;
+      font-size: 1.5em;
+      transform: translateX(300%);
+      & p{
+        width: 10em;
+        padding: 0.8em;
+        color: white;
+        font-weight: bold;
+        // font-style: italic;
+        background-color: burlywood;
+        border-radius: 5px;
+        box-shadow: 5px 2px 5px rgba(0, 0, 0, 0.527);
+      }
     }
   }
 }

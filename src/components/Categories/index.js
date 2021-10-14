@@ -35,7 +35,7 @@ const Categories = () => {
       <div className="cards">
         <div className="categories--ancre">
           {categories.map((currentCategory) => (
-            <div className="categories--ancre--indiv">
+            <div className="categories--ancre--indiv" key={currentCategory.id}>
               <a href={`#${currentCategory.name}`}>{currentCategory.name}</a>
             </div>
           ))}

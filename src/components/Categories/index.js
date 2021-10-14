@@ -1,4 +1,7 @@
 /* eslint-disable max-len */
+import './style.scss';
+
+import Loading from 'src/components/Loading';
 import Card from 'src/components/Card';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
@@ -8,6 +11,7 @@ import { useEffect } from 'react';
 const Categories = () => {
   const like = 193;
   const isLiked = true;
+  const loading = useSelector((state) => state.events.loading);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch({
@@ -23,14 +27,19 @@ const Categories = () => {
   const categories = useSelector((state) => (state.searchBar.categoriesList));
   const listEvents = useSelector((state) => state.events.list);
 
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <main>
       <div className="cards">
-        {/* <div className="cards--categories--ancre">
-          categories.map((currentCategory) => (
-            <a href=`#${currentCategory.name}`>{currentCategory.name}</a>
-          ))
-        </div> */}
+        <div className="categories--ancre">
+          {categories.map((currentCategory) => (
+            <div className="categories--ancre--indiv">
+              <a href={`#${currentCategory.name}`}>{currentCategory.name}</a>
+            </div>
+          ))}
+        </div>
         {categories.map((currentCategory) => (
           <div className="category" key={currentCategory.id} id={currentCategory.name}>
             <div className="event">
@@ -52,6 +61,11 @@ const Categories = () => {
                   liked={isLiked}
                 />
               ))}
+            </div>
+            <div className="fleche--up">
+              <a href="#">
+                <i className="fas fa-angle-double-up" />
+              </a>
             </div>
           </div>
         ))}

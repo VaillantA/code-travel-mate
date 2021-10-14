@@ -1,4 +1,4 @@
-@use 'src/styles/vars';
+/* @use 'src/styles/vars';
 
 @keyframes fade {
   0% {
@@ -48,3 +48,22 @@
     animation: load 1.5s infinite;
   }
 }
+ */
+
+ .loading fa-globe-africa, .loading fas{
+  width: 150px;
+  height: 150px;
+  /* transform-origin: 50% 50%;
+  @-webkit-keyframes rotating {
+    from{
+        -webkit-transform: rotate(0deg);
+    }
+    to{
+        -webkit-transform: rotate(360deg);
+    }
+}
+ 
+.rotating {
+    -webkit-animation: rotating 2s linear infinite;
+} */
+ }

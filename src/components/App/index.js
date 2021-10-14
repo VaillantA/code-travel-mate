@@ -64,7 +64,6 @@ const App = () => {
   return (
     <div className="app">
       <NavBar />
-      <Loading />
       <Settings />
       {/* <EventForm /> */}
       <Switch>

@@ -2,7 +2,7 @@ import axios from 'axios';
 import swal from 'sweetalert';
 
 const api = axios.create({
-  baseURL: 'http://benjamin-gleitz.vpnuser.lan:8080',
+  baseURL: 'http://benjamin-gleitz.vpnuser.lan:8000',
 });
 
 if (sessionStorage.getItem('key')) {
@@ -32,6 +32,7 @@ const ajax = (store) => (next) => (action) => {
   else if (action.type === 'FETCH_CATEGORIES') {
     api.get('/api/v1/category')
       .then((response) => {
+        console.log(response)
         store.dispatch({
           type: 'SAVE_CATEGORIES',
           categories: response.data,
